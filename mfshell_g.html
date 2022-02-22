@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
+<head>
 <link rel="stylesheet" type="text/css" href="main.css">
 <title>Guía de MF Shell</title>
+</head>
 <h1>Guía de MF Shell</h1>
 <p>
 <p><a href="index.html">Volver</a>
 <p><a href="mfshell_h.html">Ver referencia de comandos</a>
 <p>
 <p><h2>📚 Contenido</h2>
-<p>
+<div>
 <p>→ El Concepto del bot
 <p>→ Los elementos del sistema de archivos
 <p>→ Los tipos de selección
 <p>→ Límites y colas
 <p>→ Consejos
-<p>
+</div>
 <p><h2>🤔 El concepto del bot</h2>
 <p>
 <p>Habitualmente, la mayoría de los bots en Telegram que manejan archivos tienen ese efecto "boomerang", les das algo, ya sea un archivo del propio Telegram para que haga algo, un enlace a otro sitio web para que lo descargue, hacen su trabajo y te lo devuelven a tu chat, tu privado con ese bot, esto se considera "normal" y trae consigo varias limitaciones, principalmente aquella que tiene que ver con el límite de 2 GB por cada archivo.
+<div>
 <p>Antes que nada, debe entender que MF Shell no es un bot normal:
 <p>→ No es un bot puramente interactivo o "conversacional"
 <p>→ No es un bot que te devuelve automáticamente lo que le pidas debido a las funciones que trae una vez bajas algo, porque si descargas algo de un sitio web por ejemplo, no necesariamente es para recibirlo a tu chat, no en este bot
@@ -25,7 +28,7 @@
 <p>→ En este bot usted puede ver lo que descarga, crear carpetas, organizar como le dé la gana todo, incluso archivar y cifrar archivos
 <p>→ En este bot los procesos de transferencia de red del bot funcionan con un sistema de colas, los procesos pueden cancelarse o frenarse, para realizar una mejor planificación
 <p>→ En este bot hay muchas herramientas para procesamiento masivo de archivos, URLs, etc...
-<p>
+</div>
 <p><h2>🤔 Los elementos del sistema de archivos</h2>
 <p>
 <p>En MF Shell cada usuario tiene su propio directorio (carpeta) donde puede trabajar, y dentro, el usuario puede crear más subdirectorios para agrupar los archivos
@@ -39,12 +42,12 @@
 <p>
 <p>En MF Shell, todos los comandos que trabajan con archivos y el comando <code>/que</code>, usan selectores, cada uno con su propio formato. Los selectores son argumentos para seleccionar elementos, si se trata de un comando relacionado con el sistema de archivos del bot, el selector es para seleccionar algo que tengas delante por ejemplo.
 <p>Note que en la documentación de cada comando se indica los tipos de selección y tipos de elementos que soporta al seleccionar, en caso detratase solamente del sistema de archivos
-<p>
+<div>
 <p>Hay 3 tipos de selección:
 <p>→ Selección simple
 <p>→ Selección por rango
 <p>→ Selección libre
-<p>
+</div>
 <p><h3>Selección simple</h3>
 <p>La seleccción simple es para seleccionar una ubicación o un elemento del sistema de archivos, es el más sencillo de todos
 <p>Formato: N
