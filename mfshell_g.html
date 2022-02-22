@@ -52,9 +52,9 @@
 <p>La seleccción simple es para seleccionar una ubicación o un elemento del sistema de archivos, es el más sencillo de todos
 <p>Formato: N
 <p>Ejemplos:
-<p><code>/ls 3</code>
+<p><div><code>/ls 3</code></div>
 <p>Esto es para observar el contenido del elemento 3. Si 3 es un directorio, le mostrará el contenido de ese directorio, si es un archivo... pues... no hace mucho, solo muestra al archivo solo y ya.
-<p><code>/ls -1</code>
+<p><div><code>/ls -1</code></div>
 <p>Esto es para observar el directorio contenedor, también llamado directorio padre. Ojo, no se puede tratar de acceder al directorio padre por encima de "/", porque no existe
 <p>Note que la selección simple, dependiendo del comando es el único tipo de selección donde puede seleccionar niveles superiores de donde se encuentra
 <p>
@@ -63,15 +63,15 @@
 <p>Formato: N-Mr ó N-M
 <p>N y M son solo números y "r" (literalmente, una "r") es un argumento opcional. N es el índice de referencia, M indica la cantidad a seleccionar y "r" es para indicar si se selecciona en reversa.
 <p>Por ejemplo:
-<p><code>/ls 4-3</code>
+<p><div><code>/ls 4-3</code></div>
 <p>Observar los recursos 4, 5 y 6 de la ubicación actual, es decir, se seleccionan y muestran 3 elementos a partir del índice 4
-<p><code>/rm 5-2r</code>
+<p><div><code>/rm 5-2r</code></div>
 <p>Es para borrar los recursos 4 y 5 en la ubicación actual, es decir, se seleccionan y se borran 2 elementos a partir del índice 5 pero en reversa
 <p>En caso de que M, es decir, la cantidad a seleccionar sea 0 se seleccionan todos a partir del índice seleccionado y en caso de ser en reversa se seleccionan todos desde el índice cero hasta llegar al índice de referencia
 <p>Más ejemplos (porque hay un historial desagradable en el canal de no entender cómo funciona el rango):
-<p><code>/upload 6-0r</code>
+<p><div><code>/upload 6-0r</code></div>
 <p>Para subir a Telegram los 6 primeros elementos (los que sean directorios no se subirán por supuesto, véase en la ayuda, el comando <code>/upload</code>)
-<p><code>/mv 4-0 2</code>
+<p><div><code>/mv 4-0 2</code></div>
 <p>Para mover al directorio ocupando el índice 2 del índice 4 en adelante
 <p>
 <p><h3>Selección libre</h3>
@@ -79,7 +79,7 @@
 <p>Formato A,B,C,D,E.....N
 <p>Los elementos se separan en comas para definir el órden en que se procesarán. Esto es muy importante para renombrar en /bren al tratar con archivos que están desorganizados. Al seleccionar no debe repetir elementos todos deben ser seleccionados una única vez, no hay un límite máximo de selección más allá de límite de elementos en el directorio, y el límite mínimo son 2 elementos, por debajo de eso no tiene sentido la selección libre, para eso mejor use una selección simple.
 <p>Por ejemplo:
-<p><code>/bren E 4,2,3,7,0 Video-/1/2</code>
+<p><div><code>/bren E 4,2,3,7,0 Video-/1/2</code></div>
 <p>Antes que nada, supongamos que los archivos seleccionados son MP4. Renombrar con enumeración los índices 4,2,3,7,0, en ese órden en específico, y sin importar el nombre anterior que tenían (más bien el tallo), ahora sus nuevos nombre son "Video-01.mp4","Video-02.mp4","Video-03.mp4","Video-04.mp4" y "Video-05.mp4"
 <p>
 <p><h2>🤔 Límites y colas</h2>
