@@ -3,9 +3,8 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 <title>Guía de MF Shell</title>
 <h1>Guía de MF Shell</h1>
-<p><strong>Cómo usar este bot</strong>
 <p>
-<p>📚 <strong>Contenido</strong>
+<p><h2>📚 Contenido</h2>
 <p>
 <p>→ Concepto del bot
 <p>→ Los elementos del sistema de archivos
@@ -13,51 +12,81 @@
 <p>→ Límites y colas
 <p>→ Consejos
 <p>
-<p>🤔 <strong>Concepto del bot</strong>
+<p><h2>🤔 El concepto del bot</h2>
 <p>
 <p>Habitualmente, la mayoría de los bots en Telegram que manejan archivos tienen ese efecto "boomerang", les das algo, ya sea un archivo del propio Telegram para que haga algo, un enlace a otro sitio web para que lo descargue, hacen su trabajo y te lo devuelven a tu chat, tu privado con ese bot, esto se considera "normal" y trae consigo varias limitaciones, principalmente aquella que tiene que ver con el límite de 2 GB por cada archivo.
 <p>Antes que nada, debe entender que MF Shell no es un bot normal:
 <p>→ No es un bot puramente interactivo o "conversacional"
 <p>→ No es un bot que te devuelve automáticamente lo que le pidas debido a las funciones que trae una vez bajas algo, porque si descargas algo de un sitio web por ejemplo, no necesariamente es para recibirlo a tu chat, no en este bot
-<p>→ El bot funciona a base de puros comandos, comandos no interactivos (salvo alguna rara excepción), cada comando tiene sus argumentos y un uso determinado, todos ellos, o la gran mayoría comparten patrones similares que facilitan su comprensión
+<p>→ En este bot funciona a base de puros comandos, comandos no interactivos (salvo alguna rara excepción), cada comando tiene sus argumentos y un uso determinado, todos ellos, o la gran mayoría comparten patrones similares que facilitan su comprensión
 <p>→ En este bot usted puede ver lo que descarga, crear carpetas, organizar como le dé la gana todo, incluso archivar y cifrar archivos
+<p>→ En este bot los procesos de transferencia de red del bot funcionan con un sistema de colas, los procesos pueden cancelarse o frenarse, para realizar una mejor planificación
+<p>→ En este bot hay muchas herramientas para procesamiento masivo de archivos, URLs, etc...
 <p>
-<p>🤔 <strong>Los elementos del sistema de archivos</strong>
+<p><h2>🤔 Los elementos del sistema de archivos</h2>
 <p>
-<p>Pueden ser archivos y directorios o ubicaciones, se enumeran para luego ser seleccionados de forma simple o por rango. También se le llaman recursos.
-<p>De 0 en adelante se enumeran todos los archivos subirectorios de la ubicación actual.
-<p>Por debajo de 0 es para señalar a los niveles superiores. Por ejemplo, suponga que se encuentra en <code>/cosas/hoy</code>, el nivel superior o directorio padre donde usted se encuentra es <code>/cosas</code> y dos niveles más arriba es la raiz. Por encima del directorio raiz no hay niveles superiores y es el padre de todos.
+<p>En MF Shell cada usuario tiene su propio directorio (carpeta) donde puede trabajar, y dentro, el usuario puede crear más subdirectorios para agrupar los archivos
+<p>Hay una ubicación actual, que es el directorio donde usted está parado, puede verlo ejecutando <code>/ls</code>.
+<p>Los archivos y directorios se organizan y se enumeran partiendo desde el 0 como primer elemento. Los directorios se listan antes que los archivos siempre.
+<p>De cero en adelante, son todos los elementos del sistema de archivos que están a simple vista. Sin ebmargo, por debajo de cero se encuentran los niveles superiores. Por ejemplo, suponga que se encuentra en <code>/cosas/hoy</code>, el nivel superior o directorio padre donde usted se encuentra (-1) es <code>/cosas</code> y dos niveles más arriba (-2) es la raiz. Por encima del directorio raiz no hay niveles superiores y es el padre de todos.
+<p>Tenga en cuenta que las enumeraciones desde cero no son solamente en el sistema de archivos, esto también se da en las colas excepto la parte de seleccionar por debajo de cero
+<p>Por último y no menos importante, estas enumeraciones se llaman índices
 <p>
-<p>🤔 <strong>Los tipos de selección</strong>
+<p><h2>🤔 Los tipos de selección</h2>
+<p>
+<p>En MF Shell, todos los comandos que trabajan con archivos y el comando <code>/que</code>, usan selectores, cada uno con su propio formato. Los selectores son argumentos para seleccionar elementos, si se trata de un comando relacionado con el sistema de archivos del bot, el selector es para seleccionar algo que tengas delante por ejemplo.
+<p>Note que en la documentación de cada comando se indica los tipos de selección y tipos de elementos que soporta al seleccionar, en caso detratase solamente del sistema de archivos
 <p>
 <p>Hay 3 tipos de selección:
 <p>→ Selección simple
 <p>→ Selección por rango
 <p>→ Selección libre
 <p>
-<p>La seleccción simple es para seleccionar una ubicación o un elemento del sistema de archivos.
+<p><h3>Selección simple</h3>
+<p>La seleccción simple es para seleccionar una ubicación o un elemento del sistema de archivos, es el más sencillo de todos
+<p>Formato: N
+<p>Ejemplos:
+<p><code>/ls 3</code>
+<p>Esto es para observar el contenido del elemento 3. Si 3 es un directorio, le mostrará el contenido de ese directorio, si es un archivo... pues... no hace mucho, solo muestra al archivo solo y ya.
+<p><code>/ls -1</code>
+<p>Esto es para observar el directorio contenedor, también llamado directorio padre. Ojo, no se puede tratar de acceder al directorio padre por encima de "/", porque no existe
+<p>Note que la selección simple, dependiendo del comando es el único tipo de selección donde puede seleccionar niveles superiores de donde se encuentra
+<p>
+<p><h3>Selección por rango</h3>
+<p>La selección por rango puede ser engañosa a primera vista, muchos piensan que es desde-hasta. Nada que ver con eso
+<p>Formato: N-Mr ó N-M
+<p>N y M son solo números y "r" (literalmente, una "r") es un argumento opcional. N es el índice de referencia, M indica la cantidad a seleccionar y "r" es para indicar si se selecciona en reversa.
 <p>Por ejemplo:
-<p><code>/ls N</code> es para observar el contenido de N. En este caso N puede ser a partir de 0 o menor que 0. Si N es -1, te muestra el directorio padre, osea, un nivel superior, si es -2, te muestra el padre del padre, y así sucesivamente. Si N es a partir de 0 está seleccionando un recurso de los que hay en la ubicación actual.
+<p><code>/ls 4-3</code>
+<p>Observar los recursos 4, 5 y 6 de la ubicación actual, es decir, se seleccionan y muestran 3 elementos a partir del índice 4
+<p><code>/rm 5-2r</code>
+<p>Es para borrar los recursos 4 y 5 en la ubicación actual, es decir, se seleccionan y se borran 2 elementos a partir del índice 5 pero en reversa
+<p>En caso de que M, es decir, la cantidad a seleccionar sea 0 se seleccionan todos a partir del índice seleccionado y en caso de ser en reversa se seleccionan todos desde el índice cero hasta llegar al índice de referencia
+<p>Más ejemplos (porque hay un historial desagradable en el canal de no entender cómo funciona el rango):
+<p><code>/upload 6-0r</code>
+<p>Para subir a Telegram los 6 primeros elementos (los que sean directorios no se subirán por supuesto, véase en la ayuda, el comando <code>/upload</code>)
+<p><code>/mv 4-0 2</code>
+<p>Para mover al directorio ocupando el índice 2 del índice 4 en adelante
 <p>
-<p>La selección por rango es para seleccionar múltiples recursos del directorio donde usted se encuentra.
-<p>Su formato es: N-Mr ó N-M
-<p>N y M son solo números y r es un argumento opcional. N es el recurso de referencia, M indica la cantidad a seleccionar y r es para indicar si se selecciona en reversa.
+<p><h3>Selección libre</h3>
+<p>La selección libre consiste en seleccionar en un órden deseado un conjunto de elementos que a su juicio, están "desordenados" de alguna forma. Es un tipo de selección para casos específicos como el del comando <code>/bren</code>
+<p>Formato A,B,C,D,E.....N
+<p>Los elementos se separan en comas para definir el órden en que se procesarán. Esto es muy importante para renombrar en /bren al tratar con archivos que están desorganizados. Al seleccionar no debe repetir elementos todos deben ser seleccionados una única vez, no hay un límite máximo de selección más allá de límite de elementos en el directorio, y el límite mínimo son 2 elementos, por debajo de eso no tiene sentido la selección libre, para eso mejor use una selección simple.
 <p>Por ejemplo:
-<p><code>/ls 4-3</code> es para observar los recursos 4, 5 y 6 de la ubicación actual.
-<p><code>/rm 5-2r</code> es para borrar los recursos 4 y 5 en la ubicación actual.
-<p>En caso de que M, es decir, la cantidad a seleccionar sea 0 se seleccionan todos a partir del inicial y en caso de ser en reversa se seleccionan todos hasta llegar al recurso de referencia
-<p>Por ejemplo:
-<p><code>/upload 6-0r</code> es para subir a Telegram los 6 primeros recursos (los que sean directorios no se subirán por supuesto)
-<p><code>/mv 4-0 2</code> es para mover al directorio 2 del recurso 4 en adelante
+<p><code>/bren E 4,2,3,7,0 Video-/1/2</code>
+<p>Antes que nada, supongamos que los archivos seleccionados son MP4. Renombrar con enumeración los índices 4,2,3,7,0, en ese órden en específico, y sin importar el nombre anterior que tenían (más bien el tallo), ahora sus nuevos nombre son "Video-01.mp4","Video-02.mp4","Video-03.mp4","Video-04.mp4" y "Video-05.mp4"
 <p>
-<p>La selección libre se usa en comandos como /bren, básicamente, los elementos se separan en comas para definir el órden en que se procesarán. Esto es muy importante para renombrar en /bren al tratar con archivos que están desorganizados.
-<p>Por ejemplo: 4,2,3,7,0
-<p>En caso de repetir un elemento, la selección resulta en un error, ya que no puede seleccionarse un mismo elemento 2 veces
+<p><h2>🤔 Límites y colas</h2>
 <p>
-<p>🤔 <strong>Límites y colas</strong>
+<p>Transferencias de red y colas
+<p>Cada comando de transferencia de red tiene una cola asociada, al cual puede frenarse o se puede cancelar el proceso de transferencia.
+<p>Cada usuario tiene un límite de 2 transferencias simultáneas
+<p>Cada cola tiene un identificador, este identificador se usa en comandos que administran colas
 <p>
-<p>Transferencias de red
-<p>
+
+
+
+
 <p>Hay un límite de transferencias de red simultáneo de 5 procesos, es decir, usted puede tener a la vez 5 procesos ya sea de subida o de bajada. En el caso específico de las fotos enviadas de Telegram al bot no hay límite.
 <p>Cada proceso de transferencia de red tiene su propia cola. Para agregar un elemento a una cola basta con ejecutar el comando. Si la cola está vacía el comando empieza a trabajar desde cero con el primer elemento, si ejecuta el comando mientras está trabajando, el elemento será agregado a su cola.
 <p>Por ejemplo, si agrega una URL con /ddl, y la cola estaba vacía, el comando empezará a trabajar, si sigue ejecutando a /ddl pero con otras URLs mientras está trabajando, la cola de /ddl se irá llenando; esto puede comprobarlo revisando la cola con el comando /que. Para más información revise la ayuda en /help.
