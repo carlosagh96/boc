@@ -4,9 +4,12 @@
 <title>Guía de MF Shell</title>
 <h1>Guía de MF Shell</h1>
 <p>
+<p><a href="index.html">Volver</a>
+<p><a href="mfshell_h.html">Ver referencia de comandos</a>
+<p>
 <p><h2>📚 Contenido</h2>
 <p>
-<p>→ Concepto del bot
+<p>→ El Concepto del bot
 <p>→ Los elementos del sistema de archivos
 <p>→ Los tipos de selección
 <p>→ Límites y colas
@@ -78,28 +81,20 @@
 <p>
 <p><h2>🤔 Límites y colas</h2>
 <p>
-<p>Transferencias de red y colas
+<p><h3>Transferencias de red y colas</h3>
 <p>Cada comando de transferencia de red tiene una cola asociada, al cual puede frenarse o se puede cancelar el proceso de transferencia.
 <p>Cada usuario tiene un límite de 2 transferencias simultáneas
 <p>Cada cola tiene un identificador, este identificador se usa en comandos que administran colas
+<p>Por ejemplo, si agrega una o varias URLs con <code>/wget</code>, y la cola estaba vacía, el comando empezará a trabajar, si sigue ejecutando a dicho comando pero con otras URLs mientras está trabajando, la cola de "w" (que es la cola que identifica a <code>/wget</code>) se irá llenando
+<p>Para más información, véase en la referencia de comandos, los 3 comandos para gestionar colas
 <p>
-
-
-
-
-<p>Hay un límite de transferencias de red simultáneo de 5 procesos, es decir, usted puede tener a la vez 5 procesos ya sea de subida o de bajada. En el caso específico de las fotos enviadas de Telegram al bot no hay límite.
-<p>Cada proceso de transferencia de red tiene su propia cola. Para agregar un elemento a una cola basta con ejecutar el comando. Si la cola está vacía el comando empieza a trabajar desde cero con el primer elemento, si ejecuta el comando mientras está trabajando, el elemento será agregado a su cola.
-<p>Por ejemplo, si agrega una URL con /ddl, y la cola estaba vacía, el comando empezará a trabajar, si sigue ejecutando a /ddl pero con otras URLs mientras está trabajando, la cola de /ddl se irá llenando; esto puede comprobarlo revisando la cola con el comando /que. Para más información revise la ayuda en /help.
-<p>Debido a las colas, las transferencias de red son únicamente los procesos diferentes de transferencia
+<p><h3>Comandos intensivos o pesados</h3>
+<p>Hay comandos, o una parte de ellos donde se realizan tareas intensivas, ejecutarlas simultáneamente puede ocasionar que el bot se desestabilice, no es primera vez que pasa. Es por eso que en el bot hay bloqueos de comandos y una cola global para procesos pesados. Básicamente nadie puede ejecutar simultaneamente estos comandos o hacer procesamiento pesado de forma simultanea
 <p>
-<p>Comandos intensivos o pesados
+<p><h2>✍️ Consejos</h2>
 <p>
-<p>Hay otros comandos que solo pueden ejecutarse de uno en uno, esto pasa con los comandos para archivar por ejemplo, cuando lea la ayuda, fíjese si en la información del comando sale que el comando es un comando intensivo.
-<p>
-<p>🤔 <strong>Consejos</strong>
-<p>
-<p>✍️ El comando /start sirve para consultar la cantidad de transferencias simultáneas, el estado del archivador y también otros datos útiles para no 'perderse'.
-<p>
-<p>✍️ En la seccion de noticias del sitio web se suele postear información importante
+<p>El comando /start sirve para consultar la cantidad de transferencias simultáneas, el estado del archivador y también otros datos útiles para no "perderse"
+<p>Si la cola de procesos pesados se alarga, y se queda mucho tiempo viendo cómo no avanza, debe reportarlo al administrador a través del grupo, al igual que si tiene una "rotura" en una cola
+<p>Cada cuenta de MF Shell tiene un sitio web asociado, en este sitio web hay una sección de noticias donde se puede medir el "uptime" (tiempo de actividad) que lleva el bot
 </html>
 
