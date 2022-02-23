@@ -20,8 +20,12 @@
 -->
 <p><font color="red">Esta página no está completa, faltan las demás categorías de comandos</font>
 
+<p><h2>Categorías</h2>
+<p><a href=#fs1>Sistema de archivos del bot (Básico)</a>
+<p><a href=#fs2>Sistema de archivos del bot (Avanzado)</a>
+
 <div class="cat">
-<p><h2>Sistema de archivos del bot</h2>
+<a name="fs1"><p></a><h2>🤔 Sistema de archivos del bot (Básico)</h2>
 
 <p><div class="sec">
 <p><div class="cmd"><code>/back</code></div>
@@ -33,30 +37,6 @@
 </div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/bren</code></div>
-<div class="des">
-<p>Renombrado múltiple de archivos
-<p>Cuando ejecute el comando, se le va a mostrar una "simulación" de cómo van a quedar los archivos, y en ese mensaje sale para ejecutar el comando <code>/ok</code> para confirmar, puede ejecutar otro comando cualquiera para cancelar
-<p>Hay 3 operaciones: agregar, enumerar, remplazar. Cada operación se ejecuta según unos parámetros, los cuales tienen a "/" como separador
-<p>(A) Agregar:
-<p>Agrega una cadena de caracteres adicional al principio(prefijo) o al final (sufijo)
-<p>Formato (prefijo): <code>Agregar/</code>
-<p>Formato (sufijo): <code>/Agregar</code>
-<p>(E) Enumerar:
-<p>Renombra los archivos en el orden dado de forma tal que queden de la forma: NuevoNombre + Número + ExtensiónOriginal
-<p>Formato: <code>NuevoTallo/NúmeroInicial/CantCifras</code>
-<p>(R) Remplazar:
-<p>Remplaza en cada archivo seleccionado una cadena de caracteres con una nueva cadena de caracteres
-<p>Formato: <code>Objetivo/Nuevo</code>
-</div>
-<p>Uso: <div class="use"><code>/bren A1 A2 A3</code></div>
-<p><div class="det">
-<p>A1 = Selección simple, de rango o libre. Solamente de archivos
-<p>A2 = Tipo de operación: A (Agregar), E (Enumerar), R (Remplazar)
-<p>A3 = Parámetros de la operación
-</div></div>
-
-<p><div class="sec">
 <p><div class="cmd"><code>/cd</code></div>
 <div class="des">
 <p>Cambiar de directorio
@@ -65,32 +45,6 @@
 <p>Uso: <div class="use"><code>/cd A</code></div>
 <div class="det">
 <p>A = Selección simple
-</div></div>
-
-<p><div class="sec">
-<p><div class="cmd"><code>/crypt</code></div>
-<div class="des">
-<p>Cifrado de archivos bajo la especificación Fernet
-<p>Antes de usar este comando, debe asegurarse de que KFSCrypt funcione en su PC y debe acostumbrarse a cifrar y descifrar archivos
-<p><a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-windows-i386.tar">KFSCrypt para Windows (32 bits)</a>
-<p><a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-linux-amd64.tar">KFSCrypt para Linux (64 bits)</a>
-<p>Para cifrar o descifrar debe primero crear una clave ya sea ejecutando este comando sin argumentos o con KFSCrypt en su PC
-<p>Las claves generadas son completamente aleatorias y puede usarlas las veces que quiera
-<p>Para descifrar un archivo, debe hacerlo con la misma clave con el cual se cifró, en el caso de perder la clave ni se esfuerce porque <font color="red">ha perdido el archivo</font>, es lo mismo que si se le olvidara la contraseña para un archivo comprimido
-<p>Cuando genera una clave con el comando, la clave se establece como la que se va a usar y el archivo con la clave se sube al chat
-<p>
-</div>
-<p>Uso: <div class="use"><code>/crypt A1 A2</code></div>
-<p><div class="det">
-<p>Caso 1: Sin argumentos
-<p>Si se ejecuta respondiendo a un archivo en el chat, podrá ver y comparar claves
-<p>Si se ejecuta a secas, muestra la clave actual, si la tiene y los enlaces de descarga de KFSCrypt
-<p>Caso 2: Creación de una clave
-<p>A1 = "c" Crear una nueva clave
-<p>A2 = "f" Forzar creación de una nueva clave. Esto es en el caso de que ya haya una clave existente
-<p>Caso 3: Cualquier otro caso
-<p>A1 = Puede ser "r","e" o "d". El primero es para leer y asignar una clave a partir de un archivo del lado de Telegram. El segundo es para cifrar la selección de archivos hecha. El tercero es para descifrar la selección de archivos hecha
-<p>A2 = Selección simple de un archivo o un subdirectorio. En el caso de ser un subdirectorio, se seleccionan todos los archivos en el primer nivel
 </div></div>
 
 <p><div class="sec">
@@ -151,6 +105,61 @@
 <p>A = Selección simple o de rango. Solamente archivos y subdirectorios
 </div></div>
 
+</div>
+
+<div class="cat">
+<a name="fs2"><p></a><h2>🤔 Sistema de archivos del bot (Avanzado)</h2>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/bren</code></div>
+<div class="des">
+<p>Renombrado múltiple de archivos
+<p>Cuando ejecute el comando, se le va a mostrar una "simulación" de cómo van a quedar los archivos, y en ese mensaje sale para ejecutar el comando <code>/ok</code> para confirmar, puede ejecutar otro comando cualquiera para cancelar
+<p>Hay 3 operaciones: agregar, enumerar, remplazar. Cada operación se ejecuta según unos parámetros, los cuales tienen a "/" como separador
+<p>(A) Agregar:
+<p>Agrega una cadena de caracteres adicional al principio(prefijo) o al final (sufijo)
+<p>Formato (prefijo): <code>Agregar/</code>
+<p>Formato (sufijo): <code>/Agregar</code>
+<p>(E) Enumerar:
+<p>Renombra los archivos en el orden dado de forma tal que queden de la forma: NuevoNombre + Número + ExtensiónOriginal
+<p>Formato: <code>NuevoTallo/NúmeroInicial/CantCifras</code>
+<p>(R) Remplazar:
+<p>Remplaza en cada archivo seleccionado una cadena de caracteres con una nueva cadena de caracteres
+<p>Formato: <code>Objetivo/Nuevo</code>
+</div>
+<p>Uso: <div class="use"><code>/bren A1 A2 A3</code></div>
+<p><div class="det">
+<p>A1 = Selección simple, de rango o libre. Solamente de archivos
+<p>A2 = Tipo de operación: A (Agregar), E (Enumerar), R (Remplazar)
+<p>A3 = Parámetros de la operación
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/crypt</code></div>
+<div class="des">
+<p>Cifrado de archivos bajo la especificación Fernet
+<p>Antes de usar este comando, debe asegurarse de que KFSCrypt funcione en su PC y debe acostumbrarse a cifrar y descifrar archivos
+<p><a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-windows-i386.tar">KFSCrypt para Windows (32 bits)</a>
+<p><a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-linux-amd64.tar">KFSCrypt para Linux (64 bits)</a>
+<p>Para cifrar o descifrar debe primero crear una clave ya sea ejecutando este comando sin argumentos o con KFSCrypt en su PC
+<p>Las claves generadas son completamente aleatorias y puede usarlas las veces que quiera
+<p>Para descifrar un archivo, debe hacerlo con la misma clave con el cual se cifró, en el caso de perder la clave ni se esfuerce porque <font color="red">ha perdido el archivo</font>, es lo mismo que si se le olvidara la contraseña para un archivo comprimido
+<p>Cuando genera una clave con el comando, la clave se establece como la que se va a usar y el archivo con la clave se sube al chat
+<p>
+</div>
+<p>Uso: <div class="use"><code>/crypt A1 A2</code></div>
+<p><div class="det">
+<p>Caso 1: Sin argumentos
+<p>Si se ejecuta respondiendo a un archivo en el chat, podrá ver y comparar claves
+<p>Si se ejecuta a secas, muestra la clave actual, si la tiene y los enlaces de descarga de KFSCrypt
+<p>Caso 2: Creación de una clave
+<p>A1 = "c" Crear una nueva clave
+<p>A2 = "f" Forzar creación de una nueva clave. Esto es en el caso de que ya haya una clave existente
+<p>Caso 3: Cualquier otro caso
+<p>A1 = Puede ser "r","e" o "d". El primero es para leer y asignar una clave a partir de un archivo del lado de Telegram. El segundo es para cifrar la selección de archivos hecha. El tercero es para descifrar la selección de archivos hecha
+<p>A2 = Selección simple de un archivo o un subdirectorio. En el caso de ser un subdirectorio, se seleccionan todos los archivos en el primer nivel
+</div></div>
+
 <p><div class="sec">
 <p><div class="cmd"><code>/seven</code></div>
 <div class="des">
@@ -169,4 +178,3 @@
 </div></div>
 
 </div>
-
