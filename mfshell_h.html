@@ -20,9 +20,41 @@
 -->
 <p><font color="red">Esta página no está completa, faltan las demás categorías de comandos</font>
 
-<p><h2>Categorías</h2>
+<p><h2>📚 Categorías</h2>
+<p><a href=#inf>Información</a>
 <p><a href=#fs1>Sistema de archivos del bot (Básico)</a>
 <p><a href=#fs2>Sistema de archivos del bot (Avanzado)</a>
+<p><a href=#nw1>Transferencias de red (Telegram)</a>
+<p><a href=#nw2>Transferencias de red (Web)</a>
+
+<div class="cat">
+<a name="inf"><p></a><h2>🤔 Información</h2>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/about</code></div>
+<div class="des">
+<p>Muestra un breve resúmen acerca del bot y el enlace al sitio web propio del bot
+</div>
+<p>Uso: <div class="use"><code>/about</code></div>
+<p></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/help</code></div>
+<div class="des">
+<p>Muestra enlaces a la guía de usuario y a la referencia de comandos, es decir, este sitio
+</div>
+<p>Uso: <div class="use"><code>/help</code></div>
+<p></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/start</code></div>
+<div class="des">
+<p>Muestra información resumida sobre su sesión en el bot. Algunos datos no se muestran por esta vía
+</div>
+<p>Uso: <div class="use"><code>/start</code></div>
+<p></div>
+
+</div>
 
 <div class="cat">
 <a name="fs1"><p></a><h2>🤔 Sistema de archivos del bot (Básico)</h2>
@@ -159,6 +191,7 @@
 <p>Caso 3: Cualquier otro caso
 <p>A1 = Puede ser "r","e" o "d". El primero es para leer y asignar una clave a partir de un archivo del lado de Telegram. El segundo es para cifrar la selección de archivos hecha. El tercero es para descifrar la selección de archivos hecha
 <p>A2 = Selección simple de un archivo o un subdirectorio. En el caso de ser un subdirectorio, se seleccionan todos los archivos en el primer nivel
+<p>En <a href="https://t.me/bots_of_charles/111">este</a> vídeo se muestra cómo usar KFSCrypt en Windows
 </div></div>
 
 <p><div class="sec">
@@ -176,6 +209,120 @@
 <p>A1 = Selección simple archivo o subdirectorio
 <p>A2 = Tamaño de partes en MB (entero positivo, no se aceptan fracciones)
 <p>A3 = Contraseña (Opcional)
+</div></div>
+
+</div>
+
+<div class="cat">
+<a name="nw1"><p></a><h2>🤔 Transferencias de red (Telegram)</h2>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/auto</code></div>
+<div class="des">
+<p>Activar o desactivar la descarga automática de los archivos que son reenviados hacia el chat. Desactivado de forma predeterminada. Es la única forma de descargar álbumes/grupos de archivos
+</div>
+<p>Uso: <div class="use"><code>/auto</code></div>
+<p></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/download</code></div>
+<div class="des">
+<p>Descarga un archivo de Telegram al bot. Se usa respondiendo a un archivo. Opcionalmente puede cambiar el nombre del archivo al descargarlo
+</div>
+<p>o: <div class="use"><code>/download A</code></div>
+<p><div class="det">
+<p>A = Nuevo nombre (Opcional)
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/upload</code></div>
+<div class="des">
+<p>Sube archivos del bot a Telegram, puede ser uno o varios archivos
+<p>Tenga en cuenta que no se pueden subir archivos que superen 2 GB de espacio, ni superen 60 caracteres en el nombre, si los archivos no se encolan para subir, debe revisar y asegurarse de que cumplan con estos requisitos
+</div>
+<p>Uso: <div class="use"><code>/upload A</code></div>
+<p><div class="det">
+<p>A = Selección simple (archivos y directorios) o de rango (solamente archivos). En el caso de ser una selección simple sobre un directorio, se seleccionan todos los archivos en el 1er nivel de profundidad de ese directorio
+</div></div>
+
+</div>
+
+<div class="cat">
+<a name="nw2"><p></a><h2>🤔 Transferencias de red (Web)</h2>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/gddl</code></div>
+<div class="des">
+<p>Descargador de URLs de Google Drive
+</div>
+<p>Uso: <div class="use"><code>/gddl A1 A2</code></div>
+<p><div class="det">
+<p>A1 = Lista de URLs separadas por espacio
+<p>A2 = "R" (literalmente) para indicar en caso de si las URLs son carpetas de Google Drive, descargarlas de forma recursiva. Esto es opcional
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/megacreds</code></div>
+<div class="des">
+<p>Credenciales de cuenta de MEGA
+<p>Para usar una cuenta real de MEGA en lugar de depender de la sesión anónima
+</div>
+<p>Uso: <div class="use"><code>/megacreds A1 A2</code></div>
+<p><div class="det">
+<p>A1 = Usuario de MEGA
+<p>A2 = Contraseña del usuario de MEGA
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/megadl</code></div>
+<div class="des">
+<p>Descargador de enlaces MEGA. No soporta carpetas. Se usa una sesión anónima de forma predeterminada en caso de no haber credenciales de MEGA asignados
+</div>
+<p>Use: <div class="use"><code>/megadl A</code></div>
+<p><div class="det">
+<p>A = URLs de archivos en MEGA
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/share</code></div>
+<div class="des">
+<p>Compartir todos los archivos. Si activa esto, los archivos serán compartidos via web de forma pública para poder ser descargados desde el servidor web adjunto al bot. Desactivado de forma predeterminada
+<p>Puede ver en todo momento su enlace ejecutando <code>/start</code>
+</div>
+<p>Uso: <div class="use"><code>/share</code></div>
+<p></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/ua</code></div>
+<div class="des">
+<p>Agente de usuario
+<p>Afecta el comportamiento de <code>/wget</code>
+<p>Ejecute sin argumentos para ver el agente de usuario actual. De forma predeterminada, es aleatorio, pero puede elegir entre Chrome (c), Firefox (f), Safari (s), Opera (o), o aleatorio (r)
+</div>
+<p>Uso: <div class="use"><code>/ua A</code></div>
+<p><div class="det">
+<p>A = Agente de usuario (Opcional)
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/wget</code></div>
+<div class="des">
+<p>Descargador web general. Descarga enlaces directos (no todos) y es compatible con varios sitios de alojamiento de archivos, ejecute sin argumentos para ver los sitios soportados
+</div>
+<p>Use: <div class="use"><code>/wget A</code></div>
+<p><div class="det">
+<p>A = URLs separadas por espacios (Opcional)
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/ytdl</code></div>
+<div class="des">
+<p>Descargador de Youtube
+</div>
+<p>Uso: <div class="use"><code>/ytdl A1 A2</code></div>
+<p><div class="det">
+<p>A1 = URLs de vídeos de Youtube o listas de reproducción de Youtube separadas por espacios
+<p>A2 = Especificación. Puede ser "360p","720p","1080p" o "exa". Las 3 primeras son resoluciones de video, la última es para extraer audio. Todo esto es opcional
 </div></div>
 
 </div>
