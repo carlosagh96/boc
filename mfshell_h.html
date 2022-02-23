@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+<title>Bots Of Charles</title>
+</head>
+<p><h1>Comandos de MF Shell</h1>
+<p><a href="index.html">Volver</a>
+<p><a href="mfshell_g.html">Ver guía</a>
+
+<!-- TEMPLATE
+<p><div class="sec">
+<p><div class="cmd"><code>/cmd</code></div>
+<div class="des">
+<p>Desc
+</div>
+<p>Use: <div class="use"><code>/cmd Arg1</code></div>
+<p><div class="det">
+<p>Arg1 = blablabla...
+</div></div>
+-->
+<p><font color="red">Esta página no está completa, faltan las demás categorías de comandos</font>
+
+<div class="cat">
+<p><h2>Sistema de archivos del bot</h2>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/back</code></div>
+<div class="des">
+<p>Cambiar de directorio al directorio contenedor o padre
+<p>Básicamente lo mismo que ejecutar: <code>/cd -1</code></div>
+<p>Uso: <div class="use"><code>/back</code>
+<p></div>
+</div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/bren</code></div>
+<div class="des">
+<p>Renombrado múltiple de archivos
+<p>Cuando ejecute el comando, se le va a mostrar una "simulación" de cómo van a quedar los archivos, y en ese mensaje sale para ejecutar el comando <code>/ok</code> para confirmar, puede ejecutar otro comando cualquiera para cancelar
+<p>Hay 3 operaciones: agregar, enumerar, remplazar. Cada operación se ejecuta según unos parámetros, los cuales tienen a "/" como separador
+<p>(A) Agregar:
+<p>Agrega una cadena de caracteres adicional al principio(prefijo) o al final (sufijo)
+<p>Formato (prefijo): <code>Agregar/</code>
+<p>Formato (sufijo): <code>/Agregar</code>
+<p>(E) Enumerar:
+<p>Renombra los archivos en el orden dado de forma tal que queden de la forma: NuevoNombre + Número + ExtensiónOriginal
+<p>Formato: <code>NuevoTallo/NúmeroInicial/CantCifras</code>
+<p>(R) Remplazar:
+<p>Remplaza en cada archivo seleccionado una cadena de caracteres con una nueva cadena de caracteres
+<p>Formato: <code>Objetivo/Nuevo</code>
+</div>
+<p>Uso: <div class="use"><code>/bren A1 A2 A3</code></div>
+<p><div class="det">
+<p>A1 = Selección simple, de rango o libre. Solamente de archivos
+<p>A2 = Tipo de operación: A (Agregar), E (Enumerar), R (Remplazar)
+<p>A3 = Parámetros de la operación
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/cd</code></div>
+<div class="des">
+<p>Cambiar de directorio
+<p>Puede ser un subdirectorio o algún nivel superior respecto a la ubicación donde usted se encuentra
+</div>
+<p>Uso: <div class="use"><code>/cd A</code></div>
+<div class="det">
+<p>A = Selección simple
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/crypt</code></div>
+<div class="des">
+<p>Cifrado de archivos bajo la especificación Fernet
+<p>Antes de usar este comando, debe asegurarse de que KFSCrypt funcione en su PC y debe acostumbrarse a cifrar y descifrar archivos
+<p><a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-windows-i386.tar">KFSCrypt para Windows (32 bits)</a>
+<p><a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-linux-amd64.tar">KFSCrypt para Linux (64 bits)</a>
+<p>Para cifrar o descifrar debe primero crear una clave ya sea ejecutando este comando sin argumentos o con KFSCrypt en su PC
+<p>Las claves generadas son completamente aleatorias y puede usarlas las veces que quiera
+<p>Para descifrar un archivo, debe hacerlo con la misma clave con el cual se cifró, en el caso de perder la clave ni se esfuerce porque <font color="red">ha perdido el archivo</font>, es lo mismo que si se le olvidara la contraseña para un archivo comprimido
+<p>Cuando genera una clave con el comando, la clave se establece como la que se va a usar y el archivo con la clave se sube al chat
+<p>
+</div>
+<p>Uso: <div class="use"><code>/crypt A1 A2</code></div>
+<p><div class="det">
+<p>Caso 1: Sin argumentos
+<p>Si se ejecuta respondiendo a un archivo en el chat, podrá ver y comparar claves
+<p>Si se ejecuta a secas, muestra la clave actual, si la tiene y los enlaces de descarga de KFSCrypt
+<p>Caso 2: Creación de una clave
+<p>A1 = "c" Crear una nueva clave
+<p>A2 = "f" Forzar creación de una nueva clave. Esto es en el caso de que ya haya una clave existente
+<p>Caso 3: Cualquier otro caso
+<p>A1 = Puede ser "r","e" o "d". El primero es para leer y asignar una clave a partir de un archivo del lado de Telegram. El segundo es para cifrar la selección de archivos hecha. El tercero es para descifrar la selección de archivos hecha
+<p>A2 = Selección simple de un archivo o un subdirectorio. En el caso de ser un subdirectorio, se seleccionan todos los archivos en el primer nivel
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/ls</code></div>
+<div class="des">
+<p>Listar el contenido de una ubicación
+<p>Puede ser la ubicación actual, un subdirectorio, un archivo, varios elementos a la vez (rango) o algún nivel superior respecto a la ubicación donde usted se encuentra
+</div>
+<p>Uso: <div class="use"><code>/ls A</code></div>
+<div class="det">
+<p>A = Selección simple o por rango (Opcional)
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/mkdir</code></div>
+<div class="des">
+<p>Crea un subdirectorio nuevo
+</div>
+<p>Uso: <div class="use">
+<p><code>/mkdir A</code></div>
+<div class="det">
+<p>A = Nombre del subdirectorio
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/mv</code></div>
+<div class="des">
+<p>Este comando hace una de dos cosas: Mover uno o más elementos a una ubicación o renombrar un elemento
+</div>
+<p>Use: <div class="use"><code>/mv A1 A2</code></div>
+<p><div class="det">
+<p>Caso 1: Mover
+<p>A1 = Selección simple o de rango. Solamente archivos y subdirectorios
+<p>A2 = Ubicación. Puede ser un nivel superior
+<p>Caso 2: Renombrar
+<p>A1 = Selección simple. Un archivo o subdirectorio
+<p>A2 = Nuevo nombre
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/rm</code></div>
+<div class="des">
+<p>Borra uno o varios elementos. Mucho cuidado con esto porque no pide confirmación
+</div>
+<p>Uso: <div class="use"><code>/rm A</code></div>
+<p><div class="det">
+<p>A = Selección simple o de rango. Solamente archivos y subdirectorios
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/seven</code></div>
+<div class="des">
+<p>Archivador 7Z sin compresión. Puede archivar un archivo o un directorio en un único volumen o múltiples partes y hasta puede ponerle protección con contraseña
+<p>Los archivos 7z pueden extraerse con 7Zipper (Android), 7zip (Windows). El autor no recomienda usar ni WinRAR, ni el RAR para Android
+</div>
+<p>Uso: <div class="use"><code>/seven A1 A2 A3</code></div>
+<p><div class="det">
+<p>Caso 1: Archivo único
+<p>A1 = Selección simple archivo o subdirectorio
+<p>A2 = Contraseña (Opcional)
+<p>Caso 2: Multivolumen
+<p>A1 = Selección simple archivo o subdirectorio
+<p>A2 = Tamaño de partes en MB (entero positivo, no se aceptan fracciones)
+<p>A3 = Contraseña (Opcional)
+</div></div>
+
+</div>
+

@@ -4,5 +4,6 @@ a:link{color:#00BFFF;text-decoration:none;}
 a:hover{text-decoration:underline;}
 a:active{color:white;}
 a:visited {color:#4682B4;text-decoration:none;}
-td{font-size:150%;}
-div{margin:4;padding-left:16px;padding-right:16px;padding-top:2px;padding-bottom:2px;background-color:#33393B}
+div.sec{margin:8;padding-left:16px;padding-right:16px;padding-top:2px;padding-bottom:2px;background-color:#33393B}
+code{font-size:150%}
+code.scr{background-color:#33393B;padding:8px;margin:8px}
