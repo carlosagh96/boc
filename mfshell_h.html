@@ -4,8 +4,10 @@
 <title>Bots Of Charles</title>
 </head>
 <p><h1>Comandos de MF Shell</h1>
-<p><a href="index.html">Volver</a>
+<h2>¿Qué es esta página?</h2>
+<p>En esta página están todos los comandos de MF Shell. Léase la guía primero si no la ha leído
 <p><a href="mfshell_g.html">Ver guía</a>
+<p><a href="index.html">Volver</a>
 
 <!-- TEMPLATE
 <p><div class="sec">
@@ -23,10 +25,10 @@
 <p><a href=#inf>Información y ayuda</a>
 <p><a href=#fs1>Sistema de archivos del bot (Básico)</a>
 <p><a href=#fs2>Sistema de archivos del bot (Avanzado)</a>
+<p><a href=#que>Controles de cola</a>
 <p><a href=#nw1>Transferencias de red (Telegram)</a>
 <p><a href=#nw2>Transferencias de red (Web)</a>
 
-<div class="cat">
 <a name="inf"><p></a><h2>🤔 Información y ayuda</h2>
 
 <p>Comandos para obtener información
@@ -74,9 +76,6 @@
 <p>Uso: <div class="use"><code>/start</code></div>
 <p></div>
 
-</div>
-
-<div class="cat">
 <a name="fs1"><p></a><h2>🤔 Sistema de archivos del bot (Básico)</h2>
 
 <p>Comandos básicos para navegar por el sistema de archivos del bot
@@ -141,16 +140,13 @@
 <p><div class="sec">
 <p><div class="cmd"><code>/rm</code></div>
 <div class="des">
-<p>Borra uno o varios elementos. Mucho cuidado con esto porque no pide confirmación
+<p>Borra uno o varios elementos. Mucho cuidado con esto porque <font color=red>no pide confirmación</font>
 </div>
 <p>Uso: <div class="use"><code>/rm A</code></div>
 <p><div class="det">
 <p>A = Selección simple o de rango. Solamente archivos y subdirectorios
 </div></div>
 
-</div>
-
-<div class="cat">
 <a name="fs2"><p></a><h2>🤔 Sistema de archivos del bot (Avanzado)</h2>
 
 <p>Comandos para trabajar con archivos dentro del bot
@@ -224,9 +220,46 @@
 <p>A3 = Contraseña (Opcional)
 </div></div>
 
-</div>
+<a name="que"><p></a><h2>🤔 Control de colas</h2>
 
-<div class="cat">
+<p>Comandos para controlar las colas
+
+<p><div class="sec">
+<p><div class="cmd"><code>/brake</code></div>
+<div class="des">
+<p>Frena o libera el freno de una cola
+<p>Las colas pueden frenarse sin que el proceso relacionado esté trabajando
+</div>
+<p>Uso: <div class="use"><code>/brake A</code></div>
+<p><div class="det">
+<p>A = Identificador de cola
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/cancel</code></div>
+<div class="des">
+<p>Cancelación de una cola
+<p>En las colas, el elemento cero (el primero) no se puede borrar, solamente se puede cancelar
+</div>
+<p>Use: <div class="use"><code>/cancel A</code></div>
+<p><div class="det">
+<p>A = Identificador de cola
+</div></div>
+
+<p><div class="sec">
+<p><div class="cmd"><code>/que</code></div>
+<div class="des">
+<p>Si se ejecuta sin argumentos, se mostrarán en pantalla todas las colas y al final, un mensaje donde salen todos los identificadores de cola
+<p>Si se ejecuta con un argumento (un identificador de cola) es para ver una cola en específico
+<p>Si se ejecuta con dos argumentos es para borrar uno o varios elementos de una cola
+<p>El elemento cero de la cola no se puede borrar, para ello debe usar <code>/cancel</code>. Si en una selección por rango selecciona el elemento cero, este será ignorado y si selecciona el elemento cero en una selección simple, se borrarán todos los elementos de la cola excepto el elemento cero
+</div>
+<p>Use: <div class="use"><code>/que A1 A2</code></div>
+<p><div class="det">
+<p>A1 = Identificador de cola (Opcional)
+<p>A2 = Selección simple o de rango para borrar de la cola (Opcional)
+</div></div>
+
 <a name="nw1"><p></a><h2>🤔 Transferencias de red (Telegram)</h2>
 
 <p>Comandos para las transferencias de red entre el bot y Telegram
@@ -260,9 +293,6 @@
 <p>A = Selección simple (archivos y directorios) o de rango (solamente archivos). En el caso de ser una selección simple sobre un directorio, se seleccionan todos los archivos en el 1er nivel de profundidad de ese directorio
 </div></div>
 
-</div>
-
-<div class="cat">
 <a name="nw2"><p></a><h2>🤔 Transferencias de red (Web)</h2>
 
 <p>Comandos de transferencias de red entre el bot y el resto de Internet
@@ -341,5 +371,3 @@
 <p>A1 = URLs de vídeos de Youtube o listas de reproducción de Youtube separadas por espacios
 <p>A2 = Especificación. Puede ser "360p","720p","1080p" o "exa". Las 3 primeras son resoluciones de video, la última es para extraer audio. Todo esto es opcional
 </div></div>
-
-</div>

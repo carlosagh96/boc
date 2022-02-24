@@ -5,9 +5,10 @@
 <title>Bots Of Charles</title>
 </head>
 <h1>Guía de MF Shell</h1>
-<p>
-<p><a href="index.html">Volver</a>
+<h2>¿Qué es esta página?</h2>
+<p>Esta página es la guía completa del bot MF Shell, si no sabe usar el bot, lea la guía completa hasta el final y luego vea la referencia de comandos según lo que le haga falta hacer
 <p><a href="mfshell_h.html">Ver referencia de comandos</a>
+<p><a href="index.html">Volver</a>
 <p>
 <p><h2>📚 Contenido</h2>
 <div class="sec">
@@ -89,10 +90,10 @@
 <p>Cada usuario tiene un límite de 2 transferencias simultáneas
 <p>Cada cola tiene un identificador, este identificador se usa en comandos que administran colas
 <p>Por ejemplo, si agrega una o varias URLs con <code>/wget</code>, y la cola estaba vacía, el comando empezará a trabajar, si sigue ejecutando a dicho comando pero con otras URLs mientras está trabajando, la cola de "w" (que es la cola que identifica a <code>/wget</code>) se irá llenando
-<p>Para más información, véase en la referencia de comandos, los 3 comandos para gestionar colas
+<p>Para más información, véase en la referencia de comandos los comandos para gestionar colas <a href="mfshell_h.html#que">aquí</a>
 <p>
 <p><h3>Comandos intensivos o pesados</h3>
-<p>Hay comandos, o una parte de ellos donde se realizan tareas intensivas, ejecutarlas simultáneamente puede ocasionar que el bot se desestabilice, no es primera vez que pasa. Es por eso que en el bot hay bloqueos de comandos y una cola global para procesos pesados. Básicamente nadie puede ejecutar simultaneamente estos comandos o hacer procesamiento pesado de forma simultanea
+<p>Hay comandos, o una parte de ellos donde se realizan tareas intensivas, ejecutarlas simultáneamente puede ocasionar que el bot se desestabilice, no es primera vez que pasa. Es por eso que en el bot hay bloqueos de comandos y una cola global para procesos pesados. Básicamente nadie puede ejecutar simultaneamente estos comandos o hacer procesamiento pesado de forma simultanea, lo que se hace es encolar todas estas peticiones para realizar estos procesos, esto se hace con el fin de evitar que ocurra un desbordamiento de memoria o de CPU en el bot
 <p>
 <p><h2>✍️ Consejos</h2>
 <p>
