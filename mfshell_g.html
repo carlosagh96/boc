@@ -63,7 +63,7 @@
 <p>La selección por rango puede ser engañosa a primera vista, muchos piensan que es desde-hasta. Nada que ver con eso
 <p>Formato: N-Mr ó N-M
 <p>N y M son solo números y "r" (literalmente, una "r") es un argumento opcional. N es el índice de referencia, M indica la cantidad a seleccionar y "r" es para indicar si se selecciona en reversa.
-<p>Por ejemplo:
+<p>Ejemplos:
 <p><code class="scr">/ls 4-3</code>
 <p>Observar los recursos 4, 5 y 6 de la ubicación actual, es decir, se seleccionan y muestran 3 elementos a partir del índice 4
 <p><code class="scr">/rm 5-2r</code>
@@ -76,12 +76,15 @@
 <p>Para mover al directorio ocupando el índice 2 del índice 4 en adelante
 <p>
 <p><h3>Selección libre</h3>
-<p>La selección libre consiste en seleccionar en un órden deseado un conjunto de elementos que a su juicio, están "desordenados" de alguna forma. Es un tipo de selección para casos específicos como el del comando <code>/bren</code>
+<p>La selección libre consiste en seleccionar en un órden deseado un conjunto de elementos que a su juicio, ya sea porque están "desordenados" de alguna forma o son elementos que están muy apartados entre sí.
 <p>Formato A,B,C,D,E.....N
-<p>Los elementos se separan en comas para definir el órden en que se procesarán. Esto es muy importante para renombrar en /bren al tratar con archivos que están desorganizados. Al seleccionar no debe repetir elementos todos deben ser seleccionados una única vez, no hay un límite máximo de selección más allá de límite de elementos en el directorio, y el límite mínimo son 2 elementos, por debajo de eso no tiene sentido la selección libre, para eso mejor use una selección simple.
+<p>Los elementos se separan en comas para definir el órden en que se procesarán. Hay comandos en el que el órden de los elementos importa, como es el caso de <code>/bren</code> (Renombrar enumerando) y <code>/upload</code>
+<p>Al seleccionar no debe repetir elementos todos deben ser seleccionados una única vez, no hay un límite máximo de selección más allá de límite de elementos en el directorio, y el límite mínimo son 2 elementos, por debajo de eso no tiene sentido la selección libre, para eso mejor use una selección simple.
 <p>Por ejemplo:
-<p><code class="scr">/bren E 4,2,3,7,0 Video-/1/2</code>
-<p>Antes que nada, supongamos que los archivos seleccionados son MP4. Renombrar con enumeración los índices 4,2,3,7,0, en ese órden en específico, y sin importar el nombre anterior que tenían (más bien el tallo), ahora sus nuevos nombre son "Video-01.mp4","Video-02.mp4","Video-03.mp4","Video-04.mp4" y "Video-05.mp4"
+<p><code class="scr">/upload 4,5,1</code>
+<p>Encolar para subir a los índices 4, 5 y 1 en el directorio actual, justamente en ese orden se agregan a la cola de subida
+<p><code class="scr">/mv 7,9,14 6</code>
+<p>Mover los elementos 7, 9 y 14 al subdirectorio 6
 <p>
 <p><h2>🤔 Límites y colas</h2>
 <p>
