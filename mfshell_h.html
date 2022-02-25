@@ -11,14 +11,11 @@
 
 <!-- TEMPLATE
 <p><div class="sec">
-<p><div class="cmd"><code>/cmd</code></div>
-<div class="des">
-<p>Desc
-</div>
-<p>Use: <div class="use"><code>/cmd Arg1</code></div>
-<p><div class="det">
+<p><code>/cmd</code>
+<p>Description
+<p>Use: <code>/cmd Arg1</code>
 <p>Arg1 = blablabla...
-</div></div>
+<p></div>
 -->
 
 <p><h2>📚 Categorías</h2>
@@ -34,46 +31,35 @@
 <p>Comandos para obtener información
 
 <p><div class="sec">
-<p><div class="cmd"><code>/about</code></div>
-<div class="des">
+<p><code>/about</code>
 <p>Muestra un breve resúmen acerca del bot y el enlace al sitio web propio del bot
-</div>
-<p>Uso: <div class="use"><code>/about</code></div>
+<p>Uso: <code>/about</code>
 <p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/help</code></div>
-<div class="des">
+<p><code>/help</code>
 <p>Muestra enlaces a la guía de usuario y a la referencia de comandos, es decir, este sitio
-</div>
-<p>Uso: <div class="use"><code>/help</code></div>
+<p>Uso: <code>/help</code>
 <p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/info</code></div>
-<div class="des">
+<p><code>/info</code>
 <p>Mostrar las propiedades de un archivo del lado de Telegram. Se usa respondiendo a un archivo
-</div>
-<p>Use: <div class="use"><code>/info</code></div>
+<p>Uso: <code>/info</code>
 <p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/mediainfo</code></div>
-<div class="des">
+<p><code>/mediainfo</code>
 <p>Información multimedia de un archivo (dentro del bot) obtenida al ejecutar MediaInfo
 <p>La información completa se le dará en un archivo de texto que se sube al chat, en caso de no subirlo (dios sabe por qué) el archivo se queda de todos modos en el directorio donde ejecuta el comando
-</div>
-<p>Use: <div class="use"><code>/mediainfo A</code></div>
-<p><div class="det">
+<p>Use: <code>/mediainfo A</code>
 <p>A = Selección simple. Sólo un archivo
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/start</code></div>
-<div class="des">
+<p><code>/start</code>
 <p>Muestra información resumida sobre su sesión en el bot. Algunos datos no se muestran por esta vía
-</div>
-<p>Uso: <div class="use"><code>/start</code></div>
+<p>Uso: <code>/start</code>
 <p></div>
 
 <p><a name="fs1"><p></a><h2>🤔 Sistema de archivos del bot (Básico)</h2>
@@ -81,79 +67,60 @@
 <p>Comandos básicos para navegar por el sistema de archivos del bot
 
 <p><div class="sec">
-<p><div class="cmd"><code>/back</code></div>
-<div class="des">
+<p><code>/back</code>
 <p>Cambiar de directorio al directorio contenedor o padre
-<p>Básicamente lo mismo que ejecutar: <code>/cd -1</code></div>
-<p>Uso: <div class="use"><code>/back</code>
+<p>Básicamente lo mismo que ejecutar: <code>/cd -1</code>
+<p>Uso: <code>/back</code>
 <p></div>
-</div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/cd</code></div>
-<div class="des">
+<p><code>/cd</code>
 <p>Cambiar de directorio
 <p>Puede ser un subdirectorio o algún nivel superior respecto a la ubicación donde usted se encuentra
-</div>
-<p>Uso: <div class="use"><code>/cd A</code></div>
-<div class="det">
+<p>Uso: <code>/cd A</code>
 <p>A = Selección simple
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/ls</code></div>
-<div class="des">
+<p><code>/ls</code>
 <p>Listar el contenido de una ubicación
 <p>Puede ser la ubicación actual, un subdirectorio, un archivo, varios elementos a la vez (rango) o algún nivel superior respecto a la ubicación donde usted se encuentra
-</div>
-<p>Uso: <div class="use"><code>/ls A</code></div>
-<div class="det">
+<p>Uso: <code>/ls A</code>
 <p>A = Selección simple o por rango (Opcional)
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/mkdir</code></div>
-<div class="des">
+<p><code>/mkdir</code>
 <p>Crea un subdirectorio nuevo
-</div>
-<p>Uso: <div class="use">
-<p><code>/mkdir A</code></div>
-<div class="det">
+<p>Uso: <code>/mkdir A</code>
 <p>A = Nombre del subdirectorio
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/mv</code></div>
-<div class="des">
+<p><code>/mv</code>
 <p>Este comando hace una de dos cosas: Mover uno o más elementos a una ubicación o renombrar un elemento
-</div>
-<p>Use: <div class="use"><code>/mv A1 A2</code></div>
-<p><div class="det">
+<p>Uso: <code>/mv A1 A2</code>
 <p>Caso 1: Mover
 <p>A1 = Selección simple, rango o libre de archivos y subdirectorios
 <p>A2 = Ubicación. Puede ser un nivel superior
 <p>Caso 2: Renombrar
 <p>A1 = Selección simple. Un archivo o subdirectorio
 <p>A2 = Nuevo nombre
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/rm</code></div>
-<div class="des">
+<p><code>/rm</code>
 <p>Borra uno o varios elementos. Mucho cuidado con esto porque <font color=red>no pide confirmación</font>
-</div>
-<p>Uso: <div class="use"><code>/rm A</code></div>
-<p><div class="det">
+<p>Uso: <code>/rm A</code>
 <p>A = Selección simple, rango o libre de archivos y subdirectorios
-</div></div>
+<p></div>
 
 <p><a name="fs2"><p></a><h2>🤔 Sistema de archivos del bot (Avanzado)</h2>
 
 <p>Comandos para trabajar con archivos dentro del bot
 
 <p><div class="sec">
-<p><div class="cmd"><code>/bren</code></div>
-<div class="des">
+<p><code>/bren</code>
 <p>Renombrado múltiple de archivos
 <p>Cuando ejecute el comando, se le va a mostrar una "simulación" de cómo van a quedar los archivos, y en ese mensaje sale para ejecutar el comando <code>/ok</code> para confirmar, puede ejecutar otro comando cualquiera para cancelar
 <p>Hay 3 operaciones: agregar, enumerar, remplazar. Cada operación se ejecuta según unos parámetros, los cuales tienen a "/" como separador
@@ -167,18 +134,15 @@
 <p>(R) Remplazar:
 <p>Remplaza en cada archivo seleccionado una cadena de caracteres con una nueva cadena de caracteres
 <p>Formato: <code>Objetivo/Nuevo</code>
-</div>
-<p>Uso: <div class="use"><code>/bren A1 A2 A3</code></div>
-<p><div class="det">
+<p>Uso: <code>/bren A1 A2 A3</code>
 <p>A1 = Selección simple, rango o libre de archivos y subdirectorios
 <p>A2 = Tipo de operación: A (Agregar), E (Enumerar), R (Remplazar)
 <p>A3 = Parámetros de la operación
 <p>En <a href="https://t.me/bots_of_charles/141">este</a> vídeo sale cómo se usa este comando para enumerar y remplazar
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/crypt</code></div>
-<div class="des">
+<p><code>/crypt</code>
 <p>Cifrado de archivos bajo la especificación Fernet
 <p>Antes de usar este comando, debe asegurarse de que KFSCrypt funcione en su PC y debe acostumbrarse a cifrar y descifrar archivos
 <p><a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-windows-i386.tar">KFSCrypt para Windows (32 bits)</a>
@@ -187,10 +151,7 @@
 <p>Las claves generadas son completamente aleatorias y puede usarlas las veces que quiera
 <p>Para descifrar un archivo, debe hacerlo con la misma clave con el cual se cifró, en el caso de perder la clave ni se esfuerce porque <font color="red">ha perdido el archivo</font>, es lo mismo que si se le olvidara la contraseña para un archivo comprimido
 <p>Cuando genera una clave con el comando, la clave se establece como la que se va a usar y el archivo con la clave se sube al chat
-<p>
-</div>
-<p>Uso: <div class="use"><code>/crypt A1 A2</code></div>
-<p><div class="det">
+<p>Uso: <code>/crypt A1 A2</code>
 <p>Caso 1: Sin argumentos
 <p>Si se ejecuta respondiendo a un archivo en el chat, podrá ver y comparar claves
 <p>Si se ejecuta a secas, muestra la clave actual, si la tiene y los enlaces de descarga de KFSCrypt
@@ -201,16 +162,13 @@
 <p>A1 = Puede ser "r","e" o "d". El primero es para leer y asignar una clave a partir de un archivo del lado de Telegram. El segundo es para cifrar la selección de archivos hecha. El tercero es para descifrar la selección de archivos hecha
 <p>A2 = Selección simple, rango o libre de archivos y subdirectorios. En el caso de ser un subdirectorio en la selección simple, se seleccionan todos los archivos en el primer nivel, en el caso de los demás tipos de selección, solo se detectarán archivos
 <p>En <a href="https://t.me/bots_of_charles/111">este</a> vídeo se muestra cómo usar KFSCrypt en Windows
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/seven</code></div>
-<div class="des">
+<p><code>/seven</code>
 <p>Archivador 7Z sin compresión. Puede archivar un archivo o un directorio en un único volumen o múltiples partes y hasta puede ponerle protección con contraseña
 <p>Los archivos 7z pueden extraerse con 7Zipper (Android), 7zip (Windows). El autor no recomienda usar ni WinRAR, ni el RAR para Android
-</div>
-<p>Uso: <div class="use"><code>/seven A1 A2 A3</code></div>
-<p><div class="det">
+<p>Uso: <code>/seven A1 A2 A3</code>
 <p>Caso 1: Archivo único
 <p>A1 = Selección simple archivo o subdirectorio
 <p>A2 = Contraseña (Opcional)
@@ -218,156 +176,119 @@
 <p>A1 = Selección simple archivo o subdirectorio
 <p>A2 = Tamaño de partes en MB (entero positivo, no se aceptan fracciones)
 <p>A3 = Contraseña (Opcional)
-</div></div>
+<p></div>
 
 <p><a name="que"><p></a><h2>🤔 Control de colas</h2>
 
 <p>Comandos para controlar las colas
 
 <p><div class="sec">
-<p><div class="cmd"><code>/brake</code></div>
-<div class="des">
+<p><code>/brake</code>
 <p>Frena o libera el freno de una cola
 <p>Las colas pueden frenarse sin que el proceso relacionado esté trabajando
-</div>
-<p>Uso: <div class="use"><code>/brake A</code></div>
-<p><div class="det">
+<p>Uso: <code>/brake A</code>
 <p>A = Identificador de cola
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/cancel</code></div>
-<div class="des">
+<p><code>/cancel</code>
 <p>Cancelación de una cola
 <p>En las colas, el elemento cero (el primero) no se puede borrar, solamente se puede cancelar
-</div>
-<p>Use: <div class="use"><code>/cancel A</code></div>
-<p><div class="det">
+<p>Uso: <code>/cancel A</code>
 <p>A = Identificador de cola
 </div></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/que</code></div>
-<div class="des">
+<p><code>/que</code>
 <p>Si se ejecuta sin argumentos, se mostrarán en pantalla todas las colas y al final, un mensaje donde salen todos los identificadores de cola
 <p>Si se ejecuta con un argumento (un identificador de cola) es para ver una cola en específico
 <p>Si se ejecuta con dos argumentos es para borrar uno o varios elementos de una cola
 <p>El elemento cero de la cola no se puede borrar, para ello debe usar <code>/cancel</code>. Si en una selección por rango selecciona el elemento cero, este será ignorado y si selecciona el elemento cero en una selección simple, se borrarán todos los elementos de la cola excepto el elemento cero
-</div>
-<p>Use: <div class="use"><code>/que A1 A2</code></div>
-<p><div class="det">
+<p>Uso: <code>/que A1 A2</code>
 <p>A1 = Identificador de cola (Opcional)
 <p>A2 = Selección simple o de rango para borrar de la cola (Opcional)
-</div></div>
+<p></div>
 
 <p><a name="nw1"><p></a><h2>🤔 Transferencias de red (Telegram)</h2>
 
 <p>Comandos para las transferencias de red entre el bot y Telegram
 
 <p><div class="sec">
-<p><div class="cmd"><code>/auto</code></div>
-<div class="des">
+<p><code>/auto</code>
 <p>Activar o desactivar la descarga automática de los archivos que son reenviados hacia el chat. Desactivado de forma predeterminada. Es la única forma de descargar álbumes/grupos de archivos
-</div>
-<p>Uso: <div class="use"><code>/auto</code></div>
+<p>Uso: <code>/auto</code>
 <p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/download</code></div>
-<div class="des">
+<p><code>/download</code>
 <p>Descarga un archivo de Telegram al bot. Se usa respondiendo a un archivo. Opcionalmente puede cambiar el nombre del archivo al descargarlo
-</div>
-<p>o: <div class="use"><code>/download A</code></div>
-<p><div class="det">
+<p>Uso: <code>/download A</code>
 <p>A = Nuevo nombre (Opcional)
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/upload</code></div>
-<div class="des">
+<p><code>/upload</code>
 <p>Sube archivos del bot a Telegram, puede ser uno o varios archivos
 <p>Tenga en cuenta que no se pueden subir archivos que superen 2 GB de espacio, ni superen 60 caracteres en el nombre, si los archivos no se encolan para subir, debe revisar y asegurarse de que cumplan con estos requisitos
-</div>
-<p>Uso: <div class="use"><code>/upload A</code></div>
-<p><div class="det">
+<p>Uso: <code>/upload A</code>
 <p>A = Selección simple, rango o libre de archivos y subdirectorios. En el caso de ser un subdirectorio en la selección simple, se seleccionan todos los archivos en el primer nivel, en el caso de los demás tipos de selección, solo se detectarán archivos
-</div></div>
+<p></div>
 
 <p><a name="nw2"><p></a><h2>🤔 Transferencias de red (Web)</h2>
 
 <p>Comandos de transferencias de red entre el bot y el resto de Internet
 
 <p><div class="sec">
-<p><div class="cmd"><code>/gddl</code></div>
-<div class="des">
+<p><code>/gddl</code>
 <p>Descargador de URLs de Google Drive
-</div>
-<p>Uso: <div class="use"><code>/gddl A1 A2</code></div>
-<p><div class="det">
+<p>Uso: <code>/gddl A1 A2</code>
 <p>A1 = Lista de URLs separadas por espacio
 <p>A2 = "R" (literalmente) para indicar en caso de si las URLs son carpetas de Google Drive, descargarlas de forma recursiva. Esto es opcional
-</div></div>
-
-<p><div class="sec">
-<p><div class="cmd"><code>/megacreds</code></div>
-<div class="des">
-<p>Credenciales de cuenta de MEGA
-<p>Para usar una cuenta real de MEGA en lugar de depender de la sesión anónima
-</div>
-<p>Uso: <div class="use"><code>/megacreds A1 A2</code></div>
-<p><div class="det">
-<p>A1 = Usuario de MEGA
-<p>A2 = Contraseña del usuario de MEGA
-</div></div>
-
-<p><div class="sec">
-<p><div class="cmd"><code>/megadl</code></div>
-<div class="des">
-<p>Descargador de enlaces MEGA. No soporta carpetas. Se usa una sesión anónima de forma predeterminada en caso de no haber credenciales de MEGA asignados
-</div>
-<p>Use: <div class="use"><code>/megadl A</code></div>
-<p><div class="det">
-<p>A = URLs de archivos en MEGA
-</div></div>
-
-<p><div class="sec">
-<p><div class="cmd"><code>/share</code></div>
-<div class="des">
-<p>Compartir todos los archivos. Si activa esto, los archivos serán compartidos via web de forma pública para poder ser descargados desde el servidor web adjunto al bot. Desactivado de forma predeterminada
-<p>Puede ver en todo momento su enlace ejecutando <code>/start</code>
-</div>
-<p>Uso: <div class="use"><code>/share</code></div>
 <p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/ua</code></div>
-<div class="des">
+<p><code>/megacreds</code>
+<p>Credenciales de cuenta de MEGA
+<p>Para usar una cuenta real de MEGA en lugar de depender de la sesión anónima
+<p>Uso: <code>/megacreds A1 A2</code>
+<p>A1 = Usuario de MEGA
+<p>A2 = Contraseña del usuario de MEGA
+<p></div>
+
+<p><div class="sec">
+<p><code>/megadl</code>
+<p>Descargador de enlaces MEGA. No soporta carpetas. Se usa una sesión anónima de forma predeterminada en caso de no haber credenciales de MEGA asignados
+<p>Uso: <code>/megadl A</code>
+<p>A = URLs de archivos en MEGA
+<p></div>
+
+<p><div class="sec">
+<p><code>/share</code>
+<p>Compartir todos los archivos. Si activa esto, los archivos serán compartidos via web de forma pública para poder ser descargados desde el servidor web adjunto al bot. Desactivado de forma predeterminada
+<p>Puede ver en todo momento su enlace ejecutando <code>/start</code>
+<p>Uso: <code>/share</code>
+<p></div>
+
+<p><div class="sec">
+<p><code>/ua</code>
 <p>Agente de usuario
 <p>Afecta el comportamiento de <code>/wget</code>
 <p>Ejecute sin argumentos para ver el agente de usuario actual. De forma predeterminada, es aleatorio, pero puede elegir entre Chrome (c), Firefox (f), Safari (s), Opera (o), o aleatorio (r)
-</div>
-<p>Uso: <div class="use"><code>/ua A</code></div>
-<p><div class="det">
+<p>Uso: <code>/ua A</code>
 <p>A = Agente de usuario (Opcional)
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/wget</code></div>
-<div class="des">
+<p><code>/wget</code>
 <p>Descargador web general. Descarga enlaces directos (no todos) y es compatible con varios sitios de alojamiento de archivos, ejecute sin argumentos para ver los sitios soportados
-</div>
-<p>Use: <div class="use"><code>/wget A</code></div>
-<p><div class="det">
+<p>Uso: <code>/wget A</code>
 <p>A = URLs separadas por espacios (Opcional)
-</div></div>
+<p></div>
 
 <p><div class="sec">
-<p><div class="cmd"><code>/ytdl</code></div>
-<div class="des">
+<p><code>/ytdl</code>
 <p>Descargador de Youtube
-</div>
-<p>Uso: <div class="use"><code>/ytdl A1 A2</code></div>
-<p><div class="det">
+<p>Uso: <code>/ytdl A1 A2</code>
 <p>A1 = URLs de vídeos de Youtube o listas de reproducción de Youtube separadas por espacios
 <p>A2 = Especificación. Puede ser "360p","720p","1080p" o "exa". Las 3 primeras son resoluciones de video, la última es para extraer audio. Todo esto es opcional
-</div></div>
+<p></div>
