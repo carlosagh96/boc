@@ -93,7 +93,7 @@
 <p>Cada usuario tiene un límite de 2 transferencias simultáneas
 <p>Cada cola tiene un identificador, este identificador se usa en comandos que administran colas
 <p>Por ejemplo, si agrega una o varias URLs con <code>/wget</code>, y la cola estaba vacía, el comando empezará a trabajar, si sigue ejecutando a dicho comando pero con otras URLs mientras está trabajando, la cola de "w" (que es la cola que identifica a <code>/wget</code>) se irá llenando
-<p>Para más información, véase los comandos para gestionar colas <a href="mfshell_h.html#que">aquí</a>
+<p>Para más información, véase los comandos para gestionar colas <a href="mfshell_h.html#c4">aquí</a>
 <p>
 <p><h3>Comandos intensivos o pesados</h3>
 <p>Hay comandos, o una parte de ellos donde se realizan tareas intensivas, ejecutarlas simultáneamente puede ocasionar que el bot se desestabilice, no es primera vez que pasa. Es por eso que en el bot hay bloqueos de comandos y una cola global para procesos pesados. Básicamente nadie puede ejecutar simultaneamente estos comandos o hacer procesamiento pesado de forma simultanea, lo que se hace es encolar todas estas peticiones para realizar estos procesos, esto se hace con el fin de evitar que ocurra un desbordamiento de memoria o de CPU en el bot
