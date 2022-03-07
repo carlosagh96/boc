@@ -11,7 +11,7 @@
 <p><a href="index.html">Volver</a>
 <p>
 <p><h2>📚 Contenido</h2>
-<div class="sec">
+<div>
 <p>→ Introducción
 <p>→ Servidores SMTP
 <p>→ Límites
@@ -22,10 +22,12 @@
 <p>PRO Mail es un bot creado específicamente apra enviar archivos por correo
 <p>
 <p>Para usar este bot necesita 2 cosas:
-<div class="sec">
+<div>
 <p>→ Una dirección de correo para usar en el envío, que debe ser de uno de los SMTP soportados
 <p>→ Una dirección de correo destinatario a la cual va a llegar el correo
 </div>
+<p>
+<p>Si es cubano y vive en Cuba, lea <a href="https://t.me/bots_of_charles/40?single">esto</a>
 <p>
 <p>Avertencia:
 <p>PRO Mail sólo se ocupa del proceso de envío, la llegada del contenido a su destinatario dependerá únicamente del destinatario en si
@@ -36,35 +38,37 @@
 <p>Tenga en cuenta que su cuenta de envío debe ser configurada para ser usada desde el bot. La configuración depende del servidor SMTP al que pertenezca la cuenta, algunos dejan usar la contraseña directamente a cambio de un autorizo, otras necesitan lo que se conoce como una contraseña de aplicaciones externas, que es la vía más común, y otras varían según los ajustes de seguridad impuestos. El autor recomienda usar una cuenta que no sea su cuenta personal para realizar los envíos
 <p>
 <p>Hay 5 servidores SMTP soportados por el bot:
-<div class="sec">
+<div>
 <p>GMail
 <p>Es el SMTP predeterminado en PRO Mail
 <p>Para poder usar su cuenta, debe iniciar sesión en su cuenta de google e ir a <a href=https://myaccount.google.com/lesssecureapps>este</a> enlace para autorizar el uso de programas externos en su cuenta
 <p>Es bien sabido, que en GMail hay restricciones en cuanto a los tipos de archivos que se pueden enviar. En el caso específico de los envíos desde GMail, el bot archiva de forma automática los archivos en TAR antes de realizar los envíos, de esta forma se puede enviar prácticamente cualquier archivo mediante GMail, sin embargo, esto no funciona en todos los casos
 </div>
 <p>
-<div class="sec">
+<div>
 <p>Yahoo
 <p>Para usar su cuenta de en el bot, debe crear una contraseña de aplicaciones:
 <p>En su pantalla principal → Su foto de perfil → Información de la cuenta → Seguridad de la cuenta → Generar contraseña para aplicaciones
 <p>La contraseña generada es la que debe usar en el bot en lugar de su contraseña real
+<p>En <a href="https://t.me/bots_of_charles/56">este</a> post hay imágenes de cómo se crea una contraeña de aplicaciones en Yahoo
 <p>
 </div>
 <p>
-<div class="sec">
+<div>
 <p>AOL
 <p>Exactamente lo mismo que Yahoo
 </div>
 <p>
-<div class="sec">
+<div>
 <p>Outlook
 <p>No es necesario ni pedir un autorizo, puede usar su contraseña directamente, sin embargo, la opción de contraseña de aplicaciones debe existir
 <p>De forma predeterminada no hay ningún tipo de seguridad aplicada
 </div>
 <p>
-<div class="sec">
+<div>
 <p>Disroot
 <p>Puede usar su contraseña directamente
+<p>En <a href="https://t.me/bots_of_charles/169">este</a> post hay detalles de las experiencias del autor usando Disroot
 </div>
 <p>
 <p><h2>🛑 Límites</h2>
@@ -72,7 +76,7 @@
 <p>Tenga en cuenta que al realizar envíos de forma predeterminada los mensajes enviados se quedan en el buzón de salida de la cuenta que usa para realizar los envíos. Esto pasa con algunos proveedores, la solución es vaciar de vez en cuando su cuenta de envío o ver si existe algún ajuste para borrar mensajes después de enviarlos
 <p>
 <p><h2>📦 El tamaño 'inflado' durante el envío</h2>
-<p>Esto ha traído mucha confusión
+<p>Esto ha traído mucha confusión, es un tema que va más allá de este bot, porque es un tema que ocurre en general con cualquier cliente de correo electrónico
 <p>Durante el proceso de creación de un mensaje, los archivos adjuntados se codifican (el estándar es base64) y el tamaño del mensaje aumenta alrededor de un 33% aproximadamente, es por esto que no debe enviar a un tamaño exacto, debe enviar mucho menos
 <p>En resumen, no es lo mismo el tamaño del archivo que el tamaño del mensaje, el tamaño del mensaje es más grande que el archivo y es el tamaño del mensaje lo que se tiene en cuenta para realizar el envío
 <p>Sin embargo, no se preocupe, para cuando mande a descargar los mensajes, en algún momento sus adjuntos se decodifican (siempre). Esto depende del cliente de correo que use, en el caso de clientes como Deltachat, por ejemplo, los mensajes se descargan codificados y se decodifican una vez están en el dispositivo, sin embargo, en un webmail el archivo es decodificado en la red al solicitar su descarga y usted termina descargando el archivo real
