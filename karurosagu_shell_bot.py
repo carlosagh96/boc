@@ -173,6 +173,7 @@ _ws_zippy=addwsite(_wget_support,"zippyshare.com")
 
 _cdl_support=[]
 
+_ws_freeco=addwsite(_cdl_support,"freecomiconline.me")
 _ws_hvmanga=addwsite(_cdl_support,"heavenmanga.com")
 _ws_lectortmo=addwsite(_cdl_support,"lectortmo.com")
 _ws_leermanga=addwsite(_cdl_support,"leermanga.net")
@@ -5863,7 +5864,7 @@ async def tge_handler_messages(event):
 							if (_ws_ehentai in wsite) or (_ws_mtemplo in wsite):
 								wsite_type=2
 
-							if (_ws_chochox in wsite) or (_ws_vmporno in wsite) or (_ws_tmonline in wsite) or (_ws_mangasin in wsite) or (_ws_leermanga in wsite) or (_ws_xoxocm in wsite) or (_ws_mangafox in wsite) or (_ws_mreadertv in wsite) or (_ws_lectortmo in wsite) or (_ws_hvmanga in wsite) or (_ws_mreadercc in wsite):
+							if (_ws_chochox in wsite) or (_ws_vmporno in wsite) or (_ws_tmonline in wsite) or (_ws_mangasin in wsite) or (_ws_leermanga in wsite) or (_ws_xoxocm in wsite) or (_ws_mangafox in wsite) or (_ws_mreadertv in wsite) or (_ws_lectortmo in wsite) or (_ws_hvmanga in wsite) or (_ws_mreadercc in wsite) or (_ws_freeco in wsite):
 								wsite_type=3
 
 							msg_act="Descargando la página"
@@ -5892,7 +5893,7 @@ async def tge_handler_messages(event):
 								try:
 									msg_act="Buscando el título"
 
-									if (_ws_nhentai in wsite) or (_ws_hentaifox in wsite) or (_ws_imhentai in wsite) or (_ws_chochox in wsite) or (_ws_tmonline in wsite) or (_ws_mangasin in wsite) or (_ws_leermanga in wsite) or (_ws_xoxocm in wsite) or (_ws_mangafox in wsite) or (_ws_mreadercc in wsite):
+									if (_ws_nhentai in wsite) or (_ws_hentaifox in wsite) or (_ws_imhentai in wsite) or (_ws_chochox in wsite) or (_ws_tmonline in wsite) or (_ws_mangasin in wsite) or (_ws_leermanga in wsite) or (_ws_xoxocm in wsite) or (_ws_mangafox in wsite) or (_ws_mreadercc in wsite) or (_ws_freeco in wsite):
 										title=tags_all.find("h1").text.strip()
 
 									if (_ws_tmohentai in wsite):
@@ -6067,6 +6068,13 @@ async def tge_handler_messages(event):
 											for thing in data:
 												if thing.startswith("https://") or thing.startswith("http://"):
 													url_list.append(thing.strip())
+
+										if (_ws_freeco in wsite):
+											tags_imgs=tags_all.find_all("div",attrs={"class":"page-break"})
+											for tag in tags_imgs:
+												data_img=tag.find("img").get("src").strip()
+												if data_img.startswith("https://"):
+													url_list.append(data_img)
 
 										page_max=len(url_list)
 										if page_max==0:
@@ -6282,6 +6290,8 @@ async def tge_handler_messages(event):
 
 											async with session.get(url_img,cookies=cookies) as r:
 												cookies=response.cookies
+
+												# TODO: fix serious problem with the fucking suffixes!
 
 												suffix=""
 												if response.headers.get("content-disposition"):
