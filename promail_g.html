@@ -12,12 +12,18 @@
 <p>
 <p><h2>📚 Contenido</h2>
 <div>
-<p>→ Introducción
-<p>→ Servidores SMTP
-<p>→ Límites
-<p>→ El tamaño 'inflado' durante el envío
+<p>→ <a href=#c1>Introducción</a>
+<p>→ <a href=#c2>Servidores SMTP</a>
+<p>→ <a href=#c3>Límites</a>
+<p>→ <a href=#c4>El tamaño 'inflado' durante el envío</a>
 </div>
-<p><h2>🤔 Introducción</h2>
+<p>
+<div>
+<p><img src="promail_g_1.png" width=100%></img>
+<p><img src="promail_g_2.png" width=100%></img>
+<p><img src="promail_g_3.png" width=100%></img>
+</div>
+<a name="c1"><p><h2>🤔 Introducción</h2>
 <p>
 <p>PRO Mail es un bot creado específicamente apra enviar archivos por correo
 <p>
@@ -32,7 +38,7 @@
 <p>Avertencia:
 <p>PRO Mail sólo se ocupa del proceso de envío, la llegada del contenido a su destinatario dependerá únicamente del destinatario en si
 <p>
-<p><h2>✉️ Servidores SMTP</h2>
+<a name="c2"><p><h2>✉️ Servidores SMTP</h2>
 <p>
 <p>El servidor SMTP es el servicio del cual se depende para realizar los envíos
 <p>Tenga en cuenta que su cuenta de envío debe ser configurada para ser usada desde el bot. La configuración depende del servidor SMTP al que pertenezca la cuenta, algunos dejan usar la contraseña directamente a cambio de un autorizo, otras necesitan lo que se conoce como una contraseña de aplicaciones externas, que es la vía más común, y otras varían según los ajustes de seguridad impuestos. El autor recomienda usar una cuenta que no sea su cuenta personal para realizar los envíos
@@ -71,11 +77,11 @@
 <p>En <a href="https://t.me/bots_of_charles/169">este</a> post hay detalles de las experiencias del autor usando Disroot
 </div>
 <p>
-<p><h2>🛑 Límites</h2>
+<a name="c3"><p><h2>🛑 Límites</h2>
 <p>El bot en sí no tiene un límite claro, puede intentar enviar archivos de cualquier tamaño, pero esto no es recomendable, porque tanto los servicios de envío como los destinatarios imponen límites en cantidad de mensajes y tamaño ya sea total o por cada mensaje
 <p>Tenga en cuenta que al realizar envíos de forma predeterminada los mensajes enviados se quedan en el buzón de salida de la cuenta que usa para realizar los envíos. Esto pasa con algunos proveedores, la solución es vaciar de vez en cuando su cuenta de envío o ver si existe algún ajuste para borrar mensajes después de enviarlos
 <p>
-<p><h2>📦 El tamaño 'inflado' durante el envío</h2>
+<a name="c4"><p><h2>📦 El tamaño 'inflado' durante el envío</h2>
 <p>Esto ha traído mucha confusión, es un tema que va más allá de este bot, porque es un tema que ocurre en general con cualquier cliente de correo electrónico
 <p>Durante el proceso de creación de un mensaje, los archivos adjuntados se codifican (el estándar es base64) y el tamaño del mensaje aumenta alrededor de un 33% aproximadamente, es por esto que no debe enviar a un tamaño exacto, debe enviar mucho menos
 <p>En resumen, no es lo mismo el tamaño del archivo que el tamaño del mensaje, el tamaño del mensaje es más grande que el archivo y es el tamaño del mensaje lo que se tiene en cuenta para realizar el envío

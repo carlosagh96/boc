@@ -12,14 +12,20 @@
 <p>
 <p><h2>📚 Contenido</h2>
 <div>
-<p>→ Introducción
-<p>→ Tutorial de uso básico
-<p>→ Los elementos del sistema de archivos
-<p>→ Los tipos de selección
-<p>→ Límites y colas
-<p>→ Consejos
+<p>→ <a href=#c1>Introducción</a>
+<p>→ <a href=#c2>Tutorial de uso básico</a>
+<p>→ <a href=#c3>Los elementos del sistema de archivos</a>
+<p>→ <a href=#c4>Los tipos de selección</a>
+<p>→ <a href=#c5>Límites y colas</a>
+<p>→ <a href=#c6>Consejos</a>
 </div>
-<p><h2>🤔 Introducción</h2>
+<p>
+<div>
+<p><img src="mfshell_g_1.png" width=100%></img>
+<p><img src="mfshell_g_2.png" width=100%></img>
+<p><img src="mfshell_g_3.png" width=100%></img>
+</div>
+<a name="c1"><p></a><h2>🤔 Introducción</h2>
 <p>
 <p>Habitualmente, la mayoría de los bots en Telegram que manejan archivos tienen ese efecto "boomerang", les das algo, ya sea un archivo del propio Telegram para que haga algo, un enlace a otro sitio web para que lo descargue, hacen su trabajo y te lo devuelven a tu chat, tu privado con ese bot, esto se considera "normal" y trae consigo varias limitaciones, principalmente aquella que tiene que ver con el límite de 2 GB por cada archivo.
 <p>
@@ -32,7 +38,7 @@
 <p>→ En este bot los procesos de transferencia de red del bot funcionan con un sistema de colas, los procesos pueden cancelarse o frenarse, para realizar una mejor planificación
 <p>→ En este bot hay muchas herramientas para procesamiento masivo de archivos, URLs, etc...
 </div>
-<p><h2>📖 Tutorial de uso básico</h2>
+<a name="c2"><p></a><h2>📖 Tutorial de uso básico</h2>
 <p>
 <p>En <a href="https://t.me/bots_of_charles/67">este</a> post hay un tutorial de uso básico del bot, donde se explica y se muestra casi todos los comandos más usados del bot
 <p>
@@ -41,7 +47,7 @@
 <p>→ En el tutorial se usa un comando llamado <code>/zipper</code>, este comando ya no existe en el bot, fue remplazado por <code>/seven</code>, que se usa prácticamente igual y tiene algunas mejoras
 <p>→ Lea la guía de todos modos, es la única forma de entender por completo al bot
 <p></div>
-<p><h2>📂 Los elementos del sistema de archivos</h2>
+<a name="c3"><p></a><h2>📂 Los elementos del sistema de archivos</h2>
 <p>
 <p>En MF Shell cada usuario tiene su propio directorio (carpeta) donde puede trabajar, y dentro, el usuario puede crear más subdirectorios para agrupar los archivos
 <p>Hay una ubicación actual, que es el directorio donde usted está parado, puede verlo ejecutando <code>/ls</code>.
@@ -50,12 +56,12 @@
 <p>Tenga en cuenta que las enumeraciones desde cero no son solamente en el sistema de archivos, esto también se da en las colas excepto la parte de seleccionar por debajo de cero
 <p>Por último y no menos importante, estas enumeraciones se llaman índices
 <p>
-<p><h2>👀 Los tipos de selección</h2>
+<a name="c4"><p></a><h2>👀 Los tipos de selección</h2>
 <p>
 <p>En MF Shell, todos los comandos que trabajan con archivos y el comando <code>/que</code>, usan selectores, cada uno con su propio formato. Los selectores son argumentos para seleccionar elementos, si se trata de un comando relacionado con el sistema de archivos del bot, el selector es para seleccionar algo que tengas delante por ejemplo.
 <p>Note que en la documentación de cada comando se indica los tipos de selección y tipos de elementos que soporta al seleccionar, en caso detratase solamente del sistema de archivos
-<div>
 <p>Hay 3 tipos de selección:
+<div>
 <p>→ Selección simple
 <p>→ Selección por rango
 <p>→ Selección libre
@@ -97,7 +103,7 @@
 <p><code class="scr">/mv 7,9,14 6</code>
 <p>Mover los elementos 7, 9 y 14 al subdirectorio 6
 <p>
-<p><h2>⚙️ Límites y colas</h2>
+<a name="c5"><p></a><h2>⚙️ Límites y colas</h2>
 <p>
 <p><h3>Transferencias de red y colas</h3>
 <p>Cada comando de transferencia de red tiene una cola asociada, al cual puede frenarse o se puede cancelar el proceso de transferencia.
@@ -109,7 +115,7 @@
 <p><h3>Comandos intensivos o pesados</h3>
 <p>Hay comandos, o una parte de ellos donde se realizan tareas intensivas, ejecutarlas simultáneamente puede ocasionar que el bot se desestabilice, no es primera vez que pasa. Es por eso que en el bot hay bloqueos de comandos y una cola global para procesos pesados. Básicamente nadie puede ejecutar simultaneamente estos comandos o hacer procesamiento pesado de forma simultanea, lo que se hace es encolar todas estas peticiones para realizar estos procesos, esto se hace con el fin de evitar que ocurra un desbordamiento de memoria o de CPU en el bot
 <p>
-<p><h2>✍️ Consejos</h2>
+<a name="c6"><p></a><h2>✍️ Consejos</h2>
 <p>
 <p>El comando /start sirve para consultar la cantidad de transferencias simultáneas, el estado del archivador y también otros datos útiles para no "perderse"
 <p>Si la cola de procesos pesados se alarga, y se queda mucho tiempo viendo cómo no avanza, debe reportarlo al administrador a través del grupo, al igual que si tiene una "rotura" en una cola
