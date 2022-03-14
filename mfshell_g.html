@@ -2,22 +2,34 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="main.css">
+<script type="text/javascript" src="main.js"></script>
 <title>Bots Of Charles</title>
 </head>
-<h1>Guía de MF Shell</h1>
+
+<div id="this" class="topnav">
+<a class="tn" href="index.html">[←]</a>
+<a class="tn" href=#top>[↑]</a>
+</div>
+
+<div class="main">
+
+<h1>Guia de usuario de MF Shell</h1>
+<div>
+<p><a class="main" href="mfshell_h.html">Referencia de comandos</a>
+</div>
+
 <h2>¿Qué es esta página?</h2>
 <p>Esta página es la guía completa del bot MF Shell, si no sabe usar el bot, lea la guía completa hasta el final y luego vea la referencia de comandos según lo que le haga falta hacer
-<p><a href="mfshell_h.html">Ver referencia de comandos</a>
-<p><a href="index.html">Volver</a>
+<p>
 <p>
 <p><h2>📚 Contenido</h2>
-<div>
-<p>→ <a href=#c1>Introducción</a>
-<p>→ <a href=#c2>Tutorial de uso básico</a>
-<p>→ <a href=#c3>Los elementos del sistema de archivos</a>
-<p>→ <a href=#c4>Los tipos de selección</a>
-<p>→ <a href=#c5>Límites y colas</a>
-<p>→ <a href=#c6>Consejos</a>
+<div class="field">
+<p>→ <a class="main" href=#c1>Introducción</a>
+<p>→ <a class="main" href=#c2>Tutorial de uso básico</a>
+<p>→ <a class="main" href=#c3>Los elementos del sistema de archivos</a>
+<p>→ <a class="main" href=#c4>Los tipos de selección</a>
+<p>→ <a class="main" href=#c5>Límites y colas</a>
+<p>→ <a class="main" href=#c6>Consejos</a>
 </div>
 <p>
 <div>
@@ -30,21 +42,19 @@
 <p>Habitualmente, la mayoría de los bots en Telegram que manejan archivos tienen ese efecto "boomerang", les das algo, ya sea un archivo del propio Telegram para que haga algo, un enlace a otro sitio web para que lo descargue, hacen su trabajo y te lo devuelven a tu chat, tu privado con ese bot, esto se considera "normal" y trae consigo varias limitaciones, principalmente aquella que tiene que ver con el límite de 2 GB por cada archivo.
 <p>
 <p>Antes que nada, debe entender que MF Shell no es un bot de leecheo o URL uploading normal por las siguientes razones:
-<div>
-<p>→ No es un bot puramente interactivo o "conversacional"
+<div class="field">
 <p>→ No es un bot que te devuelve automáticamente lo que le pidas debido a las funciones que trae una vez bajas algo, porque si descargas algo de un sitio web por ejemplo, no necesariamente es para recibirlo a tu chat, no en este bot
 <p>→ En este bot funciona a base de puros comandos, comandos no interactivos (salvo alguna rara excepción bien justificada), cada comando tiene sus argumentos y un uso determinado, todos ellos, o la gran mayoría comparten patrones similares que facilitan su comprensión
 <p>→ En este bot usted puede ver lo que descarga, crear carpetas, organizar como le dé la gana todo, incluso archivar y cifrar archivos
 <p>→ En este bot los procesos de transferencia de red del bot funcionan con un sistema de colas, los procesos pueden cancelarse o frenarse, para realizar una mejor planificación
 <p>→ En este bot hay muchas herramientas para procesamiento masivo de archivos, URLs, etc...
 </div>
-<p><a href="#top">Ir al principio</a>
 <a name="c2"><p></a><h2>📖 Tutorial de uso básico</h2>
 <p>
-<p>En <a href="https://t.me/bots_of_charles/67">este</a> post hay un tutorial de uso básico del bot, donde se explica y se muestra casi todos los comandos más usados del bot
+<p>En <a class="main" href="https://t.me/bots_of_charles/67">este</a> post hay un tutorial de uso básico del bot, donde se explica y se muestra casi todos los comandos más usados del bot
 <p>
 <p>IMPORTANTE:
-<div>
+<div class="field">
 <p>→ En el tutorial se usa un comando llamado <code>/zipper</code>, este comando ya no existe en el bot, fue remplazado por <code>/seven</code>, que se usa prácticamente igual y tiene algunas mejoras
 <p>→ Lea la guía de todos modos, es la única forma de entender por completo al bot
 <p></div>
@@ -62,7 +72,7 @@
 <p>En MF Shell, todos los comandos que trabajan con archivos y el comando <code>/que</code>, usan selectores, cada uno con su propio formato. Los selectores son argumentos para seleccionar elementos, si se trata de un comando relacionado con el sistema de archivos del bot, el selector es para seleccionar algo que tengas delante por ejemplo.
 <p>Note que en la documentación de cada comando se indica los tipos de selección y tipos de elementos que soporta al seleccionar, en caso detratase solamente del sistema de archivos
 <p>Hay 3 tipos de selección:
-<div>
+<div class="field">
 <p>→ Selección simple
 <p>→ Selección por rango
 <p>→ Selección libre
@@ -111,7 +121,7 @@
 <p>Cada usuario tiene un límite de 2 transferencias simultáneas
 <p>Cada cola tiene un identificador, este identificador se usa en comandos que administran colas
 <p>Por ejemplo, si agrega una o varias URLs con <code>/wget</code>, y la cola estaba vacía, el comando empezará a trabajar, si sigue ejecutando a dicho comando pero con otras URLs mientras está trabajando, la cola de "w" (que es la cola que identifica a <code>/wget</code>) se irá llenando
-<p>Para más información, véase los comandos para gestionar colas <a href="mfshell_h.html#c4">aquí</a>
+<p>Para más información, véase los comandos para gestionar colas <a class="main" href="mfshell_h.html#c4">aquí</a>
 <p>
 <p><h3>Comandos intensivos o pesados</h3>
 <p>Hay comandos, o una parte de ellos donde se realizan tareas intensivas, ejecutarlas simultáneamente puede ocasionar que el bot se desestabilice, no es primera vez que pasa. Es por eso que en el bot hay bloqueos de comandos y una cola global para procesos pesados. Básicamente nadie puede ejecutar simultaneamente estos comandos o hacer procesamiento pesado de forma simultanea, lo que se hace es encolar todas estas peticiones para realizar estos procesos, esto se hace con el fin de evitar que ocurra un desbordamiento de memoria o de CPU en el bot
@@ -121,5 +131,7 @@
 <p>El comando /start sirve para consultar la cantidad de transferencias simultáneas, el estado del archivador y también otros datos útiles para no "perderse"
 <p>Si la cola de procesos pesados se alarga, y se queda mucho tiempo viendo cómo no avanza, debe reportarlo al administrador a través del grupo, al igual que si tiene una "rotura" en una cola
 <p>Cada cuenta de MF Shell tiene un sitio web asociado, en este sitio web hay una sección de noticias donde se puede medir el "uptime" (tiempo de actividad) que lleva el bot
+</div>
+
 </html>
 

@@ -1,19 +1,29 @@
 <!DOCTYPE html>
+<html>
 <head>
 <link rel="stylesheet" type="text/css" href="main.css">
+<script type="text/javascript" src="main.js"></script>
 <title>Bots Of Charles</title>
 </head>
+
+<div id="this" class="topnav">
+<a class="tn" href="index.html">[←]</a>
+<a class="tn" href=#top>[↑]</a>
+</div>
+
+<div class="main">
+
 <p><h1>Comandos de PRO Mail</h1>
 <h2>¿Qué es esta página?</h2>
 <p>En esta página están todos los comandos de PRO Mail. Léase la guía primero si no la ha leído
-<p><a href="promail_g.html">Ver guía</a>
-<p><a href="index.html">Volver</a>
+<p><a class="main" href="promail_g.html">Ver guía</a>
+<p><a class="main" href="index.html">Volver</a>
 
 <!-- TEMPLATE
 
-<p>→ <a href=#>/</a>
+<p>→ <a class="main" href=#>/</a>
 
-<p><div>
+<p><div class="field">
 <a name="cmd"><p></a><code>/cmd</code>
 <p>Description
 <p><strong>Uso:</strong> <code>/cmd Arg1</code>
@@ -23,45 +33,45 @@
 -->
 
 <p><h2>📚 Categorías</h2>
-<p><a href=#c1>Información y ayuda</a>
-<p>→ <a href=#about>/about</a>
-<p>→ <a href=#help>/help</a>
-<p>→ <a href=#start>/start</a>
-<p><a href=#c2>Descargas al bot</a>
-<p>→ <a href=#auto>/auto</a>
-<p>→ <a href=#down>/down</a>
-<p><a href=#c3>Envío de correo</a>
-<p>→ <a href=#delay>/delay</a>
-<p>→ <a href=#dest>/dest</a>
-<p>→ <a href=#from>/from</a>
-<p>→ <a href=#pass>/pass</a>
-<p>→ <a href=#user>/user</a>
-<p>→ <a href=#smtp>/smtp</a>
-<p><a href=#c4>Control de cola</a>
-<p>→ <a href=#brake>/brake</a>
-<p>→ <a href=#cancel>/cancel</a>
-<p>→ <a href=#que>/que</a>
-<p><a href=#c5>Configuración personal</a>
-<p>→ <a href=#export>/export</a>
-<p>→ <a href=#import>/import</a>
+<p><a class="main" href=#c1>Información y ayuda</a>
+<p>→ <a class="main" href=#about>/about</a>
+<p>→ <a class="main" href=#help>/help</a>
+<p>→ <a class="main" href=#start>/start</a>
+<p><a class="main" href=#c2>Descargas al bot</a>
+<p>→ <a class="main" href=#auto>/auto</a>
+<p>→ <a class="main" href=#down>/down</a>
+<p><a class="main" href=#c3>Envío de correo</a>
+<p>→ <a class="main" href=#delay>/delay</a>
+<p>→ <a class="main" href=#dest>/dest</a>
+<p>→ <a class="main" href=#from>/from</a>
+<p>→ <a class="main" href=#pass>/pass</a>
+<p>→ <a class="main" href=#user>/user</a>
+<p>→ <a class="main" href=#smtp>/smtp</a>
+<p><a class="main" href=#c4>Control de cola</a>
+<p>→ <a class="main" href=#brake>/brake</a>
+<p>→ <a class="main" href=#cancel>/cancel</a>
+<p>→ <a class="main" href=#que>/que</a>
+<p><a class="main" href=#c5>Configuración personal</a>
+<p>→ <a class="main" href=#export>/export</a>
+<p>→ <a class="main" href=#import>/import</a>
 
 <p><a name="c1"><p></a><h2>🤔 Información y ayuda</h2>
 
 <p>Comandos para obtener información
 
-<p><div>
+<p><div class="field">
 <a name="about"><p></a><code>/about</code>
 <p>Muestra un breve resúmen acerca del bot y el enlace al sitio web propio del bot
 <p><strong>Uso:</strong> <code>/about</code>
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="help"><p></a><code>/help</code>
 <p>Muestra enlaces a la guía de usuario y a la referencia de comandos, es decir, este sitio
 <p><strong>Uso:</strong> <code>/help</code>
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="start"><p></a><code>/start</code>
 <p>Muestra información resumida sobre su sesión en el bot y el estado sobre las colas globales de envío. Esto muestra toda su configuración
 <p><strong>Uso:</strong> <code>/start</code>
@@ -71,13 +81,13 @@
 
 <p>Comandos que tienen que ver con la descarga del chat al bot
 
-<p><div>
+<p><div class="field">
 <a name="auto"><p></a><code>/auto</code>
 <p>Activar o desactivar la descarga automática de los archivos que son reenviados hacia el chat. Activado de forma predeterminada. Es la única forma de descargar álbumes/grupos de archivos
 <p><strong>Uso:</strong> <code>/auto</code>
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="down"><p></a><code>/down</code>
 <p>Descarga un archivo de Telegram al bot. Se usa respondiendo a un archivo
 <p><strong>Uso:</strong> <code>/down</code>
@@ -87,7 +97,7 @@
 
 <p>Comandos relacionados directamente con el envío por correo
 
-<p><div>
+<p><div class="field">
 <a name="delay"><p></a><code>/delay</code>
 <p>Atrasa la suscripción a la cola de envío. Útil para planificar. El límite es de 1 minuto
 <p>Ejecute sin argumentos para ver cuánto tiempo hay de atraso
@@ -95,7 +105,7 @@
 <p>A = Tiempo en segundos
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="dest"><p></a><code>/dest</code>
 <p>Establecer la dirección de correo destinatario
 <p>Ejecute sin argumentos para ver el destinatario actual
@@ -103,7 +113,7 @@
 <p>A = Dirección de correo electrónico
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="from"><p></a><code>/from</code>
 <p>Establece el usuario del correo de orígen (SMTP) y la contraseña correspondiente
 <p>Ejecute sin argumentos para ver el usuario y la contraseña actual
@@ -112,7 +122,7 @@
 <p>A2 = Contraseña del usuario
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="pass"><p></a><code>/pass</code>
 <p>Establece la contraseña del usuario del correo SMTP
 <p>Ejecute sin argumentos para ver la contraseña actual
@@ -120,7 +130,7 @@
 <p>A = Contraseña del usuario
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="user"><p></a><code>/user</code>
 <p>Establece el usuario del correo SMTP
 <p>Ejecute sin argumentos para ver el usuario actual
@@ -128,7 +138,7 @@
 <p>A = Usuario
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="smtp"><p></a><code>/smtp</code>
 <p>Establece el servidor SMTP a usar. Al realizar el envío, la dirección de correo electrónico de origen se determina según el usuario establecido y el servidor SMTP
 <p>Ejecute sin argumentos para ver la lista de servidores SMTP soportados por el bot
@@ -138,26 +148,26 @@
 
 <p><a name="c4"><p></a><h2>🤔 Control de cola</h2>
 
-<p>Comandos para controlar la cola de descarga del chat al bot. La gestión de cola funciona igual que en <a href="mfshell_h.html#c4">MF Shell</a>, con la diferencia de que no es necesario el argumento extra del identificador de cola, porque aquí solamente se controla la cola de descarga del chat al bot
+<p>Comandos para controlar la cola de descarga del chat al bot. La gestión de cola funciona igual que en <a class="main" href="mfshell_h.html#c4">MF Shell</a>, con la diferencia de que no es necesario el argumento extra del identificador de cola, porque aquí solamente se controla la cola de descarga del chat al bot
 
-<p><div>
+<p><div class="field">
 <a name="brake"><p></a><code>/brake</code>
 <p>Frena el proceso de descarga de Telegram al bot. No se ejecuta en la descarga actual, siempre se ejecuta antes de la siguiente descarga
 <p><strong>Uso:</strong> <code>/brake</code>
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="cancel"><p></a><code>/cancel</code>
 <p>Cancela la suscripción del archivo para el envío
 <p>No cancela la descarga, lo que hace es evitar que el archivo se suscriba al envío
 <p><strong>Uso:</strong> <code>/cancel</code>
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="que"><p></a><code>/que</code>
 <p>Administrador de cola de descarga del chat al bot. Ejecute sin argumentos para ver la cola
 <p>El único argumento en esta cola es para borrar de la cola mediante selección simple
-<p>Al igual que en <a href="mfshell_h.html#que">MF Shell</a>, el primer elemento de la cola no se borra, se cancela, si selecciona el elemento cero por selección simple, eliminará todos los elementos de la cola. Si no sabe qué es la selección simple, véase en la guía de <a href="mfshell_g.html">MF Shell</a> los tipos de selección
+<p>Al igual que en <a class="main" href="mfshell_h.html#que">MF Shell</a>, el primer elemento de la cola no se borra, se cancela, si selecciona el elemento cero por selección simple, eliminará todos los elementos de la cola. Si no sabe qué es la selección simple, véase en la guía de <a class="main" href="mfshell_g.html">MF Shell</a> los tipos de selección
 <p><strong>Uso:</strong> <code>/que A</code>
 <p>A = Selección simple
 <p></div>
@@ -165,9 +175,9 @@
 <p><a name="c5"><p></a><h2>🤔 Configuración personal</h2>
 
 <p>Comandos para importar y exportar la configuración del bot a un archivo externo
-<p>En <a href="https://t.me/bots_of_charles/60"> este</a> vídeo se muestra cómo se usan los comandos para importar y exportar configuraciones
+<p>En <a class="main" href="https://t.me/bots_of_charles/60"> este</a> vídeo se muestra cómo se usan los comandos para importar y exportar configuraciones
 
-<p><div>
+<p><div class="field">
 <a name="export"><p></a><code>/export</code>
 <p>Exporta la configuración al chat
 <p>Se recomienda anclar estas configuraciones en el chat con el bot
@@ -176,9 +186,11 @@
 <p>A = Prefijo
 <p></div>
 
-<p><div>
+<p><div class="field">
 <a name="import"><p></a><code>/import</code>
 <p>Importa una configuración existente al bot
 <p>Se usa respondiendo a un archivo en el chat con la configuración dentro
 <p><strong>Uso:</strong> <code>/import</code>
 <p></div>
+</div>
+</html>
