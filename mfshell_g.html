@@ -25,11 +25,10 @@
 <p><h2>📚 Contenido</h2>
 <div class="field">
 <p>→ <a class="main" href=#c1>Introducción</a>
-<p>→ <a class="main" href=#c2>Tutorial de uso básico</a>
-<p>→ <a class="main" href=#c3>Los elementos del sistema de archivos</a>
-<p>→ <a class="main" href=#c4>Los tipos de selección</a>
-<p>→ <a class="main" href=#c5>Límites y colas</a>
-<p>→ <a class="main" href=#c6>Consejos</a>
+<p>→ <a class="main" href=#c2>Los elementos del sistema de archivos</a>
+<p>→ <a class="main" href=#c3>Los tipos de selección</a>
+<p>→ <a class="main" href=#c4>Límites y colas</a>
+<p>→ <a class="main" href=#c5>Consejos</a>
 </div>
 <p>
 <div>
@@ -39,26 +38,31 @@
 </div>
 <a name="c1"><p></a><h2>🤔 Introducción</h2>
 <p>
-<p>Habitualmente, la mayoría de los bots en Telegram que manejan archivos tienen ese efecto "boomerang", les das algo, ya sea un archivo del propio Telegram para que haga algo, un enlace a otro sitio web para que lo descargue, hacen su trabajo y te lo devuelven a tu chat, tu privado con ese bot, esto se considera "normal" y trae consigo varias limitaciones, principalmente aquella que tiene que ver con el límite de 2 GB por cada archivo.
+<p>Habitualmente, la mayoría de los bots en Telegram que manejan archivos tienen ese efecto "boomerang", les das algo, ya sea un archivo del propio Telegram para que haga algo, un enlace a otro sitio web para que lo descargue, hacen su trabajo y te lo devuelven a tu chat, tu privado con ese bot, esto se considera "normal". Lo primero que debe tener en cuenta es que MF Shell no es un bot normal
 <p>
-<p>Antes que nada, debe entender que MF Shell no es un bot de leecheo o URL uploading normal por las siguientes razones:
+<p>Características de MF Shell:
 <div class="field">
-<p>→ No es un bot que te devuelve automáticamente lo que le pidas debido a las funciones que trae una vez bajas algo, porque si descargas algo de un sitio web por ejemplo, no necesariamente es para recibirlo a tu chat, no en este bot
-<p>→ En este bot funciona a base de puros comandos, comandos no interactivos (salvo alguna rara excepción bien justificada), cada comando tiene sus argumentos y un uso determinado, todos ellos, o la gran mayoría comparten patrones similares que facilitan su comprensión
-<p>→ En este bot usted puede ver lo que descarga, crear carpetas, organizar como le dé la gana todo, incluso archivar y cifrar archivos
-<p>→ En este bot los procesos de transferencia de red del bot funcionan con un sistema de colas, los procesos pueden cancelarse o frenarse, para realizar una mejor planificación
-<p>→ En este bot hay muchas herramientas para procesamiento masivo de archivos, URLs, etc...
+<p>→ Puros comandos, cero "conversacionalismo" e "interactividad"
+<p>→ Herramientas para procesamientos en masa, principalmente descargar o subir grandes números de archivos
+<p>→ Sistema de colas por cada tipo de transferencia y un conjunto de herramientas para administrar estas colas
+<p>→ Herramientas para organizar como le de la gana sus archivos en el bot: creación de carpetas, mover, borrar, archivar y hasta cifrar archivos
+<p>→ Servidor web adjunto con funciones para descargar con mayor facilidad los archivos por descarga directa
 </div>
-<a name="c2"><p></a><h2>📖 Tutorial de uso básico</h2>
 <p>
-<p>En <a class="main" href="https://t.me/bots_of_charles/67">este</a> post hay un tutorial de uso básico del bot, donde se explica y se muestra casi todos los comandos más usados del bot
+<p>Básicamente en este bot el flujo de trabajo se resume en:
+<p>
+<div class="field">
+<p>Descargar de donde sea → Reorganizar → Subir al chat o compartir por HTTP
+</div>
+<p>
+<p>La guía ha resultado ser densa para muchos usuarios, es por eso que en <a class="main" href="https://t.me/bots_of_charles/67">este</a> post hay un tutorial de uso básico del bot, donde se explica y se muestra casi todos los comandos más usados del bot
 <p>
 <p>IMPORTANTE:
 <div class="field">
 <p>→ En el tutorial se usa un comando llamado <code>/zipper</code>, este comando ya no existe en el bot, fue remplazado por <code>/seven</code>, que se usa prácticamente igual y tiene algunas mejoras
-<p>→ Lea la guía de todos modos, es la única forma de entender por completo al bot
+<p>→ El tutorial no es el final, <font color=red>debe leer la guía entera</font>, el tutorial es solo para ilustrar cómo es el flujo de trabajo en el bot, pero para entender todo, <font color=red>debe seguir leyendo</font>
 <p></div>
-<a name="c3"><p></a><h2>📂 Los elementos del sistema de archivos</h2>
+<a name="c2"><p></a><h2>📂 Los elementos del sistema de archivos</h2>
 <p>
 <p>En MF Shell cada usuario tiene su propio directorio (carpeta) donde puede trabajar, y dentro, el usuario puede crear más subdirectorios para agrupar los archivos
 <p>Hay una ubicación actual, que es el directorio donde usted está parado, puede verlo ejecutando <code>/ls</code>.
@@ -67,7 +71,7 @@
 <p>Tenga en cuenta que las enumeraciones desde cero no son solamente en el sistema de archivos, esto también se da en las colas excepto la parte de seleccionar por debajo de cero
 <p>Por último y no menos importante, estas enumeraciones se llaman índices
 <p>
-<a name="c4"><p></a><h2>👀 Los tipos de selección</h2>
+<a name="c3"><p></a><h2>👈 Los tipos de selección</h2>
 <p>
 <p>En MF Shell, todos los comandos que trabajan con archivos y el comando <code>/que</code>, usan selectores, cada uno con su propio formato. Los selectores son argumentos para seleccionar elementos, si se trata de un comando relacionado con el sistema de archivos del bot, el selector es para seleccionar algo que tengas delante por ejemplo.
 <p>Note que en la documentación de cada comando se indica los tipos de selección y tipos de elementos que soporta al seleccionar, en caso detratase solamente del sistema de archivos
@@ -114,7 +118,7 @@
 <p><code class="scr">/mv 7,9,14 6</code>
 <p>Mover los elementos 7, 9 y 14 al subdirectorio 6
 <p>
-<a name="c5"><p></a><h2>⚙️ Límites y colas</h2>
+<a name="c4"><p></a><h2>⚙️ Límites y colas</h2>
 <p>
 <p><h3>Transferencias de red y colas</h3>
 <p>Cada comando de transferencia de red tiene una cola asociada, al cual puede frenarse o se puede cancelar el proceso de transferencia.
@@ -123,14 +127,16 @@
 <p>Por ejemplo, si agrega una o varias URLs con <code>/wget</code>, y la cola estaba vacía, el comando empezará a trabajar, si sigue ejecutando a dicho comando pero con otras URLs mientras está trabajando, la cola de "w" (que es la cola que identifica a <code>/wget</code>) se irá llenando
 <p>Para más información, véase los comandos para gestionar colas <a class="main" href="mfshell_h.html#c4">aquí</a>
 <p>
-<p><h3>Comandos intensivos o pesados</h3>
-<p>Hay comandos, o una parte de ellos donde se realizan tareas intensivas, ejecutarlas simultáneamente puede ocasionar que el bot se desestabilice, no es primera vez que pasa. Es por eso que en el bot hay bloqueos de comandos y una cola global para procesos pesados. Básicamente nadie puede ejecutar simultaneamente estos comandos o hacer procesamiento pesado de forma simultanea, lo que se hace es encolar todas estas peticiones para realizar estos procesos, esto se hace con el fin de evitar que ocurra un desbordamiento de memoria o de CPU en el bot
+<p><h3>Comandos regulados</h3>
+<p>Hay comandos, o una parte de ellos donde se realizan tareas intensivas o simplemente reguladas, ejecutarlas simultáneamente sin ningún tipo de control puede ocasionar que el bot se desestabilice, no es primera vez que pasa. Es por eso que en el bot hay bloqueos de comandos y una cola global para procesos pesados
+<p>Básicamente nadie puede ejecutar simultaneamente estos comandos de forma simultanea, lo que se hace es encolar todas estas peticiones para realizar estos procesos, esto se hace con el fin de evitar que ocurra un desbordamiento de memoria o de CPU en el bot
+<p>Hay 2 colas globales, una se llama INT y la otra se llama SUB. Los comandos <code>/crypt</code>, <code>/seven</code> y <code>/ytdl</code> tienen una parte donde realizan procesamiento intensivo y en el caso de <code>/seven</code>, es un comando bastante uado en el bot, asi que no se sorprenda si se ve haciendo la cola INT. El comando <code>/mediainfo</code> por ahora es el único que puebla la cola SUB, asi que es poco probable verse envuelto en una cola SUB
 <p>
-<a name="c6"><p></a><h2>✍️ Consejos</h2>
+<a name="c5"><p></a><h2>✍️ Consejos</h2>
 <p>
 <p>El comando /start sirve para consultar la cantidad de transferencias simultáneas, el estado del archivador y también otros datos útiles para no "perderse"
-<p>Si la cola de procesos pesados se alarga, y se queda mucho tiempo viendo cómo no avanza, debe reportarlo al administrador a través del grupo, al igual que si tiene una "rotura" en una cola
-<p>Cada cuenta de MF Shell tiene un sitio web asociado, en este sitio web hay una sección de noticias donde se puede medir el "uptime" (tiempo de actividad) que lleva el bot
+<p>Si la cola de procesos pesados o de subprocesos se alarga, y se queda mucho tiempo viendo cómo no avanza, debe reportarlo al administrador a través del grupo, al igual que si tiene una "rotura" en una cola
+<p>Cada cuenta de MF Shell tiene un sitio web asociado, en este sitio web hay una sección de noticias donde se puede ver el "uptime" (tiempo de actividad) que lleva el bot, tenga en cuenta que el bot es reiniciado cada 24 horas, <font color=red>borrando todo lo que hay dentro</font>
 </div>
 
 </html>
