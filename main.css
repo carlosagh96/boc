@@ -1,10 +1,10 @@
 html{scroll-behavior: smooth;}
-body{background-color:#white;}
+body{margin:0;background-color:#white;}
 div.topnav{color:white;padding:16px;float:left;width:100%;position:fixed;z-index:1;top:0;background-color:#25292b;overflow-y:hidden;}
-div.tnr{float:right}
-div.main{margin-top:80px;position:relative;}
+div.tnr{float:right;}
+div.main{margin-left:8px;margin-right:8px;margin-top:80px;position:relative;}
 div.field{margin:4px;padding-left:16px;padding-right:16px;padding-top:2px;padding-bottom:2px;background-color:#D0D0D0;}
-a.tn{margin-left:8px;margin-right:16px;padding:16px;color:white;background-color:#00BFFF;font-size:24px;text-align:center;background-color:gray;text-decoration:none;}
+a.tn{margin-left:4px;margin-right:12px;padding:16px;color:white;background-color:#00BFFF;font-size:24px;text-align:center;background-color:gray;text-decoration:none;}
 a.tn:hover{color:black;background-color:#0074E8;}
 a.main{padding:8;background-color:transparent;font-weight:bold;}
 a.main:link{color:#0074E8;text-decoration:none;}
