@@ -14,10 +14,9 @@
 <div class="main">
 
 <p><h1>Comandos de PRO Mail</h1>
-<h2>¿Qué es esta página?</h2>
+<p><h2>¿Qué es esta página?</h2>
 <p>En esta página están todos los comandos de PRO Mail. Léase la guía primero si no la ha leído
 <p><a class="main" href="promail_g.html">Ver guía</a>
-<p><a class="main" href="index.html">Volver</a>
 
 <!-- TEMPLATE
 
@@ -40,6 +39,7 @@
 <p><a class="main" href=#c2>Descargas al bot</a>
 <p>→ <a class="main" href=#auto>/auto</a>
 <p>→ <a class="main" href=#down>/down</a>
+<p>→ <a class="main" href=#slicer>/slicer</a>
 <p><a class="main" href=#c3>Envío de correo</a>
 <p>→ <a class="main" href=#delay>/delay</a>
 <p>→ <a class="main" href=#dest>/dest</a>
@@ -47,7 +47,6 @@
 <p>→ <a class="main" href=#pass>/pass</a>
 <p>→ <a class="main" href=#user>/user</a>
 <p>→ <a class="main" href=#smtp>/smtp</a>
-<p><a class="main" href=#c4>Control de cola</a>
 <p>→ <a class="main" href=#brake>/brake</a>
 <p>→ <a class="main" href=#cancel>/cancel</a>
 <p>→ <a class="main" href=#que>/que</a>
@@ -79,7 +78,7 @@
 
 <p><a name="c2"><p></a><h2>🤔 Descargas al bot</h2>
 
-<p>Comandos que tienen que ver con la descarga del chat al bot
+<p>Comandos que tienen que ver con la descarga del chat al bot y todo lo que sea antes del proceso de envío
 
 <p><div class="field">
 <a name="auto"><p></a><code>/auto</code>
@@ -91,6 +90,17 @@
 <a name="down"><p></a><code>/down</code>
 <p>Descarga un archivo de Telegram al bot. Se usa respondiendo a un archivo
 <p><strong>Uso:</strong> <code>/down</code>
+<p></div>
+
+<p><div class="field">
+<a name="slicer"><p></a><code>/slicer</code>
+<p>Configuración del archivador automático
+<p>El archivador solo funciona después de descargar y antes de suscribir, funciona de forma pasiva por lo que este comando es solo para configurar su comportamiento en dicha situación
+<p>Cuando el archivo supera un tamaño determinado, es dividido automáticamente, lo que se hace es suscribir las partes al envío y el archivo original se desecha
+<p>Opcionalmente, también está la opción de ponerle una contraseña 
+<p><strong>Uso:</strong> <code>/cmd A1 A2</code>
+<p>A1 = Tamaño de partes en MB. Debe ser entre 1 y 64. En caso de ser cero, se ignora
+<p>A2 = Contraseña. Para cambiar solamente la contraseña, el argumento anterior (A1) debe ser cero. En caso de ignorar el primer argumento y no poner contraseña, la contraseña se elimina
 <p></div>
 
 <p><a name="c3"><p></a><h2>🤔 Envío de correo</h2>

@@ -34,6 +34,7 @@
 <a name="c1"><p></a><h2>🤔 Introducción</h2>
 <p>
 <p>PRO Mail es un bot creado específicamente apra enviar archivos por correo
+<p>Si es cubano y vive en Cuba, lea <a class="main" href="https://t.me/bots_of_charles/40?single">esto</a>
 <p>
 <p>Para usar este bot necesita 2 cosas:
 <div class="field">
@@ -41,10 +42,19 @@
 <p>→ Una dirección de correo destinatario a la cual va a llegar el correo
 </div>
 <p>
-<p>Si es cubano y vive en Cuba, lea <a class="main" href="https://t.me/bots_of_charles/40?single">esto</a>
+<p>Este bot funciona de la siguiente forma:
+<p>
+<p><div class="field">
+<p>Descarga del archivo al bot → Análisis y división → Suscripción → Envío
+<p></div>
+<p>
+<p>1 - Los archivos se descargan al bot
+<p>2 - Dentro del bot se analiza si el archivo debería ser o no "picado" en partes. (Para más información ,véase <a class="main" href="promail_h.html#slicer"><code>/slicer</code></a>)
+<p>3 - El archivo o los pedazos del archivo, dependiendo si se dividió o no, se suscriben a la cola global de envío, dependiendo del SMTP del usuario
+<p>4 - Cada archivo en cada cola global de envío se procesa, se le arma un mensaje y se envía al destinatario
 <p>
 <p>Avertencia:
-<p>PRO Mail sólo se ocupa del proceso de envío, la llegada del contenido a su destinatario dependerá únicamente del destinatario en si
+<p>PRO Mail sólo se ocupa del proceso de envío, la llegada del contenido a su destinatario dependerá únicamente del destinatario en si y sus características
 <p>
 <a name="c2"><p></a><h2>✉️ Servidores SMTP</h2>
 <p>
