@@ -1,4 +1,5 @@
-body{background-color:#white}
+html{scroll-behavior: smooth;}
+body{background-color:#white;}
 div.topnav{color:white;padding:16px;float:left;width:100%;position:fixed;z-index:1;top:0;background-color:#25292b;overflow-y:hidden;}
 div.tnr{float:right}
 div.main{margin-top:80px;position:relative;}
