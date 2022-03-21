@@ -44,11 +44,11 @@
 <p>
 <p>Características de MF Shell:
 <div class="field">
-<p>→ Puros comandos, cero "conversacionalismo" e "interactividad"
-<p>→ Herramientas para procesamientos en masa, principalmente descargar o subir grandes números de archivos
+<p>→ Puede organizar como le de la gana sus archivos en el bot: creación de carpetas, mover, borrar, archivar y hasta cifrar archivos
+<p>→ Numerosas plataformas soportadas, desde el típico Youtube, sitios de alojamiento de archivos como MEGA, hasta tiendas de aplicaciones de terceros e incluso sitios para leer manga y comics en línea
+<p>→ Procesamientos en masa principalmente descargar o subir grandes números de archivos
 <p>→ Sistema de colas por cada tipo de transferencia y un conjunto de herramientas para administrar estas colas
-<p>→ Herramientas para organizar como le de la gana sus archivos en el bot: creación de carpetas, mover, borrar, archivar y hasta cifrar archivos
-<p>→ Servidor web adjunto con funciones para descargar con mayor facilidad los archivos por descarga directa directamente desde el bot, usando aplicaciones como IDM
+<p>→ Servidor web adjunto con funciones para descargar con mayor facilidad los archivos por descarga directa usando aplicaciones como IDM
 </div>
 <p>
 <p>Básicamente en este bot el flujo de trabajo se resume en:
@@ -57,7 +57,7 @@
 <p>Descargar de donde sea → Reorganizar → Subir al chat o compartir por HTTP
 </div>
 <p>
-<p>1 - Descargar ya sea de un sitio web cualquiera o del propio Telegram al bot
+<p>1 - Descargar archivos ya sea de un sitio web cualquiera o del propio Telegram al bot
 <p>2 - Dividir archivos, agruparlos, cifrarlos, lo que sea, y como a usted le guste
 <p>3 - Subir denuevo los archivos resultantes al chat o compartir en el servidor web del bot y hacer una descarga directa
 <p>
@@ -66,20 +66,20 @@
 <p>IMPORTANTE:
 <div class="field">
 <p>→ En el tutorial se usa un comando llamado <code>/zipper</code>, este comando ya no existe en el bot, fue remplazado por <code>/seven</code>, que se usa prácticamente igual y tiene algunas mejoras
-<p>→ El tutorial no es el final, <font color=red>debe leer la guía entera</font>, el tutorial es solo para ilustrar cómo es el flujo de trabajo en el bot, pero para entender todo, <font color=red>debe seguir leyendo</font>
+<p>→ El tutorial no es el final, <font color=red>debe leer la guía entera</font>, el tutorial es solo la punta del iceberg, pero para entender todo, <font color=red>debe seguir leyendo</font>
 <p></div>
 <a name="c2"><p></a><h2>📂 Los elementos del sistema de archivos</h2>
 <p>
 <p>En MF Shell cada usuario tiene su propio directorio (carpeta) donde puede trabajar, y dentro, el usuario puede crear más subdirectorios para agrupar los archivos
-<p>Hay una ubicación actual, que es el directorio donde usted está parado, puede verlo ejecutando <code>/ls</code>.
-<p>Los archivos y directorios se organizan y se enumeran partiendo desde el 0 como primer elemento. Los directorios se listan antes que los archivos siempre.
-<p>De cero en adelante, son todos los elementos del sistema de archivos que están a simple vista. Sin ebmargo, por debajo de cero se encuentran los niveles superiores. Por ejemplo, suponga que se encuentra en <code>/cosas/hoy</code>, el nivel superior o directorio padre donde usted se encuentra (-1) es <code>/cosas</code> y dos niveles más arriba (-2) es la raiz. Por encima del directorio raiz no hay niveles superiores y es el padre de todos.
+<p>Hay una ubicación considerada como la "actual", que es el directorio donde usted está parado, puede verlo ejecutando <code>/ls</code>
+<p>Los archivos y directorios se organizan y se enumeran partiendo desde el 0 como primer elemento. Los directorios se listan antes que los archivos siempre
+<p>De cero en adelante, son todos los elementos del sistema de archivos que están a simple vista. Sin ebmargo, por debajo de cero se encuentran los niveles superiores. Por ejemplo, suponga que se encuentra en <code>/cosas/hoy</code>, el nivel superior o directorio padre donde usted se encuentra (-1) es <code>/cosas</code> y dos niveles más arriba (-2) es la raiz. Por encima del directorio raiz no hay niveles superiores y es el padre de todos
 <p>Tenga en cuenta que las enumeraciones desde cero no son solamente en el sistema de archivos, esto también se da en las colas excepto la parte de seleccionar por debajo de cero
 <p>Por último y no menos importante, estas enumeraciones se llaman índices
 <p>
 <a name="c3"><p></a><h2>👈 Los tipos de selección</h2>
 <p>
-<p>En MF Shell, todos los comandos que trabajan con archivos y el comando <code>/que</code>, usan selectores, cada uno con su propio formato. Los selectores son argumentos para seleccionar elementos, si se trata de un comando relacionado con el sistema de archivos del bot, el selector es para seleccionar algo que tengas delante por ejemplo.
+<p>En MF Shell, todos los comandos que trabajan con archivos y el comando <code>/que</code>, usan selectores, cada uno con su propio formato. Los selectores son argumentos para seleccionar elementos, si se trata de un comando relacionado con el sistema de archivos del bot, el selector es para seleccionar algo que tengas delante por ejemplo
 <p>Note que en la documentación de cada comando se indica los tipos de selección y tipos de elementos que soporta al seleccionar, en caso detratase solamente del sistema de archivos
 <p>Hay 3 tipos de selección:
 <div class="field">
