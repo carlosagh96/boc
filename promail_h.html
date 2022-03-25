@@ -192,16 +192,19 @@
 <a name="slicer"><p></a><code>/slicer</code>
 <p>Configuración del archivador automático, creación y respaldo de archivos resultantes
 <p>El archivador solo funciona después de descargar y antes de suscribir, funciona de forma pasiva por lo que este comando es solo para configurar su comportamiento
-<p>El primer argumento es la configuración o acción dentro del comando, que puede ser alguna de las siguientes:
-<p><code>ps</code> → Establecer tamaño de partes. Debe ser entre 1 y 64 MB
-<p><code>pw</code> → Establecer contraseña
-<p><code>dp</code> → Borrar contraseña establecida
-<p><code>bk</code> → Establecer el nivel de respaldo. Hay 3 niveles, 0 (No respaldar), 1 (Respaldar en caso de error de envío), 2 (Respaldar siempre antes de suscribir al envío)
-<p><code>an</code> → Activar/Desactivar el uso de un nombre base de archivo aleatorio
-<p><code>ap</code> → Activar/Desactivar el uso de una contraseña aleatoria por cada archivo
+<p>Ejecute sin argumentos para ver un resúmen del comportamiento actual
+<p>En este comando hay acciones y valores, no todas las acciones tienen valores
+<p>Las acciones que tengan valores, si se ejecutan sin un valor para poder cambiarlo, se puede ver su valor actual. Por ejemplo, si ejecuta <code class="scr">/slicer ps</code>, podrá ver el tamaño de partes actual, y si ejecuta <code class="scr">/slicer bk</code> podrá ver en qué condiciones se hará un respaldo de las partes resultantes al archivar
+<p>Acciones:
+<p><code>ps</code> → Establecer/Cambiar el tamaño de partes. Debe ser entre 1 y 64 MB. El valor es el tamaño nuevo de partes
+<p><code>pw</code> → Establecer/Cambiar contraseña. El valor es la contraseña
+<p><code>dp</code> → Borrar contraseña establecida. No usa un valor
+<p><code>bk</code> → Establecer el nivel de respaldo. Hay 3 niveles, 0 (No respaldar), 1 (Respaldar en caso de error de envío), 2 (Respaldar siempre antes de suscribir al envío). El valor es el nivel
+<p><code>an</code> → Activar/Desactivar el uso de un nombre base de archivo aleatorio. No usa un valor
+<p><code>ap</code> → Activar/Desactivar el uso de una contraseña aleatoria por cada archivo. No usa un valor. Al activar el uso de contraseñas aleatorias, se ignorará el hecho de si tiene o no una contraseña asignada de forma fija en <code>pw</code>
 <p><strong>Uso:</strong> <code>/slicer A1 A2</code>
 <p>A1 = Acción
-<p>A2 = Valor. Las acciones que no usan este argumento son <code>dp</code>, <code>an</code> y <code>ap</code>
+<p>A2 = Valor (Depende de la acción)
 <p></div>
 <p><a name="c5"><p></a><h2>🤔 Configuración personal</h2>
 
