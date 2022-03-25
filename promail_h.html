@@ -41,25 +41,26 @@
 <p>→ <a class="main" href=#about>/about</a>
 <p>→ <a class="main" href=#help>/help</a>
 <p>→ <a class="main" href=#start>/start</a>
-<p><a class="main" href=#c2>Descargas al bot</a>
-<p>→ <a class="main" href=#auto>/auto</a>
-<p>→ <a class="main" href=#backup>/backup</a>
-<p>→ <a class="main" href=#down>/down</a>
-<p>→ <a class="main" href=#slicer>/slicer</a>
-<p><a class="main" href=#c3>Envío de correo</a>
-<p>→ <a class="main" href=#delay>/delay</a>
+<p><a class="main" href=#c2>Datos del correo</a>
 <p>→ <a class="main" href=#dest>/dest</a>
 <p>→ <a class="main" href=#from>/from</a>
 <p>→ <a class="main" href=#pass>/pass</a>
 <p>→ <a class="main" href=#user>/user</a>
 <p>→ <a class="main" href=#smtp>/smtp</a>
-<p><a class="main" href=#c4>Control de cola</a>
+<p><a class="main" href=#c3>Descargas al bot</a>
+<p>→ <a class="main" href=#down>/down</a>
 <p>→ <a class="main" href=#brake>/brake</a>
 <p>→ <a class="main" href=#cancel>/cancel</a>
 <p>→ <a class="main" href=#que>/que</a>
+<p><a class="main" href=#c4>Comportamiento</a>
+<p>→ <a class="main" href=#auto>/auto</a>
+<p>→ <a class="main" href=#delay>/delay</a>
+<p>→ <a class="main" href=#hasher>/hasher</a>
+<p>→ <a class="main" href=#slicer>/slicer</a>
 <p><a class="main" href=#c5>Configuración personal</a>
 <p>→ <a class="main" href=#export>/export</a>
 <p>→ <a class="main" href=#import>/import</a>
+
 
 <p><a name="c1"><p></a><h2>🤔 Información y ayuda</h2>
 
@@ -83,57 +84,9 @@
 <p><strong>Uso:</strong> <code>/start</code>
 <p></div>
 
-<p><a name="c2"><p></a><h2>🤔 Descargas al bot</h2>
+<p><a name="c2"><p></a><h2>🤔 Datos de correo</h2>
 
-<p>Comandos que tienen que ver con la descarga del chat al bot y todo lo que sea antes del proceso de envío
-
-<p><div class="field">
-<a name="auto"><p></a><code>/auto</code>
-<p>Activar o desactivar la descarga automática de los archivos que son reenviados hacia el chat. Activado de forma predeterminada. Es la única forma de descargar álbumes/grupos de archivos
-<p><strong>Uso:</strong> <code>/auto</code>
-<p></div>
-
-<p><div class="field">
-<a name="backup"><p></a><code>/backup</code>
-<p>Comando para configurar el respaldo de los archivos resultantes de la actuación pasiva de <code>/slicer</code>
-<p>Este proceso es cancelable, es decir, el respaldo se puede anular
-<p>Ejecute sin argumentos para ver el nivel actual
-<p>Son 3 niveles:
-<p>(0) No se realizarán respaldos de las partes. Esto es predeterminado
-<p>(1) Se realizarán respaldos en caso de fallar el envío
-<p>(2) Se realizarán respaldos siempre antes de suscribir al envío, o sea, recién hechas
-<p><strong>Uso:</strong> <code>/backup A1</code>
-<p>A1 = Nivel
-<p></div>
-
-<p><div class="field">
-<a name="down"><p></a><code>/down</code>
-<p>Descarga un archivo de Telegram al bot. Se usa respondiendo a un archivo
-<p><strong>Uso:</strong> <code>/down</code>
-<p></div>
-
-<p><div class="field">
-<a name="slicer"><p></a><code>/slicer</code>
-<p>Configuración del archivador automático
-<p>El archivador solo funciona después de descargar y antes de suscribir, funciona de forma pasiva por lo que este comando es solo para configurar su comportamiento en dicha situación
-<p>Cuando el archivo supera un tamaño determinado, es dividido automáticamente, lo que se hace es suscribir las partes al envío y el archivo original se desecha
-<p>Opcionalmente, también está la opción de ponerle una contraseña 
-<p><strong>Uso:</strong> <code>/slicer A1 A2</code>
-<p>A1 = Tamaño de partes en MB. Debe ser entre 1 y 64. En caso de ser cero, se ignora
-<p>A2 = Contraseña. Para cambiar solamente la contraseña, el argumento anterior (A1) debe ser cero. En caso de ignorar el primer argumento y no poner contraseña, la contraseña se elimina
-<p></div>
-
-<p><a name="c3"><p></a><h2>🤔 Envío de correo</h2>
-
-<p>Comandos relacionados directamente con el envío por correo
-
-<p><div class="field">
-<a name="delay"><p></a><code>/delay</code>
-<p>Atrasa la suscripción a la cola de envío. Útil para planificar. El límite es de 1 minuto
-<p>Ejecute sin argumentos para ver cuánto tiempo hay de atraso
-<p><strong>Uso:</strong> <code>/delay A</code>
-<p>A = Tiempo en segundos
-<p></div>
+<p>Comandos para ingresar los datos para el envío por correo
 
 <p><div class="field">
 <a name="dest"><p></a><code>/dest</code>
@@ -176,9 +129,17 @@
 <p>A = Servidor SMTP
 <p></div>
 
-<p><a name="c4"><p></a><h2>🤔 Control de cola</h2>
 
-<p>Comandos para controlar la cola de descarga del chat al bot. La gestión de cola funciona igual que en <a class="main" href="mfshell_h.html#c4">MF Shell</a>, con la diferencia de que no es necesario el argumento extra del identificador de cola, porque aquí solamente se controla la cola de descarga del chat al bot
+<p><a name="c3"><p></a><h2>🤔 Descargas al bot</h2>
+
+<p>Comandos que tienen que ver con la descarga del chat al bot y todo lo que sea antes del proceso de envío
+
+<p><div class="field">
+<a name="down"><p></a><code>/down</code>
+<p>Descarga un archivo de Telegram al bot. Se usa respondiendo a un archivo
+<p><strong>Uso:</strong> <code>/down</code>
+<p></div>
+
 
 <p><div class="field">
 <a name="brake"><p></a><code>/brake</code>
@@ -202,6 +163,46 @@
 <p>A = Selección simple o de rango
 <p></div>
 
+<p><a name="c4"><p></a><h2>🤔 Comportamiento</h2>
+
+<p>Comandos que modifican el comportamiento del bot respecto a los archivos, principalmente antes de suscribirlos al envío
+
+<p><div class="field">
+<a name="auto"><p></a><code>/auto</code>
+<p>Activar o desactivar la descarga automática de los archivos que son reenviados hacia el chat. Activado de forma predeterminada. Es la única forma de descargar álbumes/grupos de archivos
+<p><strong>Uso:</strong> <code>/auto</code>
+<p></div>
+
+<p><div class="field">
+<a name="delay"><p></a><code>/delay</code>
+<p>Atrasa la suscripción a la cola de envío. Útil para planificar. El límite es de 1 minuto
+<p>Ejecute sin argumentos para ver cuánto tiempo hay de atraso
+<p><strong>Uso:</strong> <code>/delay A</code>
+<p>A = Tiempo en segundos
+<p></div>
+
+<p><div class="field">
+<a name="hasher"><p></a><code>/hasher</code>
+<p>Activar o desactivar el cálculo de hashes MD5 de cada archivo antes de suscribirlo envío
+<p>Muy útil para asegurar la fiabilidad de los archivos después de ser enviados
+<p><strong>Uso:</strong> <code>/hasher</code>
+<p></div>
+
+<p><div class="field">
+<a name="slicer"><p></a><code>/slicer</code>
+<p>Configuración del archivador automático, creación y respaldo de archivos resultantes
+<p>El archivador solo funciona después de descargar y antes de suscribir, funciona de forma pasiva por lo que este comando es solo para configurar su comportamiento
+<p>El primer argumento es la configuración o acción dentro del comando, que puede ser alguna de las siguientes:
+<p><code>ps</code> → Establecer tamaño de partes. Debe ser entre 1 y 64 MB
+<p><code>pw</code> → Establecer contraseña
+<p><code>dp</code> → Borrar contraseña establecida
+<p><code>bk</code> → Establecer el nivel de respaldo. Hay 3 niveles, 0 (No respaldar), 1 (Respaldar en caso de error de envío), 2 (Respaldar siempre antes de suscribir al envío)
+<p><code>an</code> → Activar/Desactivar el uso de un nombre base de archivo aleatorio
+<p><code>ap</code> → Activar/Desactivar el uso de una contraseña aleatoria por cada archivo
+<p><strong>Uso:</strong> <code>/slicer A1 A2</code>
+<p>A1 = Acción
+<p>A2 = Valor. Las acciones que no requieren el 2do argumento son <code>dp</code>, <code>an</code> y <code>ap</code>
+<p></div>
 <p><a name="c5"><p></a><h2>🤔 Configuración personal</h2>
 
 <p>Comandos para importar y exportar la configuración del bot a un archivo externo
@@ -224,4 +225,5 @@
 <p></div>
 </div>
 </body>
+
 </html>
