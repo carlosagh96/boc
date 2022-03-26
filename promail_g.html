@@ -110,8 +110,9 @@
 </div>
 <p>
 <a name="c3"><p></a><h2>🛑 Límites</h2>
-<p>El bot en sí no tiene un límite claro, puede intentar enviar archivos de cualquier tamaño, pero esto no es recomendable, porque tanto los servicios de envío como los destinatarios imponen límites en cantidad de mensajes y tamaño ya sea total o por cada mensaje
-<p>Tenga en cuenta que al realizar envíos de forma predeterminada los mensajes enviados se quedan en el buzón de salida de la cuenta que usa para realizar los envíos. Esto pasa con algunos proveedores, la solución es vaciar de vez en cuando su cuenta de envío o ver si existe algún ajuste para borrar mensajes después de enviarlos
+<p>El bot en sí no tiene un límite claro en cuanto a número de mensajes, y el tamaño máximo de cada mensaje es en realidad producto a la existencia del comando <a class="main" href="./promail_h.html#slicer">/slicer</a>
+<p>Tenga en cuenta que tanto los servicios de envío como los destinatarios imponen límites en cantidad de mensajes y tamaño ya sea total o por cada mensaje
+<p>También debe tener en cuenta cómo el correo usado para el envío (SMTP) trata los mensajes, ya sea si los conserva después de enviar o si el proveedor es consciente de que está siendo usado por un bot y los borra automáticamente. En el caso de ser lo primero, debe ver si hay alguna configuración para no acumular los mensajes y en el peor de los casos, debe ir periódicamente a borrar los mensajes
 <p>
 <a name="c4"><p></a><h2>📦 El tamaño 'inflado' durante el envío</h2>
 <p>Esto ha traído mucha confusión, es un tema que va más allá de este bot, porque es un tema que ocurre en general con cualquier cliente de correo electrónico
