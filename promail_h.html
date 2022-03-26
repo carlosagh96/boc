@@ -157,10 +157,12 @@
 <p><div class="field">
 <a name="que"><p></a><code>/que</code>
 <p>Administrador de cola de descarga del chat al bot. Ejecute sin argumentos para ver la cola
-<p>El único argumento en esta cola es para borrar de la cola mediante selección simple
 <p>Al igual que en <a class="main" href="mfshell_h.html#que">MF Shell</a>, el primer elemento de la cola no se borra, se cancela, si selecciona el elemento cero por selección simple, eliminará todos los elementos de la cola. Si no sabe qué es la selección simple, véase en la guía de <a class="main" href="mfshell_g.html">MF Shell</a> los tipos de selección
 <p><strong>Uso:</strong> <code>/que A</code>
 <p>A = Selección simple o de rango
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/que 0</code> Borra todos los elementos de la cola excepto el primero
+<p><code class="scr">/que 4-3</code> Borra los elementos (si existen) 4,5, y 6 de la cola
 <p></div>
 
 <p><a name="c4"><p></a><h2>🤔 Comportamiento</h2>
