@@ -180,15 +180,6 @@
 <p></div>
 
 <p><div class="field">
-<a name="ext"><p></a><code>/ext</code>
-<p>Extractor de archivadores 7Z, GZ, TAR, XZ, y ZIP
-<p>En el caso de 7Z y ZIP, soporta multivolumen y contraseña 
-<p>Uso: <code>/ext A1 A2</code>
-<p>A1 = Selección simple. Solamente de un archivo. En el caso de ser un multivolumen, elija solamente el primero
-<p>A2 = Contraseña (Opcional)
-<p></div>
-
-<p><div class="field">
 <a name="crypt"><p></a><code>/crypt</code>
 <p>Cifrado de archivos bajo la especificación Fernet
 <p>Antes de usar este comando, debe asegurarse de que KFSCrypt funcione en su PC y debe acostumbrarse a cifrar y descifrar archivos
@@ -197,18 +188,31 @@
 <p>Para cifrar o descifrar debe primero crear una clave ya sea ejecutando este comando sin argumentos o con KFSCrypt en su PC
 <p>Las claves generadas son completamente aleatorias y puede usarlas las veces que quiera
 <p>Para descifrar un archivo, debe hacerlo con la misma clave con el cual se cifró, en el caso de perder la clave ni se esfuerce porque <font color="red">ha perdido el archivo</font>, es lo mismo que si se le olvidara la contraseña para un archivo comprimido
-<p>Cuando genera una clave con el comando, la clave se establece como la que se va a usar y el archivo con la clave se sube al chat
+<p>Cuando genera una clave con el comando, la clave se establece como la que se va a usar y el archivo con la clave se sube al chat. Tambien puede crear claves usando a KFSCrypt e importarlas al bot
+<p>
+<p>Acciones:
+<p>r → Leer y asignar clave a partir de un archivo en el chat. Se usa respondiendo a un archivo. No usa ningún valor
+<p>c → Crear una nueva clave de la nada. Opcionalmente usa el valor "f" para forzar la creación de la clave nueva, esto es necesario si ya existe una clave asignada
+<p>e → Cifrar archivos usando la clave. De valor usa una selección de archivos
+<p>d → Descifrar archivos ya cifrados con determinada clave. De valor usa una selección de archivos
 <p><strong>Uso:</strong> <code>/crypt A1 A2</code>
-<p>Caso 1: Sin argumentos
-<p>Si se ejecuta respondiendo a un archivo en el chat, podrá ver y comparar claves
-<p>Si se ejecuta a secas, muestra la clave actual, si la tiene y los enlaces de descarga de KFSCrypt
-<p>Caso 2: Creación de una clave
-<p>A1 = "c" Crear una nueva clave
-<p>A2 = "f" Forzar creación de una nueva clave. Esto es en el caso de que ya haya una clave existente
-<p>Caso 3: Cualquier otro caso
-<p>A1 = Puede ser "r","e" o "d". El primero es para leer y asignar una clave a partir de un archivo del lado de Telegram. El segundo es para cifrar la selección de archivos hecha. El tercero es para descifrar la selección de archivos hecha
-<p>A2 = Selección simple, rango o libre de archivos y subdirectorios. En el caso de ser un subdirectorio en la selección simple, se seleccionan todos los archivos en el primer nivel, en el caso de los demás tipos de selección, solo se detectarán archivos
+<p>A1 = Acción
+<p>A2 = Valor (Depende de la acción)
 <p>En <a class="main" href="https://t.me/bots_of_charles/111">este</a> vídeo se muestra cómo usar KFSCrypt en Windows
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/crypt r</code> (Respondiendo a un archivo) Leer y asignar como clave la del archivo
+<p><code class="scr">/crypt c</code> Crear una nueva clave de la nada
+<p><code class="scr">/crypt e 3</code> Cifrar el elemento 3. En el caso de ser in directorio, se cifran los archivos que hay dentro del directorio
+<p><code class="scr">/crypt d 6</code> Descifrar el elemento 6. Recuerde que solamente se puede descifrar un archivo con la calve que se usó para cifrarlo 
+<p></div>
+
+<p><div class="field">
+<a name="ext"><p></a><code>/ext</code>
+<p>Extractor de archivadores 7Z, GZ, TAR, XZ, y ZIP
+<p>En el caso de 7Z y ZIP, soporta multivolumen y contraseña 
+<p>Uso: <code>/ext A1 A2</code>
+<p>A1 = Selección simple. Solamente de un archivo. En el caso de ser un multivolumen, elija solamente el primero
+<p>A2 = Contraseña (Opcional)
 <p></div>
 
 <p><div class="field">
