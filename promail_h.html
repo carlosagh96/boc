@@ -87,6 +87,8 @@
 <p><a name="c2"><p></a><h2>🤔 Datos de correo</h2>
 
 <p>Comandos para ingresar los datos para el envío por correo
+<p>Si no pone estos datos y trata de descargar archivos al bot, recibirá un error que dice "Revise sus credenciales de correo"
+<p>Importante: Hay comandos que piden el usuario, el usuario es sin el @ con el dominio, por ejemplo, si el correo de origien es "juan@gmail.net", el usuario es "juan"
 
 <p><div class="field">
 <a name="dest"><p></a><code>/dest</code>
@@ -100,14 +102,15 @@
 <a name="from"><p></a><code>/from</code>
 <p>Establece el usuario del correo de orígen (SMTP) y la contraseña correspondiente
 <p>Ejecute sin argumentos para ver el usuario y la contraseña actual
+<p>El comando usa si o si los dos argumentos, para cambiar solamente el usuario o solamente la contraseña, mejor use <a class="main" href=#user>/user</a> o <a class="main" href=#pass>/pass</a> respectivamente
 <p><strong>Uso:</strong> <code>/from A1 A2</code>
-<p>A1 = Usuario de correo electrónico SMTP
+<p>A1 = Usuario del correo de origen
 <p>A2 = Contraseña del usuario
 <p></div>
 
 <p><div class="field">
 <a name="pass"><p></a><code>/pass</code>
-<p>Establece la contraseña del usuario del correo SMTP
+<p>Establece la contraseña del correo de orígen (SMTP)
 <p>Ejecute sin argumentos para ver la contraseña actual
 <p><strong>Uso:</strong> <code>/pass A</code>
 <p>A = Contraseña del usuario
@@ -115,10 +118,10 @@
 
 <p><div class="field">
 <a name="user"><p></a><code>/user</code>
-<p>Establece el usuario del correo SMTP
+<p>Establece el usuario del correo de orígen (SMTP)
 <p>Ejecute sin argumentos para ver el usuario actual
 <p><strong>Uso:</strong> <code>/user A</code>
-<p>A = Usuario
+<p>A1 = Usuario del correo de origen
 <p></div>
 
 <p><div class="field">
