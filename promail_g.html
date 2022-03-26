@@ -65,7 +65,7 @@
 <p>1 - Descarga del archivo al bot. Los archivos se descargan al bot (Véase <a class="main" href="./promail_h.html#c3">Desgargas al bot</a>) en forma de cola y una vez dentro se analizarán
 <p>2 - Análisis. Dentro del bot se analiza si el archivo debería ser o no "picado" en partes y todo lo que esto implica (Véase <a class="main" href="./promail_h.html#slicer">/slicer</a>), si se debería calcular un has MD5 del archivo (Véase <a class="main" href="./promail_h.html#hasher">/hasher</a>), etc... todo esto antes de suscribirlo a la cola de envío
 <p>3 - Suscripción. El archivo se suscribe a una cola de envío dependiendo del servidor SMTP que se usará para el envío
-<p>4 - Envío. Cada archivo en cada cola global de envío se procesa, se le arma un mensaje y se envía al destinatario, el envío funciona independientemente de cada usuario y no se puede cancelar
+<p>4 - Envío. Cada archivo en cada cola global de envío se procesa, se le arma un mensaje y se envía al destinatario, el sistema de envío funciona independientemente de cada usuario y <font color="red">no se puede cancelar ni detener</font>
 <p>
 <p>Avertencia:
 <p>PRO Mail sólo se ocupa del proceso de envío, la llegada del contenido a su destinatario dependerá únicamente del destinatario en si y sus características, un éxito del envío junto a una no llegada del mensaje no implica en si un error de envío desde el punto de vista técnico y del bot
