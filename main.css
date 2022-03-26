@@ -1,4 +1,3 @@
-html{scroll-behavior: smooth;}
 body{margin:0;background-color:#white;}
 div.topnav{color:white;padding:12px;width:100%;position:fixed;z-index:1;top:0;background-color:#25292b;overflow-y:hidden;}
 div.tnr{margin-right:24px;float:right;}
@@ -13,4 +12,4 @@ a.main:hover{text-decoration:underline;}
 a.main:active{color:white;}
 a.main:visited{color:#4682B4;text-decoration:none;}
 code{font-size:150%}
-code.scr{color:white;background-color:#33393B;padding-left:8px;padding-right:8px;margin:2px;}
+code.scr{color:white;background-color:#33393B;padding-left:8px;padding-right:8px;padding-top:2px;padding-bottom:2px;margin:2px;}
