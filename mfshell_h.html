@@ -141,6 +141,9 @@
 <p>Caso 2: Renombrar
 <p>A1 = Selección simple. Un archivo o subdirectorio
 <p>A2 = Nuevo nombre
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/mv 3-4 2</code> Mueve los elementos (ya sean archivos o directorios) 3,4,5,6 al directorio 2
+<p><code class="scr">/mv 7 Nombre.xxx</code> Cambia el nombre del elemento 7 a "Nombre.xxx"
 <p></div>
 
 <p><div class="field">
@@ -213,13 +216,12 @@
 <p>Archivador 7Z sin compresión. Puede archivar un archivo o un directorio en un único volumen o múltiples partes y hasta puede ponerle protección con contraseña
 <p>Los archivos 7z pueden extraerse con 7Zipper (Android), 7zip (Windows). El autor no recomienda usar ni WinRAR, ni el RAR para Android
 <p><strong>Uso:</strong> <code>/seven A1 A2 A3</code>
-<p>Caso 1: Archivo único
 <p>A1 = Selección simple archivo o subdirectorio
-<p>A2 = Contraseña (Opcional)
-<p>Caso 2: Multivolumen
-<p>A1 = Selección simple archivo o subdirectorio
-<p>A2 = Tamaño de partes en MB (entero positivo, no se aceptan fracciones)
+<p>A2 = Tamaño de partes en MB (entero positivo, no se aceptan fracciones). Si el segundo argumento es 0, no se archivará en partes, sino en un único archivo
 <p>A3 = Contraseña (Opcional)
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/seven 4 16</code> Archiva el elemento #4 en partes de 16 MB
+<p><code class="scr">/seven 2 0 P4ssw0rd h3r3!</code> Archiva el elemento #2 como archivo único y con la contraseña "P4ssw0rd h3r3!"
 <p></div>
 
 <p><a name="c4"><p></a><h2>🤔 Control de colas</h2>
@@ -232,6 +234,8 @@
 <p>Las colas pueden frenarse sin que el proceso relacionado esté trabajando
 <p><strong>Uso:</strong> <code>/brake A</code>
 <p>A = Identificador de cola
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/brake d</code> Frena la cola de descarga de Telegram al bot
 <p></div>
 
 <p><div class="field">
@@ -251,7 +255,10 @@
 <p><strong>Uso:</strong> <code>/que A1 A2</code>
 <p>A1 = Identificador de cola (Opcional)
 <p>A2 = Selección simple o de rango para borrar de la cola (Opcional)
-<p>
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/que y</code> Ver la cola de descarga de Youtube (/ytdl)
+<p><code class="scr">/que w 0</code> Borrar de la cola de desgarga general (/wget) todos los elementos menos el 1ro (elemento #0)
+<p><code class="scr">/que m 3-6</code> Borrar de la cola de MEGA (/megadl) los elementos que ocupan los lugares 3,4,5,6,7,8
 </div>
 
 <p><a name="c5"><p></a><h2>🤔 Transferencias de red (Telegram)</h2>
@@ -288,6 +295,10 @@
 <p>Tenga en cuenta que no se pueden subir archivos que superen 2 GB de espacio, ni superen 60 caracteres en el nombre, si los archivos no se encolan para subir, debe revisar y asegurarse de que cumplan con estos requisitos
 <p><strong>Uso:</strong> <code>/upload A</code>
 <p>A = Selección simple, rango o libre de archivos y subdirectorios. En el caso de ser un subdirectorio en la selección simple, se seleccionan todos los archivos en el primer nivel, en el caso de los demás tipos de selección, solo se detectarán archivos
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/upload 6</code> Subir el elemento #6, en el caso de ser un directorio, se suben los archivos que tiene dentro
+<p><code class="scr">/upload 2-4</code> Subir los archivos 2,3,4 y 5. Los que sean directorios serán ignorados porsuppuesto
+<p><code class="scr">/upload 6,7,3</code> Subir los archivos 6,7 y 3 en ese orden
 <p></div>
 
 <p><a name="c6"><p></a><h2>🤔 Transferencias de red (Web)</h2>
@@ -299,9 +310,11 @@
 <p>Descargador de comics y manga. Ejecuta sin argumentos para ver los sitios soportados
 <p>El comando no hace labores de búsqueda, debe ir a uno de los sitios soportados y darle una o varias URLs de capítulos
 <p>Por cada capítulo o número se crea un CBZ, en el caso de haber errores durante la descarga, se deja la carpeta tal cual y no se crea el CBZ
-<p>En <a class="main" href="https://t.me/bots_of_charles/191">este</a> post del canal hay una demostración de cómo bajar de uno de los sitios con soporte
 <p>Uso: <code>/freak A1</code>
 <p>A1 = Lista de URLs separadas por espacio
+<p>En <a class="main" href="https://t.me/bots_of_charles/191">este</a> post del canal hay una demostración de cómo bajar de uno de los sitios soportados
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/freak URL1 URL2 URL3</code> Encola 3 URLs para descargar
 <p></div>
 
 <p><div class="field">
@@ -310,6 +323,10 @@
 <p><strong>Uso:</strong> <code>/gddl A1 A2</code>
 <p>A1 = Lista de URLs separadas por espacio
 <p>A2 = "R" (literalmente) para indicar en caso de si las URLs son carpetas de Google Drive, descargarlas de forma recursiva. Esto es opcional
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/gddl URL1</code> Encola una URL para descargar
+<p><code class="scr">/gddl URL1 URL2 URL3 URL4</code> Encola 4 URLs para descargar
+<p><code class="scr">/gddl URL1 URL2 R</code> Encola 2 URLs para descargar y si alguna es una carpeta de Google drive, se procesan de forma recursiva
 <p></div>
 
 <p><div class="field">
@@ -326,6 +343,8 @@
 <p>Descargador de enlaces MEGA. No soporta carpetas. Se usa una sesión anónima de forma predeterminada en caso de no haber credenciales de MEGA asignados
 <p><strong>Uso:</strong> <code>/megadl A</code>
 <p>A = URLs de archivos en MEGA
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/megadl URL1 URL2</code> Encola 2 URLs para descargar
 <p></div>
 
 <p><div class="field">
@@ -342,6 +361,8 @@
 <p>Ejecute sin argumentos para ver el agente de usuario actual. De forma predeterminada, es aleatorio, pero puede elegir entre Chrome (c), Firefox (f), Safari (s), Opera (o), o aleatorio (r)
 <p><strong>Uso:</strong> <code>/ua A</code>
 <p>A = Agente de usuario (Opcional)
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/ua s</code> Usar un agente de usuario de Safari
 <p></div>
 
 <p><div class="field">
@@ -349,7 +370,9 @@
 <p>Descargador web general. Descarga enlaces directos (no todos) y es compatible con varios sitios de alojamiento de archivos, ejecute sin argumentos para ver los sitios soportados
 <p><strong>Uso:</strong> <code>/wget A</code>
 <p>A = URLs separadas por espacios (Opcional)
-<p>Video sobre los sitios soportados <a class="main" href="https://t.me/bots_of_charles/170">aquí</a> 
+<p>Video sobre los sitios soportados <a class="main" href="https://t.me/bots_of_charles/170">aquí</a>
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/wget URL1 URL2 URL3 URL4 URL5</code> Encola 5 URLs para descargar
 <p></div>
 
 <p><div class="field">
@@ -358,6 +381,9 @@
 <p><strong>Uso:</strong> <code>/ytdl A1 A2</code>
 <p>A1 = URLs de vídeos de Youtube o listas de reproducción de Youtube separadas por espacios
 <p>A2 = Especificación. Puede ser "360p","720p","1080p" o "exa". Las 3 primeras son resoluciones de video, la última es para extraer audio. Todo esto es opcional
+<p><strong>Ejemplos:</strong>
+<p><code class="scr">/ytdl URL1 URL2</code> Encola 2 enlaces, si alguno es una lista de reproducción, se repobla la cola con los videos de dicha lista de reproducción
+<p><code class="scr">/ytdl URL1 URL2 URL3 360p</code> Encola 3 enlaces y prioriza descargar solamente en una resolución de 360p
 <p></div>
 </div>
 
