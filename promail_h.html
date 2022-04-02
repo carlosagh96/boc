@@ -57,6 +57,7 @@
 <p>→ <a class="main" href=#delay>/delay</a>
 <p>→ <a class="main" href=#hasher>/hasher</a>
 <p>→ <a class="main" href=#slicer>/slicer</a>
+<p>→ <a class="main" href=#sname>/sname</a>
 <p><a class="main" href=#c5>Configuración personal</a>
 <p>→ <a class="main" href=#export>/export</a>
 <p>→ <a class="main" href=#import>/import</a>
@@ -219,6 +220,21 @@
 <p>Véase también <a class="main" href="https://t.me/bots_of_charles_chat/17178">este</a> y <a class="main" href="https://t.me/bots_of_charles_chat/17180">este</a> otro mensaje
 <p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles_chat/17178" data-width="100%" data-dark="1"></script>
 <p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles_chat/17180" data-width="100%" data-dark="1"></script>
+<p></div>
+
+<p><div class="field">
+<a name="sname"><p></a><code>/sname</code>
+<p>Cambiar nombres de archivos a "nombres seguros" antes de descargar al bot
+<p>Algunos clientes de correo electrónico no leen correctamente nombres de archivos desde lo que se espera que no puedan leer correctamente desde caractéres cirílicos, asiáticos o arábicos, hasta lo más simple como tildes o incluso espacios
+<p>Los archivos no se renombran no existen todavía del lado del bot para que pase eso, lo que se hace es que se les cambia el nombre antes de ser descargados y ese será el nuevo nombre del archivo al descargar
+<p>Hay 3 niveles de renombrado:
+<p>0 - No renombrar. Mantiene el nombre del archivo tal cual
+<p>1 - Normal. Reemplaza espacios por guiones bajos, tildes, quita caracteres tales como asiáticos, griegos, arábicos, etc...
+<p>2 - Agresivo. Además de lo que se hace en el nivel 1, sustituye símbolos comunes como "&","$", elimina incluso paréntesis, corchetes y llaves. <font color="red">El uso de este nivel puede resultar en un nombre drásticamente diferente al original</font>
+<p><strong>Uso:</strong> <code>/sname A</code>
+<p>A = Nivel
+<p><strong>Ejemplos</strong>
+<p><code class="scr">/sname 1</code> Ajustar agresividad de nombres seguros al nivel 1
 <p></div>
 
 <p><a name="c5"><p></a><h2>🤔 Configuración personal</h2>
