@@ -69,19 +69,23 @@ w3.slideshow(".slides", 3000);
 <div id="c2" class="w3-container w3-padding-32">
 <p><h2>📂 Los elementos del sistema de archivos</h2>
 
+<p><img src="show_mfshell_example1.png" style="width:100%;max-width:480px">
 <p>En MF Shell cada usuario tiene su propio directorio (carpeta) donde puede trabajar, y dentro, el usuario puede crear más subdirectorios para agrupar archivos y otros subdirectorios también
-<p>Hay una ubicación considerada como la "actual", que es el directorio donde usted está parado, puede verlo ejecutando <kbd>/ls</kbd>
+<p>Hay una ubicación considerada como la "actual", que es el directorio donde usted está parado, puede verlo ejecutando <code>/ls</code> o moviendose con <code>/cd</code> y <code>/back</code>
 <p>Los archivos y directorios se organizan y se enumeran partiendo desde el 0 como primer elemento. Los directorios se listan antes que los archivos siempre
-<p>De cero en adelante, son todos los elementos del sistema de archivos que están a simple vista. Sin embargo, por debajo de cero se encuentran los niveles superiores. Por ejemplo, suponga que se encuentra en <kbd>/cosas/hoy</kbd>, el nivel superior o directorio padre donde usted se encuentra (-1) es <kbd>/cosas</kbd> y dos niveles más arriba (-2) es la raiz, o sea <kbd>/</kbd>. Por encima del directorio raiz no hay niveles superiores y es el padre de todos
+<p>De cero en adelante, son todos los elementos del sistema de archivos que están a simple vista. Sin embargo, por debajo de cero se encuentran los niveles superiores. Por ejemplo, suponga que se encuentra en <code>/things/more/</code>, el nivel superior o directorio padre donde usted se encuentra (-1) es <code>/things/</code> y dos niveles más arriba (-2) es la raiz, o sea <code>/</code>. Por encima del directorio raiz no hay niveles superiores y es el padre de todos
 <p>Tenga en cuenta que las enumeraciones desde cero no son solamente en el sistema de archivos, esto también se da en las colas excepto la parte de seleccionar por debajo de cero
-<p>Por último y no menos importante, estas enumeraciones se llaman índices 
+<p>Por último y no menos importante, estas enumeraciones se llaman índices
+
 </div>
 
 
 <div id="c3" class="w3-container w3-padding-32">
 <p><h2>👈 Los tipos de selección</h2>
 
-<p>En MF Shell, todos los comandos que trabajan principalmente con archivos y directorios y comandos como el <kbd>/que</kbd>, usan selectores. Los selectores son argumentos para seleccionar elementos, si se trata de un comando relacionado con el sistema de archivos del bot, el selector es para seleccionar algo que tenga en la ubicación actual
+<p><img src="show_mfshell_example2.png" style="width:100%;max-width:480px">
+
+<p>En MF Shell, todos los comandos que trabajan principalmente con archivos y directorios y comandos como el <code>/que</code>, usan selectores. Los selectores son argumentos para seleccionar elementos, si se trata de un comando relacionado con el sistema de archivos del bot, el selector es para seleccionar algo que tenga en la ubicación actual
 <p>Hay 3 tipos de selección: 
 
 <p>→ Selección simple
@@ -157,7 +161,7 @@ w3.slideshow(".slides", 3000);
 
 <div id="c5" class="w3-container w3-padding-32">
 <p><h2>✍️ Información extra</h2>
-<p>El comando /start sirve para consultar información básica, más allá de la ubicación actual para no para no "perderse"
+<p>El comando <code>/start</code> sirve para consultar información básica, más allá de la ubicación actual para no para no "perderse"
 <p>Si la cola de procesos pesados o de subprocesos se alarga, y se queda mucho tiempo viendo cómo no avanza, debe reportarlo al administrador a través del grupo, al igual que si tiene una "rotura" en una cola de algún comando. El administrador del bot es el único que puede forzar vaciado de colas, resetear estados de sesiones y otros aspectos del bot sin necesidad de esperar a que el propio bot sea reseteado
 <p>Cada cuenta de MF Shell tiene un sitio web asociado, en este sitio web hay una sección de noticias donde se puede ver el "uptime" (tiempo de actividad) que lleva el bot guiándose del primer mensaje, tenga en cuenta que el bot es reiniciado cada 24 horas, <font color=red>borrando todo lo que hay dentro</font>. Asi que si piensa dejar información alojada en el bot para luego descargarla via web, revise el tiempo que lleva en pie el bot y saque usted sus propias conclusiones
 
