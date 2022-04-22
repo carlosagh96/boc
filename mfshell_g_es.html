@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<title>Bots Of Charles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="my.css">
+<script src="w3.js"></script>
+
+<body>
+
+<!-- Navigation (Stays on Top) -->
+<div class="w3-top w3-bar w3-black">
+<a href="index_es.html" class="w3-bar-item w3-button">Inicio</a>
+<a href="#top" class="w3-bar-item w3-button">Arriba</a>
+<a href="mfshell_h_es.html" class="w3-bar-item w3-button" style="float:right">Comandos de MF Shell</a>
+</div>
+
+<!-- Start Content -->
+<div class="w3-content" style="margin-top:48px">
+<h1 class="w3-center">Guía de MF Shell</h1>
+<p class="w3-center">Esta página es la guía completa del bot MF Shell, si no sabe usar el bot, lea la guía completa hasta el final y luego vea la referencia de comandos según lo que le haga falta hacer</p>
+
+<!-- Content -->
+<div class="w3-container">
+<h2 class="w3-center">Contenido</h2>
+<p class="w3-center"><a href="#c1"><button class="w3-button w3-black" style="width:320px">Introducción</button></a>
+<p class="w3-center"><a href="#c2"><button class="w3-button w3-black" style="width:320px">Elementos del sistema de archivos</button></a>
+<p class="w3-center"><a href="#c3"><button class="w3-button w3-black" style="width:320px">Tipos de selección</button></a>
+<p class="w3-center"><a href="#c4"><button class="w3-button w3-black" style="width:320px">Límites y colas</button></a>
+<p class="w3-center"><a href="#c5"><button class="w3-button w3-black" style="width:320px">Información extra</button></a>
+</div>
+
+<!-- Slides -->
+<div class="w3-container w3-padding-32">
+<img class="slides" src="show_mfshell_1.jpeg" width="100%">
+<img class="slides" src="show_mfshell_2.jpeg" width="100%">
+<img class="slides" src="show_mfshell_3.jpeg" width="100%">
+<script>
+w3.slideshow(".slides", 3000);
+</script>
+</div>
+
+<div id="c1" class="w3-container w3-padding-32">
+<p><h2>🤔 Introducción</h2>
+<p>Habitualmente, la mayoría de los bots en Telegram que manejan archivos tienen ese efecto "boomerang", les das algo, ya sea un archivo del propio Telegram para que haga algo, un enlace a otro sitio web para que lo descargue, hacen su trabajo y te lo devuelven a tu chat, tu privado con ese bot, esto se considera "normal". Lo primero que debe tener en cuenta es que MF Shell no es un bot normal, porque no tiene ese efecto boomerang y esto se debe principalmente porque hay 2 formas de sacar lso archivos: o los subes al chat o los compartes por el servidor web, vulgarmente conocido como hacer File-to-Link
+<p><h3>Características de MF Shell</h3>
+<p>→ Puede organizar como le de la gana sus archivos en el bot: creación de carpetas, mover, borrar, archivar y hasta cifrar archivos
+<p>→ Numerosas plataformas soportadas, desde el típico Youtube, sitios de alojamiento de archivos como MEGA, hasta tiendas de aplicaciones de terceros e incluso sitios para leer manga y comics en línea
+<p>→ Procesamientos en masa principalmente descargar o subir grandes números de archivos
+<p>→ Sistema de colas por cada tipo de transferencia y un conjunto de herramientas para administrar estas colas
+<p>→ Servidor web adjunto con funciones para descargar con mayor facilidad los archivos por descarga directa usando aplicaciones como IDM 
+
+<p><h3>Básicamente en este bot el flujo de trabajo se resume en:</h3>
+<p>1 - Descargar archivos ya sea de un sitio web cualquiera o del propio Telegram al bot
+<p>2 - Dividir archivos, agruparlos, cifrarlos, lo que sea, y como a usted le guste
+<p>3 - Subir denuevo los archivos resultantes al chat o compartir en el servidor web del bot
+<p>
+<p>La guía ha resultado ser densa para muchos usuarios, es por eso que en <a class="blu" href="https://t.me/bots_of_charles/67">esta</a> publicación hay un tutorial de uso básico del bot, donde se explica y se muestra casi todos los comandos más usados del bot
+<p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/67" data-width="100%" data-dark="1"></script>
+
+<div class="w3-panel w3-pale-red w3-leftbar w3-rightbar w3-border-red">
+<p>En el tutorial se usa un comando llamado /zipper, este comando ya no existe en el bot, fue remplazado por /seven, que se usa prácticamente igual y tiene algunas mejoras
+<p>El tutorial no es el final, es solo la punta del iceberg, para entender todo, debe seguir leyendo hasta el final 
+</div>
+
+</div>
+
+<div id="c2" class="w3-container w3-padding-32">
+<p><h2>📂 Los elementos del sistema de archivos</h2>
+
+<p>En MF Shell cada usuario tiene su propio directorio (carpeta) donde puede trabajar, y dentro, el usuario puede crear más subdirectorios para agrupar archivos y otros subdirectorios también
+<p>Hay una ubicación considerada como la "actual", que es el directorio donde usted está parado, puede verlo ejecutando <kbd>/ls</kbd>
+<p>Los archivos y directorios se organizan y se enumeran partiendo desde el 0 como primer elemento. Los directorios se listan antes que los archivos siempre
+<p>De cero en adelante, son todos los elementos del sistema de archivos que están a simple vista. Sin embargo, por debajo de cero se encuentran los niveles superiores. Por ejemplo, suponga que se encuentra en <kbd>/cosas/hoy</kbd>, el nivel superior o directorio padre donde usted se encuentra (-1) es <kbd>/cosas</kbd> y dos niveles más arriba (-2) es la raiz, o sea <kbd>/</kbd>. Por encima del directorio raiz no hay niveles superiores y es el padre de todos
+<p>Tenga en cuenta que las enumeraciones desde cero no son solamente en el sistema de archivos, esto también se da en las colas excepto la parte de seleccionar por debajo de cero
+<p>Por último y no menos importante, estas enumeraciones se llaman índices 
+</div>
+
+
+<div id="c3" class="w3-container w3-padding-32">
+<p><h2>👈 Los tipos de selección</h2>
+
+<p>En MF Shell, todos los comandos que trabajan principalmente con archivos y directorios y comandos como el <kbd>/que</kbd>, usan selectores. Los selectores son argumentos para seleccionar elementos, si se trata de un comando relacionado con el sistema de archivos del bot, el selector es para seleccionar algo que tenga en la ubicación actual
+<p>Hay 3 tipos de selección: 
+
+<p>→ Selección simple
+<p>→ Selección por rango
+<p>→ Selección libre 
+
+<div class="w3-panel w3-pale-red w3-leftbar w3-rightbar w3-border-red">
+<p>En la documentación de cada comando se indica los tipos de selección y tipos de elementos que soporta al seleccionar en caso de tratarse solamente de elementos del sistema de archivos
+</div>
+
+<p><h3>Selección simple</h3>
+<p>La seleccción simple es para seleccionar una ubicación o un elemento del sistema de archivos, es el más sencillo de todos
+<p>Formato: N
+<p>Ejemplos:
+<p><code class="cmd">/ls 3</code>
+<p>Esto es para observar el contenido del elemento 3. Si 3 es un directorio, le mostrará el contenido de ese directorio, si es un archivo... pues... no hace mucho, solo muestra al archivo solo y ya.
+<p><code class="cmd">/ls -1</code>
+<p>Esto es para observar el directorio contenedor, también llamado directorio padre. Ojo, no se puede tratar de acceder al directorio padre por encima de "/", porque no existe
+<p>Note que la selección simple, dependiendo del comando es el único tipo de selección donde puede seleccionar niveles superiores de donde se encuentra
+<p>
+<p><h3>Selección por rango</h3>
+<p>La selección por rango puede ser engañosa a primera vista, muchos piensan que es desde-hasta. Nada que ver con eso
+<p>Formato: N-Mr ó N-M
+<p>N y M son solo números y "r" (literalmente, una "r") es un argumento opcional. N es el índice de referencia, M indica la cantidad a seleccionar y "r" es para indicar si se selecciona en reversa.
+<p>Ejemplos:
+<p><code class="cmd">/ls 4-3</code>
+<p>Observar los recursos 4, 5 y 6 de la ubicación actual, es decir, se seleccionan y muestran 3 elementos a partir del índice 4
+<p><code class="cmd">/rm 5-2r</code>
+<p>Es para borrar los recursos 4 y 5 en la ubicación actual, es decir, se seleccionan y se borran 2 elementos a partir del índice 5 pero en reversa
+<p>En caso de que M, es decir, la cantidad a seleccionar sea 0 se seleccionan todos a partir del índice seleccionado y en caso de ser en reversa se seleccionan todos desde el índice cero hasta llegar al índice de referencia
+<p>Más ejemplos (porque hay un historial desagradable en el canal de no entender cómo funciona el rango):
+<p><code class="cmd">/upload 6-0r</code>
+<p>Para subir a Telegram los 6 primeros elementos (los que sean directorios no se subirán por supuesto, véase en la ayuda, el comando <code>/upload</code>)
+<p><code class="cmd">/mv 4-0 2</code>
+<p>Para mover al directorio ocupando el índice 2 del índice 4 en adelante
+<p>
+<p><h3>Selección libre</h3>
+<p>La selección libre consiste en seleccionar en un órden deseado un conjunto de elementos que a su juicio, ya sea porque están "desordenados" de alguna forma o son elementos que están muy apartados entre sí.
+<p>Formato A,B,C,D,E.....N
+<p>Los elementos se separan en comas para definir el órden en que se procesarán. Hay comandos en el que el órden de los elementos importa, como es el caso de <code>/bren</code> (Renombrar enumerando) y <code>/upload</code>
+<p>Al seleccionar no debe repetir elementos todos deben ser seleccionados una única vez, no hay un límite máximo de selección más allá de límite de elementos en el directorio, y el límite mínimo son 2 elementos, por debajo de eso no tiene sentido la selección libre, para eso mejor use una selección simple.
+<p>Por ejemplo:
+<p><code class="cmd">/upload 4,5,1</code>
+<p>Encolar para subir a los índices 4, 5 y 1 en el directorio actual, justamente en ese orden se agregan a la cola de subida
+<p><code class="cmd">/mv 7,9,14 6</code>
+<p>Mover los elementos 7, 9 y 14 al subdirectorio 6
+
+</div>
+
+<div id="c4" class="w3-container w3-padding-32">
+<p><h2>⚙️ Límites y colas</h2>
+
+<p><h3>Transferencias de red y colas</h3>
+<p>Cada comando de transferencia de red tiene una cola asociada, al cual puede frenarse o se puede cancelar el proceso de transferencia.
+<p>Cada usuario tiene un límite de 2 transferencias paralelas y a nivel global hay un límite de 5. El límite global puede ser reajustado por el administrador
+<p>Cada cola tiene un identificador, este identificador se usa en comandos que administran colas
+<p>Por ejemplo, si agrega una o varias URLs con <code>/wget</code>, y la cola estaba vacía, el comando empezará a trabajar, si sigue ejecutando a dicho comando pero con otras URLs mientras está trabajando, la cola de "w" (que es la cola que identifica a <code>/wget</code>) se irá llenando
+<p>Para más información, véase los comandos para gestionar colas <a class="main" href="mfshell_h_es.html#c4">aquí</a>
+<p>
+<p><h3>Comandos regulados</h3>
+<p>Hay comandos, o una parte de ellos donde se realizan tareas intensivas o simplemente reguladas, ejecutarlas simultáneamente sin ningún tipo de control puede ocasionar que el bot se desestabilice, no es primera vez que pasa. Es por eso que en el bot hay bloqueos de comandos y una cola global para procesos pesados
+<p>Básicamente nadie puede ejecutar estos comandos de forma simultanea, solo uno de estos comandos puede ejecutarse a uno a la vez y de forma global, lo que se hace es encolar todas estas peticiones para realizar estos procesos, esto se hace con el fin de evitar que ocurra un desbordamiento de memoria o de CPU en el bot
+<p>A pesar de todo esto, en la práctica es poco probable verse envuelto en una cola para ejecutar estos comandos. En el caso de verse envuelto en una cola automática y se demora un tiempo considerable, debe reportar inmediatamente el problema al administrador del bot
+<p>
+<p><h3>Límite de sesiones</h3>
+<p>En cada instancia del bot hay un límite de sesiones, esto se hace por dos razones principales:
+<p>1 - El espacio que consume cada sesión dentro de la memoria del bot
+<p>2 - El uso de los datos de cada sesión dentro del bot
+
+</div>
+
+
+
+<div id="c5" class="w3-container w3-padding-32">
+<p><h2>✍️ Información extra</h2>
+<p>El comando /start sirve para consultar información básica, más allá de la ubicación actual para no para no "perderse"
+<p>Si la cola de procesos pesados o de subprocesos se alarga, y se queda mucho tiempo viendo cómo no avanza, debe reportarlo al administrador a través del grupo, al igual que si tiene una "rotura" en una cola de algún comando. El administrador del bot es el único que puede forzar vaciado de colas, resetear estados de sesiones y otros aspectos del bot sin necesidad de esperar a que el propio bot sea reseteado
+<p>Cada cuenta de MF Shell tiene un sitio web asociado, en este sitio web hay una sección de noticias donde se puede ver el "uptime" (tiempo de actividad) que lleva el bot guiándose del primer mensaje, tenga en cuenta que el bot es reiniciado cada 24 horas, <font color=red>borrando todo lo que hay dentro</font>. Asi que si piensa dejar información alojada en el bot para luego descargarla via web, revise el tiempo que lleva en pie el bot y saque usted sus propias conclusiones
+
+</div>
+
+
+
+
+</div>
+</body>
+</html>
