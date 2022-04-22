@@ -1,3 +1,4 @@
-# Bots Of Charles (Español)
+# Bots Of Charles
 
-https://carlosagh96.github.io/boc_es
+English: https://carlosagh96.github.io/boc
+Español: https://carlosagh96.github.io/boc_es
