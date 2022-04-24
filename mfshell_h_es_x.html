@@ -4,7 +4,7 @@
 <title>Bots Of Charles</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="mmy.css">
+<link rel="stylesheet" href="my.css">
 <script src="w3.js"></script>
 <script src="w3_hide_n_show.js"></script>
 <script>
@@ -38,36 +38,36 @@ const the_data_keys_ln=the_data_keys.length;
 <p>
 <div>
 <button onclick="funAccGroup('c1')" class="w3-button w3-block w3-black" style="width:100%">Información y ayuda</button>
-<div id="c1" class="w3-hide w3-padding-32">
+<div id="c1" class="w3-hide">
 
 <button onclick="funAccSimple('about','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/about</button>
-<div id="about" class="w3-hide field">
+<div id="about" class="w3-hide field w3-padding-32">
 <p>Muestra un breve resúmen acerca del bot y el enlace al sitio web propio del bot
 <p><strong>Uso:</strong> <code class="cmd">/about</code>
 </div>
 
 <button onclick="funAccSimple('help','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/help</button>
-<div id="help" class="w3-hide field">
+<div id="help" class="w3-hide field w3-padding-32">
 <p>Muestra enlaces a la guía de usuario y a la referencia de comandos, es decir, este sitio 
 <p><strong>Uso:</strong> <code class="cmd">/help</code>
 </div>
 
 <button onclick="funAccSimple('info','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/info</button>
-<div id="info" class="w3-hide field">
+<div id="info" class="w3-hide field w3-padding-32">
 <p>Mostrar las propiedades de un archivo del lado de Telegram
 <p>Se usa respondiendo a un archivo en el chat
 <p><strong>Uso:</strong> <code class="cmd">/info</code>
 </div>
 
 <button onclick="funAccSimple('mediainfo','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/mediainfo</button>
-<div id="mediainfo" class="w3-hide field">
+<div id="mediainfo" class="w3-hide field w3-padding-32">
 <p>Información multimedia de un archivo (dentro del bot) obtenida al ejecutar MediaInfo
 <p>La información completa se le dará en un archivo de texto que se sube al chat, en caso de no subirlo (dios sabe por qué) el archivo se queda de todos modos en el directorio donde ejecuta el comando
 <p><strong>Uso:</strong> <code class="cmd">/mediainfo</code>
 </div>
 
 <button onclick="funAccSimple('start','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/start</button>
-<div id="start" class="w3-hide field">
+<div id="start" class="w3-hide field w3-padding-32">
 <p>Muestra información resumida sobre su sesión en el bot. Algunos datos no se muestran por esta vía
 <p><strong>Uso:</strong> <code class="cmd">/start</code>
 </div>
@@ -80,10 +80,10 @@ const the_data_keys_ln=the_data_keys.length;
 <p>
 <div>
 <button onclick="funAccGroup('c2')" class="w3-button w3-block w3-black" style="width:100%">Sistema de archivos (Básico)</button>
-<div id="c2" class="w3-hide w3-padding-32">
+<div id="c2" class="w3-hide">
 
 <button onclick="funAccSimple('back','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/back</button>
-<div id="back" class="w3-hide field">
+<div id="back" class="w3-hide field w3-padding-32">
 <p>Cambiar de directorio al directorio contenedor o padre
 <p>Básicamente lo mismo que ejecutar <code class="cmd">/cd -1</code> 
 <p><strong>Uso:</strong> <code class="cmd">/back</code>
@@ -142,7 +142,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>
 <div>
 <button onclick="funAccGroup('c3')" class="w3-button w3-block w3-black" style="width:100%">Sistema de archivos (Avanzado)</button>
-<div id="c3" class="w3-hide w3-padding-32">
+<div id="c3" class="w3-hide">
 
 <button onclick="funAccSimple('bren','c3')" class="w3-button w3-block w3-dark-grey" style="width:100%">/bren</button>
 <div id="bren" class="w3-hide field w3-padding-32">
@@ -224,7 +224,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>
 <div>
 <button onclick="funAccGroup('c4')" class="w3-button w3-block w3-black" style="width:100%">Control de colas</button>
-<div id="c4" class="w3-hide w3-padding-32">
+<div id="c4" class="w3-hide">
 
 <button onclick="funAccSimple('brake','c4')" class="w3-button w3-block w3-dark-grey" style="width:100%">/brake</button>
 <div id="brake" class="w3-hide field w3-padding-32">
@@ -267,7 +267,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>
 <div>
 <button onclick="funAccGroup('c5')" class="w3-button w3-block w3-black" style="width:100%">Transferencias de red (Telegram)</button>
-<div id="c5" class="w3-hide w3-padding-32">
+<div id="c5" class="w3-hide">
 
 <button onclick="funAccSimple('aname','c5')" class="w3-button w3-block w3-dark-grey" style="width:100%">/aname</button>
 <div id="aname" class="w3-hide field w3-padding-32">
@@ -314,7 +314,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>
 <div>
 <button onclick="funAccGroup('c6')" class="w3-button w3-block w3-black" style="width:100%">Transferencias de red (Web)</button>
-<div id="c6" class="w3-hide w3-padding-32">
+<div id="c6" class="w3-hide">
 
 <button onclick="funAccSimple('freak','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/freak</button>
 <div id="freak" class="w3-hide field w3-padding-32">
