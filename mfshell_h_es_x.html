@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<title>Bots Of Charles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="my.css">
+<script src="w3.js"></script>
+<script src="w3_hide_n_show.js"></script>
+<script>
+//const id_list=["a1","a2","a3","a4","a5","a6"];
+//const the_json = JSON.parse('{"c1":["about","help","info","mediainfo","start"],"c2":"","c3":"","c4":"","c5":"","c6":""}');
+const the_json='{"c1":["about","help","info","mediainfo","start"],"c2":["back","cd","ls","mkdir","mv","rm"],"c3":["bren","crypt","ext","seven"],"c4":["brake","cancel","que"],"c5":["aname","auto","download","upload"],"c6":["freak","gddl","megacreds","megadl","share","ua","wget","ytdl"]}';
+const the_data=JSON.parse(the_json);
+const the_data_keys=Object.keys(the_data);
+const the_data_keys_ln=the_data_keys.length;
+</script>
+
+<body>
+
+<!-- Navigation (Stays on Top) -->
+<div class="w3-top w3-bar w3-black">
+<a href="index_es.html" class="w3-bar-item w3-button">Inicio</a>
+<a href="#top" class="w3-bar-item w3-button">Arriba</a>
+<a href="mfshell_g_es.html" class="w3-bar-item w3-button" style="float:right">Guía de MF Shell</a>
+</div>
+
+<!-- Start Content -->
+<div class="w3-content" style="margin-top:48px">
+<h1 class="w3-center">Comandos de MF Shell</h1>
+
+<!-- Categories -->
+<div class="w3-container">
+
+<p class="w3-center">Esta página contiene todos los comandos del bot MF Shell</p>
+<p class="w3-center">Si no ha leído la guía, vuelva y termine de leerla</p>
+
+<p>
+<div>
+<button onclick="funAccGroup('c1')" class="w3-button w3-block w3-black" style="width:100%">Información y ayuda</button>
+<div id="c1" class="w3-hide w3-padding-32">
+
+<button onclick="funAccSimple('about','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/about</button>
+<div id="about" class="w3-hide field">
+<p>Muestra un breve resúmen acerca del bot y el enlace al sitio web propio del bot
+<p><strong>Uso:</strong> <code class="cmd">/about</code>
+</div>
+
+<button onclick="funAccSimple('help','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/help</button>
+<div id="help" class="w3-hide field">
+<p>Muestra enlaces a la guía de usuario y a la referencia de comandos, es decir, este sitio 
+<p><strong>Uso:</strong> <code class="cmd">/help</code>
+</div>
+
+<button onclick="funAccSimple('info','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/info</button>
+<div id="info" class="w3-hide field">
+<p>Mostrar las propiedades de un archivo del lado de Telegram
+<p>Se usa respondiendo a un archivo en el chat
+<p><strong>Uso:</strong> <code class="cmd">/info</code>
+</div>
+
+<button onclick="funAccSimple('mediainfo','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/mediainfo</button>
+<div id="mediainfo" class="w3-hide field">
+<p>Información multimedia de un archivo (dentro del bot) obtenida al ejecutar MediaInfo
+<p>La información completa se le dará en un archivo de texto que se sube al chat, en caso de no subirlo (dios sabe por qué) el archivo se queda de todos modos en el directorio donde ejecuta el comando
+<p><strong>Uso:</strong> <code class="cmd">/mediainfo</code>
+</div>
+
+<button onclick="funAccSimple('start','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/start</button>
+<div id="start" class="w3-hide field">
+<p>Muestra información resumida sobre su sesión en el bot. Algunos datos no se muestran por esta vía
+<p><strong>Uso:</strong> <code class="cmd">/start</code>
+</div>
+
+</div>
+</div>
+</p>
+
+
+<p>
+<div>
+<button onclick="funAccGroup('c2')" class="w3-button w3-block w3-black" style="width:100%">Sistema de archivos (Básico)</button>
+<div id="c2" class="w3-hide w3-padding-32">
+
+<button onclick="funAccSimple('back','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/back</button>
+<div id="back" class="w3-hide field">
+<p>Cambiar de directorio al directorio contenedor o padre
+<p>Básicamente lo mismo que ejecutar <code class="cmd">/cd -1</code> 
+<p><strong>Uso:</strong> <code class="cmd">/back</code>
+</div>
+
+<button onclick="funAccSimple('cd','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/cd</button>
+<div id="cd" class="w3-hide field w3-padding-32">
+<p>Cambiar de directorio/ubicación
+<p>Puede ser un subdirectorio o algún nivel superior respecto a la ubicación donde usted se encuentra
+<p><strong>Uso:</strong> <code class="cmd">/cd A</code>
+<p>A = Selección simple (subdirectorio o nivel superior)
+</div>
+
+<button onclick="funAccSimple('ls','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/ls</button>
+<div id="ls" class="w3-hide field w3-padding-32">
+<p>Listar el contenido de una ubicación
+<p>Puede ser la ubicación actual, un subdirectorio, un archivo, varios elementos a la vez (rango) o algún nivel superior respecto a la ubicación donde usted se encuentra
+<p><strong>Uso:</strong> <code class="cmd">/ls A</code>
+<p>A = Selección simple o de rango (Opcional)
+</div>
+
+<button onclick="funAccSimple('mkdir','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/mkdir</button>
+<div id="mkdir" class="w3-hide field w3-padding-32">
+<p>Crea un subdirectorio nuevo
+<p><strong>Uso:</strong> <code class="cmd">/mkdir A</code>
+<p>A = Nombre del subdirectorio
+</div>
+
+<button onclick="funAccSimple('mv','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/mv</button>
+<div id="mv" class="w3-hide field w3-padding-32">
+<p>Este comando hace una de dos cosas: Mover uno o más elementos a una ubicación o renombrar un elemento
+<p><strong>Uso:</strong> <code class="cmd">/mv A1 A2</code>
+<p>Caso 1: Mover
+<p>A1 = Selección simple, rango o libre de archivos y subdirectorios
+<p>A2 = Ubicación. Puede ser un nivel superior
+<p>Caso 2: Renombrar
+<p>A1 = Selección simple. Un archivo o subdirectorio
+<p>A2 = Nuevo nombre
+<p><strong>Ejemplos:</strong>
+<p><code class="cmd">/mv 3-4 2</code> Mueve los elementos (ya sean archivos o directorios) 3,4,5,6 al directorio 2
+<p><code class="cmd">/mv 7 Nombre.xxx</code> Cambia el nombre del elemento 7 a "Nombre.xxx" 
+</div>
+
+<button onclick="funAccSimple('rm','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/rm</button>
+<div id="rm" class="w3-hide field w3-padding-32">
+<p>Borra uno o varios elementos
+<p>Tenga mucho cuidado con este comando porque <font color="red">no pide confirmación</font>
+<p><strong>Uso:</strong> <code class="cmd">/rm A</code>
+<p>A = Selección simple, rango o libre de archivos y/o subdirectorios
+</div>
+
+</div>
+</div>
+</p>
+
+<p>
+<div>
+<button onclick="funAccGroup('c3')" class="w3-button w3-block w3-black" style="width:100%">Sistema de archivos (Avanzado)</button>
+<div id="c3" class="w3-hide w3-padding-32">
+
+<button onclick="funAccSimple('bren','c3')" class="w3-button w3-block w3-dark-grey" style="width:100%">/bren</button>
+<div id="bren" class="w3-hide field w3-padding-32">
+<p>Renombrado múltiple de archivos
+<p>Cuando ejecute el comando, se le va a mostrar una "simulación" de cómo van a quedar los archivos, y en ese mensaje sale para ejecutar el comando <code>/ok</code> para confirmar, puede ejecutar otro comando cualquiera para cancelar. En ese caso, el comando que cancela se ejecutará incluso si se trata del propio <code>/bren</code>
+<p>Hay 3 operaciones: agregar, enumerar, remplazar. Cada operación se ejecuta según unos parámetros, los cuales tienen a "/" como separador
+<p>(A) Agregar:
+<p>Agrega una cadena de caracteres adicional al principio(prefijo) o al final (sufijo)
+<p>Formato (prefijo): <code>Agregar/</code>
+<p>Formato (sufijo): <code>/Agregar</code>
+<p>(E) Enumerar:
+<p>Renombra los archivos en el orden dado de forma tal que queden de la forma: NuevoNombre + Número + ExtensiónOriginal
+<p>Formato: <code>NuevoTallo/NúmeroInicial/CantCifras</code>
+<p>(R) Remplazar:
+<p>Remplaza en cada archivo seleccionado una cadena de caracteres con una nueva cadena de caracteres
+<p>Formato: <code>Objetivo/Nuevo</code>
+<p><strong>Uso:</strong> <code class="cmd">/bren A1 A2 A3</code>
+<p>A1 = Selección simple, rango o libre de archivos y subdirectorios
+<p>A2 = Tipo de operación: A (Agregar), E (Enumerar), R (Remplazar)
+<p>A3 = Parámetros de la operación
+<p>En <a class="blu" href="https://t.me/bots_of_charles/141">este</a> vídeo sale cómo se usa este comando para enumerar y remplazar
+<p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/141" data-width="100%" data-dark="1"></script>
+</div>
+
+<button onclick="funAccSimple('crypt','c3')" class="w3-button w3-block w3-dark-grey" style="width:100%">/crypt</button>
+<div id="crypt" class="w3-hide field w3-padding-32">
+<p>Cifrado de archivos bajo la especificación Fernet
+<p>Antes de usar este comando, debe asegurarse de que KFSCrypt funcione en su PC y debe acostumbrarse a cifrar y descifrar archivos si no está acostumbrad@
+<p>
+<a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-windows-i386.tar"><button class="w3-button w3-black w3-border" style="width:320px">KFSCrypt para Windows (32 bits)</button></a>
+<a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-linux-amd64.tar"><button class="w3-button w3-black w3-border" style="width:320px">KFSCrypt para Linux (64 bits)</button></a>
+<p>Para cifrar o descifrar debe primero crear una clave ya sea ejecutando este comando sin argumentos o con KFSCrypt en su PC
+<p>Las claves generadas son completamente aleatorias y puede usarlas las veces que quiera
+<p>Para descifrar un archivo, debe hacerlo con la misma clave con el cual se cifró, en el caso de perder la clave ni se esfuerce porque ha perdido el archivo, es lo mismo que si se le olvidara la contraseña para un archivo comprimido
+<p>Cuando genera una clave con el comando, la clave se establece como la que se va a usar y el archivo con la clave se sube al chat. Tambien puede crear claves usando a KFSCrypt e importarlas al bot
+<p>Acciones y valores:
+<p>r → Leer y asignar una clave a partir de un archivo en el chat que contiene dicha clave. Se usa respondiendo a un archivo. No usa ningún valor
+<p>c → Crear una nueva clave de la nada (se asigna y se sube al chat). Opcionalmente usa el valor "f" para forzar la creación de la clave nueva, esto es necesario si ya existe una clave asignada
+<p>e → Cifrar archivos usando la clave. De valor usa una selección de archivos
+<p>d → Descifrar archivos ya cifrados con determinada clave. De valor usa una selección de archivos 
+<p><strong>Uso:</strong> <code class="cmd">/crypt A V</code>
+<p>A = Acción
+<p>V = Valor (Depende de la acción)
+<p><strong>Ejemplos:</strong>
+<p><code class="cmd">/crypt r</code> (Respondiendo a un archivo) Leer y asignar como clave la del archivo
+<p><code class="cmd">/crypt c</code> Crear una nueva clave de la nada
+<p><code class="cmd">/crypt e 3</code> Cifrar el elemento 3. En el caso de ser in directorio, se cifran los archivos que hay dentro del directorio
+<p><code class="cmd">/crypt d 6</code> Descifrar el elemento 6. Recuerde que solamente se puede descifrar un archivo con la calve que se usó para cifrarlo
+<p>En <a class="blu" href="https://t.me/bots_of_charles/111">este</a> vídeo se muestra cómo usar KFSCrypt en Windows
+<p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/111" data-width="100%" data-dark="1"></script>
+</div>
+
+<button onclick="funAccSimple('ext','c3')" class="w3-button w3-block w3-dark-grey" style="width:100%">/ext</button>
+<div id="ext" class="w3-hide field w3-padding-32">
+<p>Extractor de archivadores 7Z, GZ, TAR, XZ, y ZIP
+<p>En el caso de 7Z y ZIP, soporta multivolumen y contraseña 
+<p><strong>Uso:</strong> <code class="cmd">/ext A1 A2</code>
+<p>A1 = Selección simple. Solamente de un archivo. En el caso de ser un multivolumen, elija solamente el primero
+<p>A2 = Contraseña (Opcional)
+</div>
+
+<button onclick="funAccSimple('seven','c3')" class="w3-button w3-block w3-dark-grey" style="width:100%">/seven</button>
+<div id="seven" class="w3-hide field w3-padding-32">
+<p>Archivador 7Z sin compresión. Puede archivar un archivo o un directorio en un único volumen o múltiples partes y hasta puede ponerle protección con contraseña
+<p>Los archivos 7z pueden extraerse con 7Zipper (Android), 7zip (Windows). El autor no recomienda usar ni WinRAR, ni el RAR de Android 
+<p><strong>Uso:</strong> <code class="cmd">/seven A1 A2 A3</code>
+<p>A1 = Selección simple archivo o subdirectorio
+<p>A2 = Tamaño de partes en MB (entero positivo, no se aceptan fracciones). Si el segundo argumento es 0, no se archivará en partes, sino en un único archivo
+<p>A3 = Contraseña (Opcional) 
+<p><strong>Ejemplos:</strong>
+<p><code class="cmd">/seven 4 16</code> Archiva el elemento 4 en partes de 16 MB
+<p><code class="cmd">/seven 2 0 P4ssw0rd h3r3!</code> Archiva el elemento 2 como archivo único y con la contraseña "P4ssw0rd h3r3!"
+</div>
+
+</div>
+</div>
+</p>
+
+<p>
+<div>
+<button onclick="funAccGroup('c4')" class="w3-button w3-block w3-black" style="width:100%">Control de colas</button>
+<div id="c4" class="w3-hide w3-padding-32">
+
+<button onclick="funAccSimple('brake','c4')" class="w3-button w3-block w3-dark-grey" style="width:100%">/brake</button>
+<div id="brake" class="w3-hide field w3-padding-32">
+<p>Frena o libera el freno de una cola
+<p>Las colas pueden frenarse sin que el proceso relacionado esté trabajando
+<p><strong>Uso:</strong> <code class="cmd">/brake A</code>
+<p>A = Identificador de cola
+<p><strong>Ejemplos</strong>:
+<p><code class="cmd">/brake d</code> Frena la cola de descarga de Telegram al bot
+</div>
+
+<button onclick="funAccSimple('cancel','c4')" class="w3-button w3-block w3-dark-grey" style="width:100%">/cancel</button>
+<div id="cancel" class="w3-hide field w3-padding-32">
+<p>Envía una orden de cancelación a una cola
+<p>En las colas, el elemento cero (el primero) no se puede borrar, es el que se está ejecutando en el momento así que solamente se puede cancelar
+<p>Los procesos no se cancelan de inmediato, lo que se hace es enviar una órden de cancelación, que sólo se debe enviar una vez y en algún momento se realiza la cancelación como tal
+<p><strong>Uso:</strong> <code class="cmd">/cancel A</code>
+<p>A = Identificador de cola 
+</div>
+
+<button onclick="funAccSimple('que','c4')" class="w3-button w3-block w3-dark-grey" style="width:100%">/que</button>
+<div id="que" class="w3-hide field w3-padding-32">
+<p>Si se ejecuta sin argumentos, se mostrarán en pantalla todas las colas que no estén vacías y al final, un mensaje donde salen todos los identificadores de cola
+<p>Si se ejecuta con un argumento (un identificador de cola) es para ver una cola en específico
+<p>Si se ejecuta con dos argumentos es para borrar uno o varios elementos de una cola
+<p>El elemento cero de la cola no se puede borrar, para ello debe usar <code>/cancel</code>. Si en una selección por rango selecciona el elemento cero, este será ignorado y si selecciona el elemento cero en una selección simple, se borrarán todos los elementos de la cola excepto el elemento cero
+<p><strong>Uso:</strong> <code class="cmd">/que A1 A2</code>
+<p>A1 = Identificador de cola (Opcional)
+<p>A2 = Selección simple o de rango para borrar de la cola (Opcional)
+<p><strong>Ejemplos</strong>:
+<p><code class="cmd">/que y</code> Ver la cola de descarga de Youtube (/ytdl)
+<p><code class="cmd">/que w 0</code> Borrar de la cola de desgarga general (/wget) todos los elementos menos el 1ro (elemento 0)
+<p><code class="cmd">/que m 3-6</code> Borrar de la cola de MEGA (/megadl) los elementos que ocupan los lugares 3,4,5,6,7,8
+</div>
+
+</div>
+</div>
+</p>
+
+<p>
+<div>
+<button onclick="funAccGroup('c5')" class="w3-button w3-block w3-black" style="width:100%">Transferencias de red (Telegram)</button>
+<div id="c5" class="w3-hide w3-padding-32">
+
+<button onclick="funAccSimple('aname','c5')" class="w3-button w3-block w3-dark-grey" style="width:100%">/aname</button>
+<div id="aname" class="w3-hide field w3-padding-32">
+<p>Activar o desactivar el renombramiento automático al descargar del chat al bot
+<p>Funciona solamente si <code>/auto</code> está activado también y si el archivo ya trae un nombre real, es decir, no funciona con archivos a los que se le tenga que dar un nombre de forma automática desde cero
+<p>Desactivado de forma predeterminada
+<p>Al descargar, se le agrega al archivo un texto adicional en el nombre, muy util al descargar masivamente múltiples archivos que podrían compartir el mismo nombre
+<p><strong>Uso:</strong> <code class="cmd">/aname</code>
+</div>
+
+<button onclick="funAccSimple('auto','c5')" class="w3-button w3-block w3-dark-grey" style="width:100%">/auto</button>
+<div id="auto" class="w3-hide field w3-padding-32">
+<p>Activar o desactivar la descarga automática de los archivos que son reenviados hacia el chat
+<p>Desactivado de forma predeterminada
+<p>Es la única forma de descargar álbumes/grupos de archivos
+<p><strong>Uso:</strong> <code class="cmd">/auto</code>
+</div>
+
+<button onclick="funAccSimple('download','c5')" class="w3-button w3-block w3-dark-grey" style="width:100%">/download</button>
+<div id="download" class="w3-hide field w3-padding-32">
+<p>Descarga un archivo de Telegram al bot
+<p>Se usa respondiendo a un archivo
+<p>Opcionalmente puede cambiar el nombre del archivo al descargarlo
+<p><strong>Uso:</strong> <code class="cmd">/download A</code>
+<p>A = Nuevo nombre (Opcional)
+</div>
+
+<button onclick="funAccSimple('upload','c5')" class="w3-button w3-block w3-dark-grey" style="width:100%">/upload</button>
+<div id="upload" class="w3-hide field w3-padding-32">
+<p>Sube archivos del bot a Telegram, puede ser uno o varios archivos
+<p>Tenga en cuenta que no se pueden subir archivos que superen 2 GB de espacio, ni superen 60 caracteres en el nombre, si los archivos no se encolan para subir, debe revisar y asegurarse de que cumplan con estos requisitos
+<p><strong>Uso:</strong> <code class="cmd">/upload A</code>
+<p>Selección simple, rango o libre de archivos y subdirectorios. En el caso de ser un subdirectorio en la selección simple, se seleccionan todos los archivos en el primer nivel, en el caso de los demás tipos de selección, solo se detectarán archivos
+<p><strong>Ejemplos</strong>:
+<p><code class="cmd">/upload 6</code> Subir el elemento 6, en el caso de ser un directorio, se suben los archivos que tiene dentro
+<p><code class="cmd">/upload 2-4</code> Subir los archivos 2,3,4 y 5. Los que sean directorios serán ignorados porsuppuesto
+<p><code class="cmd">/upload 6,7,3</code> Subir los archivos 6,7 y 3 en ese orden
+</div>
+
+</div>
+</div>
+</p>
+
+<p>
+<div>
+<button onclick="funAccGroup('c6')" class="w3-button w3-block w3-black" style="width:100%">Transferencias de red (Web)</button>
+<div id="c6" class="w3-hide w3-padding-32">
+
+<button onclick="funAccSimple('freak','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/freak</button>
+<div id="freak" class="w3-hide field w3-padding-32">
+<p>Descargador de comics y manga. Ejecuta sin argumentos para ver los sitios soportados
+<p>El comando no hace labores de búsqueda, debe ir a uno de los sitios soportados y darle una o varias URLs de capítulos
+<p>Por cada capítulo o número se crea un CBZ, en el caso de haber errores durante la descarga, se deja la carpeta tal cual y no se crea el CBZ
+<p><strong>Uso:</strong> <code class="cmd">/freak A</code>
+<p>A = Lista de URLs separadas por espacio
+<p><strong>Ejemplos</strong>:
+<p><code class="cmd">/freak</code> Ver sitios soportados
+<p><code class="cmd">/freak URL1 URL2 URL3</code> Encola 3 URLs para descargar
+<p>En <a class="blu" href="https://t.me/bots_of_charles/191">esta</a> publicación del canal hay una demostración de cómo bajar de uno de los sitios soportados
+<p>
+<div style="overflow:visible">
+	<script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/191" data-width="100%" data-dark="1"></script>
+</div>
+</div>
+
+<button onclick="funAccSimple('gddl','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/gddl</button>
+<div id="gddl" class="w3-hide field w3-padding-32">
+<p>Descargador de URLs de Google Drive 
+<p><strong>Uso:</strong> <code class="cmd">/gddl</code>
+<p>A1 = Lista de URLs separadas por espacio
+<p>A2 = "R" (literalmente) para indicar en caso de si las URLs son carpetas de Google Drive, descargarlas de forma recursiva. Esto es opcional
+<p><strong>Ejemplos</strong>:
+<p><code class="cmd">/gddl URL1</code>
+<p><code class="cmd">/gddl URL1 URL2 URL3 URL4</code>
+<p><code class="cmd">/gddl URL1 URL2 R</code>
+</div>
+
+<button onclick="funAccSimple('megacreds','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/megacreds</button>
+<div id="megacreds" class="w3-hide field w3-padding-32">
+<p>Credenciales de cuenta de MEGA
+<p>Para usar una cuenta real de MEGA en lugar de depender de la sesión anónima
+<p>Las cuotas de descarga en el bot son públicas, así que la cuenta real lo único que hace es darle acceso a sus archivos
+<p><strong>Uso:</strong> <code class="cmd">/megacreds A1 A2</code>
+<p>A1 = Usuario de MEGA
+<p>A2 = Contraseña del usuario de MEGA
+</div>
+
+<button onclick="funAccSimple('megadl','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/megadl</button>
+<div id="megadl" class="w3-hide field w3-padding-32">
+<p>Descargador de enlaces MEGA. No soporta carpetas. Se usa una sesión anónima de forma predeterminada en caso de no haber credenciales de MEGA asignados
+<p><strong>Uso:</strong> <code class="cmd">/megadl</code>
+<p>A = URLs de archivos en MEGA separadas por espacios
+<p><strong>Ejemplos</strong>:
+<p><code class="cmd">/megadl URL1 URL2</code> Encola 2 URLs para descargar
+</div>
+
+<button onclick="funAccSimple('share','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/share</button>
+<div id="share" class="w3-hide field w3-padding-32">
+<p>Activar/Desactivar compartir los archivos de su sesión públicamente
+<p>Si activa esto, los archivos serán visibles desde el servidor web de forma pública para poder ser descargados. También puede hacer streamming en caso de ser archivos de vídeo o música
+<p>Desactivado de forma predeterminada
+<p>Puede ver en todo momento su enlace con <code>/start</code>
+<p><strong>Uso:</strong> <code class="cmd">/share</code>
+</div>
+
+<button onclick="funAccSimple('ua','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/ua</button>
+<div id="ua" class="w3-hide field w3-padding-32">
+<p>Agente de usuario
+<p>Afecta el comportamiento de /wget
+<p>No use este comando a menos lo que sepa que está haciendo
+<p>Ejecute sin argumentos para ver el agente de usuario actual
+<p>De forma predeterminada el agente de usuario es aleatorio (r), pero puede elegir entre Chrome (c), Firefox (f), Safari (s) u Opera (o)
+<p><strong>Uso:</strong> <code class="cmd">/ua A</code>
+<p><code class="cmd">/ua s</code> Usar un agente de usuario de Safari
+</div>
+
+<button onclick="funAccSimple('wget','c6')" class="w3-button w3-dark-grey" style="width:100%">/wget</button>
+<div id="wget" class="w3-hide field w3-padding-32" style="display:block;overflow:visible">
+<p>Descargador web general
+<p>Descarga enlaces directos (no todos) y es compatible con varios sitios de alojamiento de archivos
+<p>Ejecute sin argumentos para ver los sitios soportados directamente
+<p><strong>Uso:</strong> <code class="cmd">/wget A</code>
+<p>A = URLs separadas por espacios (Opcional)
+<p><strong>Ejemplos</strong>:
+<p><code class="cmd">/wget URL1 URL2 URL3 URL4 URL5</code> Encola 5 URLs para descargar
+<p>En <a class="blu" href="https://t.me/bots_of_charles/170">esta</a> publicación del canal hay un vídeo sobre los sitios soportados por este comando
+<p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/170" data-width="100%" data-dark="1"></script>
+</div>
+
+<button onclick="funAccSimple('ytdl','c6')" class="w3-button w3-dark-grey" style="width:100%">/ytdl</button>
+<div id="ytdl" class="w3-hide field w3-padding-32">
+<p>Descargador de Youtube
+<p>Soporta listas de reproducción
+<p>Además de las URLs, se puede también especificar ajustes
+<p>Ajustes:
+<p>→ Resoluciones de vídeo: "144p","240p","360p","480p","720p","1080p","1440p","2160p". La resolución predeterminada es "720p"
+<p>→ Extraer audio: "exa"
+<p>→ Subtitular: "subs"
+<p>Reglas de los ajustes:
+<p>→ Extraer audio debe usarse solo, no tiene sentido usar este ajuste junto al de subtitular o descargar en una resolución específica
+<p>→ Se puede subtitular y bajar también una resolución de vídeo específica, en el caso de no especificar una resolución de video al subtitular, se descarga en el predeterminado
+<p>Acerca del subtitulado:
+<p>→ Depende del lenguaje detectado por el bot al iniciar sesión
+<p>→ No todos los vídeos de Youtube están subtitulados, los autogenerados no cuentan
+<p><strong>Uso:</strong> <code class="cmd">/ytdl A1 A2</code>
+<p>A1 = URLs de vídeos de Youtube o listas de reproducción de Youtube separadas por espacios
+<p>A2 = Ajustes. Puede ser una resolución de video de las soportadas, extraer audio o generar subtítulos junto al video descargado 
+<p><strong>Ejemplos</strong>:
+<p><code class="cmd">/ytdl URL1 URL2</code> Encola 2 enlaces, si alguno es una lista de reproducción, se repobla la cola con los videos de dicha lista de reproducción
+<p><code class="cmd">/ytdl URL1 URL2 URL3 360p</code> Encola 3 enlaces y prioriza descargar solamente en una resolución de 360p
+<p><code class="cmd">/ytdl URL1 URL2 URL3 URL4 subs</code> Encola 4 enlaces y los manda a subtitular
+<p><code class="cmd">/ytdl URL1 URL2 exa</code> Encola 2 enlaces y manda a extraer el audio
+<p><code class="cmd">/ytdl URL1 URL2 URL3 subs,1080p</code> Encola 3 enlaces y los manda a subtitular y bajar en 1080p
+</div>
+
+</div>
+</div>
+</p>
+
+<!-- TEMPLATE
+<p>
+<div>
+<button onclick="funAccGroup('')" class="w3-button w3-block w3-black" style="width:100%"></button>
+<div id="" class="w3-hide w3-padding-32">
+
+<button onclick="funAccSimple('','')" class="w3-button w3-block w3-dark-grey" style="width:100%">/</button>
+<div id="" class="w3-hide w3-padding-32">
+
+</div>
+
+</div>
+</div>
+</p>
+-->
+
+<!--
+
+<p>
+<div>
+<button onclick="funMain('a1')" class="w3-button w3-block w3-black" style="width:320px;margin: 0 auto">Información y ayuda</button>
+<div id="a1" class="w3-hide w3-padding-32" style="width:320px;margin: 0 auto">
+<a class="w3-button w3-block w3-dark-grey" href="#c1">Ir a la categoría</a>
+<a class="w3-button w3-block w3-dark-grey" href="#about">/about</a>
+<a class="w3-button w3-block w3-dark-grey" href="#help">/about</a>
+<a class="w3-button w3-block w3-dark-grey" href="#info">/info</a>
+<a class="w3-button w3-block w3-dark-grey" href="#mediainfo">/mediainfo</a>
+<a class="w3-button w3-block w3-dark-grey" href="#start">/start</a>
+</div>
+</div>
+</p>
+
+<p>
+<div>
+<button onclick="funMain('a2')" class="w3-button w3-block w3-black" style="width:320px;margin: 0 auto">Sistema de archivos (Básico)</button>
+<div id="a2" class="w3-hide w3-padding-32" style="width:320px;margin: 0 auto">
+<a class="w3-button w3-block w3-dark-grey" href="#c2">Ir a la categoría</a>
+<a class="w3-button w3-block w3-dark-grey" href="#back">/back</a>
+<a class="w3-button w3-block w3-dark-grey" href="#cd">/cd</a>
+<a class="w3-button w3-block w3-dark-grey" href="#ls">/ls</a>
+<a class="w3-button w3-block w3-dark-grey" href="#mkdir">/mkdir</a>
+<a class="w3-button w3-block w3-dark-grey" href="#mv">/mv</a>
+<a class="w3-button w3-block w3-dark-grey" href="#rm">/rm</a>
+</div>
+</div>
+</p>
+
+<p>
+<div>
+<button onclick="funMain('a3')" class="w3-button w3-block w3-black" style="width:320px;margin: 0 auto">Sistema de archivos (Avanzado)</button>
+<div id="a3" class="w3-hide w3-padding-32" style="width:320px;margin: 0 auto">
+<a class="w3-button w3-block w3-dark-grey" href="#c3">Ir a la categoría</a>
+<a class="w3-button w3-block w3-dark-grey" href="#bren">/bren</a>
+<a class="w3-button w3-block w3-dark-grey" href="#ext">/ext</a>
+<a class="w3-button w3-block w3-dark-grey" href="#crypt">/crypt</a>
+<a class="w3-button w3-block w3-dark-grey" href="#seven">/seven</a>
+</div>
+</div>
+</p>
+
+<p>
+<div>
+<button onclick="funMain('a4')" class="w3-button w3-block w3-black" style="width:320px;margin: 0 auto">Control de colas</button>
+<div id="a4" class="w3-hide w3-padding-32" style="width:320px;margin: 0 auto">
+<a class="w3-button w3-block w3-dark-grey" href="#c4">Ir a la categoría</a>
+<a class="w3-button w3-block w3-dark-grey" href="#brake">/brake</a>
+<a class="w3-button w3-block w3-dark-grey" href="#cancel">/cancel</a>
+<a class="w3-button w3-block w3-dark-grey" href="#que">/que</a>
+</div>
+</div>
+</p>
+
+<p>
+<div>
+<button onclick="funMain('a5')" class="w3-button w3-block w3-black" style="width:320px;margin: 0 auto">Transferencias (Telegram)</button>
+<div id="a5" class="w3-hide w3-padding-32" style="width:320px;margin: 0 auto">
+<a class="w3-button w3-block w3-dark-grey" href="#c5">Ir a la categoría</a>
+<a class="w3-button w3-block w3-dark-grey" href="#aname">/aname</a>
+<a class="w3-button w3-block w3-dark-grey" href="#auto">/auto</a>
+<a class="w3-button w3-block w3-dark-grey" href="#download">/download</a>
+<a class="w3-button w3-block w3-dark-grey" href="#upload">/upload</a>
+</div>
+</div>
+</p>
+
+<p>
+<div>
+<button onclick="funMain('a6')" class="w3-button w3-block w3-black" style="width:320px;margin: 0 auto">Transferencias (Web)</button>
+<div id="a6" class="w3-hide w3-padding-32" style="width:320px;margin: 0 auto">
+<a class="w3-button w3-block w3-dark-grey" href="#c6">Ir a la categoría</a>
+<a class="w3-button w3-block w3-dark-grey" href="#freak">/freak</a>
+<a class="w3-button w3-block w3-dark-grey" href="#gddl">/gddl</a>
+<a class="w3-button w3-block w3-dark-grey" href="#megacreds">/megacreds</a>
+<a class="w3-button w3-block w3-dark-grey" href="#megadl">/megadl</a>
+<a class="w3-button w3-block w3-dark-grey" href="#share">/share</a>
+<a class="w3-button w3-block w3-dark-grey" href="#ua">/ua</a>
+<a class="w3-button w3-block w3-dark-grey" href="#wget">/wget</a>
+<a class="w3-button w3-block w3-dark-grey" href="#ytdl">/ytdl</a>
+</div>
+</div>
+</p>
+
+</div>
+
+<h2 class="w3-center" style="margin-top:64px">🤔🤔🤔</h2>
+
+<div id="c1" class="w3-padding-32 w3-center">
+<h2>🤔 Información y ayuda</h2>
+<p class="w3-center">Comandos para obtención de información y ayuda</p>
+</div>
+
+<div id="about" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/about</code>
+<p>Muestra un breve resúmen acerca del bot y el enlace al sitio web propio del bot
+<p><strong>Uso:</strong> <code class="cmd">/about</code>
+</div>
+
+<div id="help" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/help</code>
+<p>Muestra enlaces a la guía de usuario y a la referencia de comandos, es decir, este sitio 
+<p><strong>Uso:</strong> <code class="cmd">/help</code>
+</div>
+
+<div id="info" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/info</code>
+<p>Mostrar las propiedades de un archivo del lado de Telegram
+<p>Se usa respondiendo a un archivo en el chat
+<p><strong>Uso:</strong> <code class="cmd">/info</code>
+</div>
+
+<div id="mediainfo" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/mediainfo</code>
+<p>Información multimedia de un archivo (dentro del bot) obtenida al ejecutar MediaInfo
+<p>La información completa se le dará en un archivo de texto que se sube al chat, en caso de no subirlo (dios sabe por qué) el archivo se queda de todos modos en el directorio donde ejecuta el comando
+<p><strong>Uso:</strong> <code class="cmd">/mediainfo</code>
+</div>
+
+<div id="start" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/start</code>
+<p>Muestra información resumida sobre su sesión en el bot. Algunos datos no se muestran por esta vía
+<p><strong>Uso:</strong> <code class="cmd">/start</code>
+</div>
+
+<div id="c2" class="w3-padding-32 w3-center">
+<h2>🤔 Sistema de archivos (Básico)</h2>
+<p class="w3-center">Comandos básicos para interactuar con el sistema de archivos dentro del bot</p>
+</div>
+
+<div id="back" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/back</code>
+<p>Cambiar de directorio al directorio contenedor o padre
+<p>Básicamente lo mismo que ejecutar <code class="cmd">/cd -1</code> 
+<p><strong>Uso:</strong> <code class="cmd">/back</code>
+</div>
+
+<div id="cd" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/cd</code>
+<p>Cambiar de directorio/ubicación
+<p>Puede ser un subdirectorio o algún nivel superior respecto a la ubicación donde usted se encuentra
+<p><strong>Uso:</strong> <code class="cmd">/cd A</code>
+<p>A = Selección simple (subdirectorio o nivel superior)
+</div>
+
+<div id="ls" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/ls</code>
+<p>Listar el contenido de una ubicación
+<p>Puede ser la ubicación actual, un subdirectorio, un archivo, varios elementos a la vez (rango) o algún nivel superior respecto a la ubicación donde usted se encuentra
+<p><strong>Uso:</strong> <code class="cmd">/ls A</code>
+<p>A = Selección simple o de rango (Opcional)
+</div>
+
+<div id="mkdir" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/mkdir</code>
+<p>Crea un subdirectorio nuevo
+<p><strong>Uso:</strong> <code class="cmd">/mkdir A</code>
+<p>A = Nombre del subdirectorio
+</div>
+
+<div id="mv" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/mv</code>
+<p>Este comando hace una de dos cosas: Mover uno o más elementos a una ubicación o renombrar un elemento
+<p><strong>Uso:</strong> <code class="cmd">/mv A1 A2</code>
+<p>Caso 1: Mover
+<p>A1 = Selección simple, rango o libre de archivos y subdirectorios
+<p>A2 = Ubicación. Puede ser un nivel superior
+<p>Caso 2: Renombrar
+<p>A1 = Selección simple. Un archivo o subdirectorio
+<p>A2 = Nuevo nombre
+<p><strong>Ejemplos:</strong>
+<p><code class="cmd">/mv 3-4 2</code> Mueve los elementos (ya sean archivos o directorios) 3,4,5,6 al directorio 2
+<p><code class="cmd">/mv 7 Nombre.xxx</code> Cambia el nombre del elemento 7 a "Nombre.xxx" 
+</div>
+
+<div id="rm" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/rm</code>
+<p>Borra uno o varios elementos. Mucho cuidado con esto porque <font color="red">no pide confirmación</font>
+<p><strong>Uso:</strong> <code class="cmd">/rm</code>
+<p>A = Selección simple, rango o libre de archivos y subdirectorios
+</div>
+
+<div id="c3" class="w3-padding-32 w3-center">
+<h2>🤔 Sistema de archivos (Avanzado)</h2>
+<p class="w3-center">Comandos avanzados para interactuar con el sistema de archivos dentro del bot</p>
+</div>
+
+<div id="bren" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/bren</code>
+
+
+<p>Renombrado múltiple de archivos
+<p>Cuando ejecute el comando, se le va a mostrar una "simulación" de cómo van a quedar los archivos, y en ese mensaje sale para ejecutar el comando <code>/ok</code> para confirmar, puede ejecutar otro comando cualquiera para cancelar. En ese caso, el comando que cancela se ejecutará incluso si se trata del propio <code>/bren</code>
+<p>Hay 3 operaciones: agregar, enumerar, remplazar. Cada operación se ejecuta según unos parámetros, los cuales tienen a "/" como separador
+<p>(A) Agregar:
+<p>Agrega una cadena de caracteres adicional al principio(prefijo) o al final (sufijo)
+<p>Formato (prefijo): <code>Agregar/</code>
+<p>Formato (sufijo): <code>/Agregar</code>
+<p>(E) Enumerar:
+<p>Renombra los archivos en el orden dado de forma tal que queden de la forma: NuevoNombre + Número + ExtensiónOriginal
+<p>Formato: <code>NuevoTallo/NúmeroInicial/CantCifras</code>
+<p>(R) Remplazar:
+<p>Remplaza en cada archivo seleccionado una cadena de caracteres con una nueva cadena de caracteres
+<p>Formato: <code>Objetivo/Nuevo</code>
+<p><strong>Uso:</strong> <code class="cmd">/bren A1 A2 A3</code>
+<p>A1 = Selección simple, rango o libre de archivos y subdirectorios
+<p>A2 = Tipo de operación: A (Agregar), E (Enumerar), R (Remplazar)
+<p>A3 = Parámetros de la operación
+<p>En <a class="blu" href="https://t.me/bots_of_charles/141">este</a> vídeo sale cómo se usa este comando para enumerar y remplazar
+<p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/141" data-width="100%" data-dark="1"></script>
+</div>
+
+<div id="crypt" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/crypt</code>
+<p>Cifrado de archivos bajo la especificación Fernet
+
+<p>Antes de usar este comando, debe asegurarse de que KFSCrypt funcione en su PC y debe acostumbrarse a cifrar y descifrar archivos si no está acostumbrad@
+
+<p>
+<a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-windows-i386.tar"><button class="w3-button w3-black w3-border" style="width:320px">KFSCrypt para Windows (32 bits)</button></a>
+<a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-linux-amd64.tar"><button class="w3-button w3-black w3-border" style="width:320px">KFSCrypt para Linux (64 bits)</button></a>
+
+<p>Para cifrar o descifrar debe primero crear una clave ya sea ejecutando este comando sin argumentos o con KFSCrypt en su PC
+<p>Las claves generadas son completamente aleatorias y puede usarlas las veces que quiera
+<p>Para descifrar un archivo, debe hacerlo con la misma clave con el cual se cifró, en el caso de perder la clave ni se esfuerce porque ha perdido el archivo, es lo mismo que si se le olvidara la contraseña para un archivo comprimido
+<p>Cuando genera una clave con el comando, la clave se establece como la que se va a usar y el archivo con la clave se sube al chat. Tambien puede crear claves usando a KFSCrypt e importarlas al bot
+<p>Acciones y valores:
+<p>r → Leer y asignar una clave a partir de un archivo en el chat que contiene dicha clave. Se usa respondiendo a un archivo. No usa ningún valor
+<p>c → Crear una nueva clave de la nada (se asigna y se sube al chat). Opcionalmente usa el valor "f" para forzar la creación de la clave nueva, esto es necesario si ya existe una clave asignada
+<p>e → Cifrar archivos usando la clave. De valor usa una selección de archivos
+<p>d → Descifrar archivos ya cifrados con determinada clave. De valor usa una selección de archivos 
+
+<p><strong>Uso:</strong> <code class="cmd">/crypt A V</code>
+<p>A = Acción
+<p>V = Valor (Depende de la acción)
+<p><strong>Ejemplos:</strong>
+<p><code class="cmd">/crypt r</code> (Respondiendo a un archivo) Leer y asignar como clave la del archivo
+<p><code class="cmd">/crypt c</code> Crear una nueva clave de la nada
+<p><code class="cmd">/crypt e 3</code> Cifrar el elemento 3. En el caso de ser in directorio, se cifran los archivos que hay dentro del directorio
+<p><code class="cmd">/crypt d 6</code> Descifrar el elemento 6. Recuerde que solamente se puede descifrar un archivo con la calve que se usó para cifrarlo
+<p>En <a class="blu" href="https://t.me/bots_of_charles/111">este</a> vídeo se muestra cómo usar KFSCrypt en Windows
+<p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/111" data-width="100%" data-dark="1"></script>
+</div>
+
+
+<div id="ext" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/ext</code>
+<p>Extractor de archivadores 7Z, GZ, TAR, XZ, y ZIP
+<p>En el caso de 7Z y ZIP, soporta multivolumen y contraseña 
+<p><strong>Uso:</strong> <code class="cmd">/ext A1 A2</code>
+<p>A1 = Selección simple. Solamente de un archivo. En el caso de ser un multivolumen, elija solamente el primero
+<p>A2 = Contraseña (Opcional)
+</div>
+
+<div id="seven" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/seven</code>
+<p>Archivador 7Z sin compresión. Puede archivar un archivo o un directorio en un único volumen o múltiples partes y hasta puede ponerle protección con contraseña
+<p>Los archivos 7z pueden extraerse con 7Zipper (Android), 7zip (Windows). El autor no recomienda usar ni WinRAR, ni el RAR de Android 
+<p><strong>Uso:</strong> <code class="cmd">/seven A1 A2 A3</code>
+<p>A1 = Selección simple archivo o subdirectorio
+<p>A2 = Tamaño de partes en MB (entero positivo, no se aceptan fracciones). Si el segundo argumento es 0, no se archivará en partes, sino en un único archivo
+<p>A3 = Contraseña (Opcional) 
+<p><strong>Ejemplos:</strong>
+<p><code class="cmd">/seven 4 16</code> Archiva el elemento 4 en partes de 16 MB
+<p><code class="cmd">/seven 2 0 P4ssw0rd h3r3!</code> Archiva el elemento 2 como archivo único y con la contraseña "P4ssw0rd h3r3!" 
+</div>
+
+<div id="c4" class="w3-padding-32 w3-center">
+<h2>🤔 Control de colas</h2>
+<p class="w3-center">Comandos para controlar las colas de transferencia de red</p>
+</div>
+
+<div id="brake" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/brake</code>
+<p>Frena o libera el freno de una cola
+<p>Las colas pueden frenarse sin que el proceso relacionado esté trabajando
+<p><strong>Uso:</strong> <code class="cmd">/brake A</code>
+<p>A = Identificador de cola
+<p><strong>Ejemplos</strong>:
+<p><code class="cmd">/brake d</code> Frena la cola de descarga de Telegram al bot
+</div>
+
+<div id="cancel" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/cancel</code>
+<p>Envía una orden de cancelación a una cola
+<p>En las colas, el elemento cero (el primero) no se puede borrar, es el que se está ejecutando en el momento así que solamente se puede cancelar
+<p>Los procesos no se cancelan de inmediato, lo que se hace es enviar una órden de cancelación, que sólo se debe enviar una vez y en algún momento se realiza la cancelación como tal
+<p><strong>Uso:</strong> <code class="cmd">/cancel A</code>
+<p>A = Identificador de cola 
+</div>
+
+<div id="que" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/que</code>
+<p>Si se ejecuta sin argumentos, se mostrarán en pantalla todas las colas que no estén vacías y al final, un mensaje donde salen todos los identificadores de cola
+<p>Si se ejecuta con un argumento (un identificador de cola) es para ver una cola en específico
+<p>Si se ejecuta con dos argumentos es para borrar uno o varios elementos de una cola
+<p>El elemento cero de la cola no se puede borrar, para ello debe usar <code>/cancel</code>. Si en una selección por rango selecciona el elemento cero, este será ignorado y si selecciona el elemento cero en una selección simple, se borrarán todos los elementos de la cola excepto el elemento cero
+<p><strong>Uso:</strong> <code class="cmd">/que A1 A2</code>
+<p>A1 = Identificador de cola (Opcional)
+<p>A2 = Selección simple o de rango para borrar de la cola (Opcional)
+<p><strong>Ejemplos</strong>:
+<p><code class="cmd">/que y</code> Ver la cola de descarga de Youtube (/ytdl)
+<p><code class="cmd">/que w 0</code> Borrar de la cola de desgarga general (/wget) todos los elementos menos el 1ro (elemento 0)
+<p><code class="cmd">/que m 3-6</code> Borrar de la cola de MEGA (/megadl) los elementos que ocupan los lugares 3,4,5,6,7,8
+</div>
+
+<div id="c5" class="w3-padding-32 w3-center">
+<h2>🤔 Transferencias de red (Telegram)</h2>
+<p class="w3-center">Comandos que tienen que ver directamente con las transferencias de red entre el bot y Telegram</p>
+</div>
+
+<div id="aname" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/aname</code>
+</div>
+
+<div id="auto" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/auto</code>
+
+</div>
+
+<div id="download" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/download</code>
+
+</div>
+
+<div id="upload" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/upload</code>
+
+</div>
+
+<div id="c6" class="w3-padding-32 w3-center">
+<h2>🤔 Transferencias de red (Web)</h2>
+<p class="w3-center">Comandos que tienen que ver directamente con las transferencias entre el bot y el resto de la web</p>
+</div>
+
+<div id="freak" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/freak</code>
+
+</div>
+
+<div id="gddl" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/gddl</code>
+
+</div>
+
+<div id="megacreds" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/megacreds</code>
+
+</div>
+
+<div id="megadl" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/megadl</code>
+
+</div>
+
+<div id="share" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/share</code>
+
+</div>
+
+<div id="ua" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/ua</code>
+
+</div>
+
+<div id="wget" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/wget</code>
+</div>
+
+<div id="ytdl" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/ytdl</code>
+
+</div>
+</div>
+
+-->
+
+
+</div>
+</body>
+</html>
+
+<!--
+<div id="" class="w3-padding-32"></div>
+<div class="field">
+<p><code>/</code>
+<p>
+<p><strong>Uso:</strong> <code class="cmd">/</code>
+</div>
+-->
