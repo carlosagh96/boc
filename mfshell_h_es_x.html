@@ -16,7 +16,7 @@ const the_data_keys=Object.keys(the_data);
 const the_data_keys_ln=the_data_keys.length;
 </script>
 
-<body>
+<body class="tgdark">
 
 <!-- Navigation (Stays on Top) -->
 <div class="w3-top w3-bar w3-black">
@@ -40,33 +40,33 @@ const the_data_keys_ln=the_data_keys.length;
 <button onclick="funAccGroup('c1')" class="w3-button w3-block w3-black" style="width:100%">Información y ayuda</button>
 <div id="c1" class="w3-hide">
 
-<button onclick="funAccSimple('about','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/about</button>
+<button onclick="funAccSimple('about','c1')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/about</button>
 <div id="about" class="w3-hide field w3-padding-32">
 <p>Muestra un breve resúmen acerca del bot y el enlace al sitio web propio del bot
 <p><strong>Uso:</strong> <code class="cmd">/about</code>
 </div>
 
-<button onclick="funAccSimple('help','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/help</button>
+<button onclick="funAccSimple('help','c1')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/help</button>
 <div id="help" class="w3-hide field w3-padding-32">
 <p>Muestra enlaces a la guía de usuario y a la referencia de comandos, es decir, este sitio 
 <p><strong>Uso:</strong> <code class="cmd">/help</code>
 </div>
 
-<button onclick="funAccSimple('info','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/info</button>
+<button onclick="funAccSimple('info','c1')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/info</button>
 <div id="info" class="w3-hide field w3-padding-32">
 <p>Mostrar las propiedades de un archivo del lado de Telegram
 <p>Se usa respondiendo a un archivo en el chat
 <p><strong>Uso:</strong> <code class="cmd">/info</code>
 </div>
 
-<button onclick="funAccSimple('mediainfo','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/mediainfo</button>
+<button onclick="funAccSimple('mediainfo','c1')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/mediainfo</button>
 <div id="mediainfo" class="w3-hide field w3-padding-32">
 <p>Información multimedia de un archivo (dentro del bot) obtenida al ejecutar MediaInfo
 <p>La información completa se le dará en un archivo de texto que se sube al chat, en caso de no subirlo (dios sabe por qué) el archivo se queda de todos modos en el directorio donde ejecuta el comando
 <p><strong>Uso:</strong> <code class="cmd">/mediainfo</code>
 </div>
 
-<button onclick="funAccSimple('start','c1')" class="w3-button w3-block w3-dark-grey" style="width:100%">/start</button>
+<button onclick="funAccSimple('start','c1')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/start</button>
 <div id="start" class="w3-hide field w3-padding-32">
 <p>Muestra información resumida sobre su sesión en el bot. Algunos datos no se muestran por esta vía
 <p><strong>Uso:</strong> <code class="cmd">/start</code>
@@ -82,14 +82,14 @@ const the_data_keys_ln=the_data_keys.length;
 <button onclick="funAccGroup('c2')" class="w3-button w3-block w3-black" style="width:100%">Sistema de archivos (Básico)</button>
 <div id="c2" class="w3-hide">
 
-<button onclick="funAccSimple('back','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/back</button>
+<button onclick="funAccSimple('back','c2')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/back</button>
 <div id="back" class="w3-hide field w3-padding-32">
 <p>Cambiar de directorio al directorio contenedor o padre
 <p>Básicamente lo mismo que ejecutar <code class="cmd">/cd -1</code> 
 <p><strong>Uso:</strong> <code class="cmd">/back</code>
 </div>
 
-<button onclick="funAccSimple('cd','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/cd</button>
+<button onclick="funAccSimple('cd','c2')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/cd</button>
 <div id="cd" class="w3-hide field w3-padding-32">
 <p>Cambiar de directorio/ubicación
 <p>Puede ser un subdirectorio o algún nivel superior respecto a la ubicación donde usted se encuentra
@@ -97,7 +97,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>A = Selección simple (subdirectorio o nivel superior)
 </div>
 
-<button onclick="funAccSimple('ls','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/ls</button>
+<button onclick="funAccSimple('ls','c2')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/ls</button>
 <div id="ls" class="w3-hide field w3-padding-32">
 <p>Listar el contenido de una ubicación
 <p>Puede ser la ubicación actual, un subdirectorio, un archivo, varios elementos a la vez (rango) o algún nivel superior respecto a la ubicación donde usted se encuentra
@@ -105,14 +105,14 @@ const the_data_keys_ln=the_data_keys.length;
 <p>A = Selección simple o de rango (Opcional)
 </div>
 
-<button onclick="funAccSimple('mkdir','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/mkdir</button>
+<button onclick="funAccSimple('mkdir','c2')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/mkdir</button>
 <div id="mkdir" class="w3-hide field w3-padding-32">
 <p>Crea un subdirectorio nuevo
 <p><strong>Uso:</strong> <code class="cmd">/mkdir A</code>
 <p>A = Nombre del subdirectorio
 </div>
 
-<button onclick="funAccSimple('mv','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/mv</button>
+<button onclick="funAccSimple('mv','c2')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/mv</button>
 <div id="mv" class="w3-hide field w3-padding-32">
 <p>Este comando hace una de dos cosas: Mover uno o más elementos a una ubicación o renombrar un elemento
 <p><strong>Uso:</strong> <code class="cmd">/mv A1 A2</code>
@@ -127,7 +127,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><code class="cmd">/mv 7 Nombre.xxx</code> Cambia el nombre del elemento 7 a "Nombre.xxx" 
 </div>
 
-<button onclick="funAccSimple('rm','c2')" class="w3-button w3-block w3-dark-grey" style="width:100%">/rm</button>
+<button onclick="funAccSimple('rm','c2')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/rm</button>
 <div id="rm" class="w3-hide field w3-padding-32">
 <p>Borra uno o varios elementos
 <p>Tenga mucho cuidado con este comando porque <font color="red">no pide confirmación</font>
@@ -144,7 +144,7 @@ const the_data_keys_ln=the_data_keys.length;
 <button onclick="funAccGroup('c3')" class="w3-button w3-block w3-black" style="width:100%">Sistema de archivos (Avanzado)</button>
 <div id="c3" class="w3-hide">
 
-<button onclick="funAccSimple('bren','c3')" class="w3-button w3-block w3-dark-grey" style="width:100%">/bren</button>
+<button onclick="funAccSimple('bren','c3')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/bren</button>
 <div id="bren" class="w3-hide field w3-padding-32">
 <p>Renombrado múltiple de archivos
 <p>Cuando ejecute el comando, se le va a mostrar una "simulación" de cómo van a quedar los archivos, y en ese mensaje sale para ejecutar el comando <code>/ok</code> para confirmar, puede ejecutar otro comando cualquiera para cancelar. En ese caso, el comando que cancela se ejecutará incluso si se trata del propio <code>/bren</code>
@@ -163,17 +163,20 @@ const the_data_keys_ln=the_data_keys.length;
 <p>A1 = Selección simple, rango o libre de archivos y subdirectorios
 <p>A2 = Tipo de operación: A (Agregar), E (Enumerar), R (Remplazar)
 <p>A3 = Parámetros de la operación
-<p>En <a class="blu" href="https://t.me/bots_of_charles/141">este</a> vídeo sale cómo se usa este comando para enumerar y remplazar
+<p>En este post hay un vídeo de cómo se usar este comando para enumerar y remplazar
+<p><a href="https://t.me/bots_of_charles/141"><button class="w3-button w3-black" style="width:320px">Ver la publicación</button></a>
+<!--
 <p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/141" data-width="100%" data-dark="1"></script>
+-->
 </div>
 
-<button onclick="funAccSimple('crypt','c3')" class="w3-button w3-block w3-dark-grey" style="width:100%">/crypt</button>
+<button onclick="funAccSimple('crypt','c3')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/crypt</button>
 <div id="crypt" class="w3-hide field w3-padding-32">
 <p>Cifrado de archivos bajo la especificación Fernet
 <p>Antes de usar este comando, debe asegurarse de que KFSCrypt funcione en su PC y debe acostumbrarse a cifrar y descifrar archivos si no está acostumbrad@
 <p>
-<a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-windows-i386.tar"><button class="w3-button w3-black w3-border" style="width:320px">KFSCrypt para Windows (32 bits)</button></a>
-<a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-linux-amd64.tar"><button class="w3-button w3-black w3-border" style="width:320px">KFSCrypt para Linux (64 bits)</button></a>
+<a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-windows-i386.tar"><button class="w3-button w3-black" style="width:320px">KFSCrypt para Windows (32 bits)</button></a>
+<a href="https://github.com/carlosagh96/cuban-python-scripts/raw/main/multi/kfscrypt/kfscrypt-linux-amd64.tar"><button class="w3-button w3-black" style="width:320px">KFSCrypt para Linux (64 bits)</button></a>
 <p>Para cifrar o descifrar debe primero crear una clave ya sea ejecutando este comando sin argumentos o con KFSCrypt en su PC
 <p>Las claves generadas son completamente aleatorias y puede usarlas las veces que quiera
 <p>Para descifrar un archivo, debe hacerlo con la misma clave con el cual se cifró, en el caso de perder la clave ni se esfuerce porque ha perdido el archivo, es lo mismo que si se le olvidara la contraseña para un archivo comprimido
@@ -191,11 +194,15 @@ const the_data_keys_ln=the_data_keys.length;
 <p><code class="cmd">/crypt c</code> Crear una nueva clave de la nada
 <p><code class="cmd">/crypt e 3</code> Cifrar el elemento 3. En el caso de ser in directorio, se cifran los archivos que hay dentro del directorio
 <p><code class="cmd">/crypt d 6</code> Descifrar el elemento 6. Recuerde que solamente se puede descifrar un archivo con la calve que se usó para cifrarlo
-<p>En <a class="blu" href="https://t.me/bots_of_charles/111">este</a> vídeo se muestra cómo usar KFSCrypt en Windows
+<p>En este vídeo se muestra cómo usar KFSCrypt en Windows
+<p><a href="https://t.me/bots_of_charles/141"><button class="w3-button w3-black" style="width:320px">Ver la publicación</button></a>
+
+<!--
 <p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/111" data-width="100%" data-dark="1"></script>
+-->
 </div>
 
-<button onclick="funAccSimple('ext','c3')" class="w3-button w3-block w3-dark-grey" style="width:100%">/ext</button>
+<button onclick="funAccSimple('ext','c3')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/ext</button>
 <div id="ext" class="w3-hide field w3-padding-32">
 <p>Extractor de archivadores 7Z, GZ, TAR, XZ, y ZIP
 <p>En el caso de 7Z y ZIP, soporta multivolumen y contraseña 
@@ -204,7 +211,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>A2 = Contraseña (Opcional)
 </div>
 
-<button onclick="funAccSimple('seven','c3')" class="w3-button w3-block w3-dark-grey" style="width:100%">/seven</button>
+<button onclick="funAccSimple('seven','c3')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/seven</button>
 <div id="seven" class="w3-hide field w3-padding-32">
 <p>Archivador 7Z sin compresión. Puede archivar un archivo o un directorio en un único volumen o múltiples partes y hasta puede ponerle protección con contraseña
 <p>Los archivos 7z pueden extraerse con 7Zipper (Android), 7zip (Windows). El autor no recomienda usar ni WinRAR, ni el RAR de Android 
@@ -226,7 +233,7 @@ const the_data_keys_ln=the_data_keys.length;
 <button onclick="funAccGroup('c4')" class="w3-button w3-block w3-black" style="width:100%">Control de colas</button>
 <div id="c4" class="w3-hide">
 
-<button onclick="funAccSimple('brake','c4')" class="w3-button w3-block w3-dark-grey" style="width:100%">/brake</button>
+<button onclick="funAccSimple('brake','c4')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/brake</button>
 <div id="brake" class="w3-hide field w3-padding-32">
 <p>Frena o libera el freno de una cola
 <p>Las colas pueden frenarse sin que el proceso relacionado esté trabajando
@@ -236,7 +243,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><code class="cmd">/brake d</code> Frena la cola de descarga de Telegram al bot
 </div>
 
-<button onclick="funAccSimple('cancel','c4')" class="w3-button w3-block w3-dark-grey" style="width:100%">/cancel</button>
+<button onclick="funAccSimple('cancel','c4')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/cancel</button>
 <div id="cancel" class="w3-hide field w3-padding-32">
 <p>Envía una orden de cancelación a una cola
 <p>En las colas, el elemento cero (el primero) no se puede borrar, es el que se está ejecutando en el momento así que solamente se puede cancelar
@@ -245,7 +252,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>A = Identificador de cola 
 </div>
 
-<button onclick="funAccSimple('que','c4')" class="w3-button w3-block w3-dark-grey" style="width:100%">/que</button>
+<button onclick="funAccSimple('que','c4')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/que</button>
 <div id="que" class="w3-hide field w3-padding-32">
 <p>Si se ejecuta sin argumentos, se mostrarán en pantalla todas las colas que no estén vacías y al final, un mensaje donde salen todos los identificadores de cola
 <p>Si se ejecuta con un argumento (un identificador de cola) es para ver una cola en específico
@@ -269,7 +276,7 @@ const the_data_keys_ln=the_data_keys.length;
 <button onclick="funAccGroup('c5')" class="w3-button w3-block w3-black" style="width:100%">Transferencias de red (Telegram)</button>
 <div id="c5" class="w3-hide">
 
-<button onclick="funAccSimple('aname','c5')" class="w3-button w3-block w3-dark-grey" style="width:100%">/aname</button>
+<button onclick="funAccSimple('aname','c5')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/aname</button>
 <div id="aname" class="w3-hide field w3-padding-32">
 <p>Activar o desactivar el renombramiento automático al descargar del chat al bot
 <p>Funciona solamente si <code>/auto</code> está activado también y si el archivo ya trae un nombre real, es decir, no funciona con archivos a los que se le tenga que dar un nombre de forma automática desde cero
@@ -278,7 +285,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><strong>Uso:</strong> <code class="cmd">/aname</code>
 </div>
 
-<button onclick="funAccSimple('auto','c5')" class="w3-button w3-block w3-dark-grey" style="width:100%">/auto</button>
+<button onclick="funAccSimple('auto','c5')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/auto</button>
 <div id="auto" class="w3-hide field w3-padding-32">
 <p>Activar o desactivar la descarga automática de los archivos que son reenviados hacia el chat
 <p>Desactivado de forma predeterminada
@@ -286,7 +293,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><strong>Uso:</strong> <code class="cmd">/auto</code>
 </div>
 
-<button onclick="funAccSimple('download','c5')" class="w3-button w3-block w3-dark-grey" style="width:100%">/download</button>
+<button onclick="funAccSimple('download','c5')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/download</button>
 <div id="download" class="w3-hide field w3-padding-32">
 <p>Descarga un archivo de Telegram al bot
 <p>Se usa respondiendo a un archivo
@@ -295,7 +302,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>A = Nuevo nombre (Opcional)
 </div>
 
-<button onclick="funAccSimple('upload','c5')" class="w3-button w3-block w3-dark-grey" style="width:100%">/upload</button>
+<button onclick="funAccSimple('upload','c5')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/upload</button>
 <div id="upload" class="w3-hide field w3-padding-32">
 <p>Sube archivos del bot a Telegram, puede ser uno o varios archivos
 <p>Tenga en cuenta que no se pueden subir archivos que superen 2 GB de espacio, ni superen 60 caracteres en el nombre, si los archivos no se encolan para subir, debe revisar y asegurarse de que cumplan con estos requisitos
@@ -316,7 +323,7 @@ const the_data_keys_ln=the_data_keys.length;
 <button onclick="funAccGroup('c6')" class="w3-button w3-block w3-black" style="width:100%">Transferencias de red (Web)</button>
 <div id="c6" class="w3-hide">
 
-<button onclick="funAccSimple('freak','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/freak</button>
+<button onclick="funAccSimple('freak','c6')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/freak</button>
 <div id="freak" class="w3-hide field w3-padding-32">
 <p>Descargador de comics y manga. Ejecuta sin argumentos para ver los sitios soportados
 <p>El comando no hace labores de búsqueda, debe ir a uno de los sitios soportados y darle una o varias URLs de capítulos
@@ -333,7 +340,7 @@ const the_data_keys_ln=the_data_keys.length;
 </div>
 </div>
 
-<button onclick="funAccSimple('gddl','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/gddl</button>
+<button onclick="funAccSimple('gddl','c6')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/gddl</button>
 <div id="gddl" class="w3-hide field w3-padding-32">
 <p>Descargador de URLs de Google Drive 
 <p><strong>Uso:</strong> <code class="cmd">/gddl</code>
@@ -345,7 +352,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><code class="cmd">/gddl URL1 URL2 R</code>
 </div>
 
-<button onclick="funAccSimple('megacreds','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/megacreds</button>
+<button onclick="funAccSimple('megacreds','c6')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/megacreds</button>
 <div id="megacreds" class="w3-hide field w3-padding-32">
 <p>Credenciales de cuenta de MEGA
 <p>Para usar una cuenta real de MEGA en lugar de depender de la sesión anónima
@@ -355,7 +362,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>A2 = Contraseña del usuario de MEGA
 </div>
 
-<button onclick="funAccSimple('megadl','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/megadl</button>
+<button onclick="funAccSimple('megadl','c6')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/megadl</button>
 <div id="megadl" class="w3-hide field w3-padding-32">
 <p>Descargador de enlaces MEGA. No soporta carpetas. Se usa una sesión anónima de forma predeterminada en caso de no haber credenciales de MEGA asignados
 <p><strong>Uso:</strong> <code class="cmd">/megadl</code>
@@ -364,7 +371,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><code class="cmd">/megadl URL1 URL2</code> Encola 2 URLs para descargar
 </div>
 
-<button onclick="funAccSimple('share','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/share</button>
+<button onclick="funAccSimple('share','c6')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/share</button>
 <div id="share" class="w3-hide field w3-padding-32">
 <p>Activar/Desactivar compartir los archivos de su sesión públicamente
 <p>Si activa esto, los archivos serán visibles desde el servidor web de forma pública para poder ser descargados. También puede hacer streamming en caso de ser archivos de vídeo o música
@@ -373,7 +380,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><strong>Uso:</strong> <code class="cmd">/share</code>
 </div>
 
-<button onclick="funAccSimple('ua','c6')" class="w3-button w3-block w3-dark-grey" style="width:100%">/ua</button>
+<button onclick="funAccSimple('ua','c6')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/ua</button>
 <div id="ua" class="w3-hide field w3-padding-32">
 <p>Agente de usuario
 <p>Afecta el comportamiento de /wget
@@ -384,7 +391,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><code class="cmd">/ua s</code> Usar un agente de usuario de Safari
 </div>
 
-<button onclick="funAccSimple('wget','c6')" class="w3-button w3-dark-grey" style="width:100%">/wget</button>
+<button onclick="funAccSimple('wget','c6')" class="w3-button" style="width:100%;background-color:#3A4047">/wget</button>
 <div id="wget" class="w3-hide field w3-padding-32" style="display:block;overflow:visible">
 <p>Descargador web general
 <p>Descarga enlaces directos (no todos) y es compatible con varios sitios de alojamiento de archivos
@@ -397,7 +404,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/170" data-width="100%" data-dark="1"></script>
 </div>
 
-<button onclick="funAccSimple('ytdl','c6')" class="w3-button w3-dark-grey" style="width:100%">/ytdl</button>
+<button onclick="funAccSimple('ytdl','c6')" class="w3-button" style="width:100%;background-color:#3A4047">/ytdl</button>
 <div id="ytdl" class="w3-hide field w3-padding-32">
 <p>Descargador de Youtube
 <p>Soporta listas de reproducción
@@ -433,7 +440,7 @@ const the_data_keys_ln=the_data_keys.length;
 <button onclick="funAccGroup('')" class="w3-button w3-block w3-black" style="width:100%"></button>
 <div id="" class="w3-hide w3-padding-32">
 
-<button onclick="funAccSimple('','')" class="w3-button w3-block w3-dark-grey" style="width:100%">/</button>
+<button onclick="funAccSimple('','')" class="w3-button w3-block" style="width:100%;background-color:#3A4047">/</button>
 <div id="" class="w3-hide w3-padding-32">
 
 </div>
