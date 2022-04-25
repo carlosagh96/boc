@@ -63,7 +63,8 @@ const the_data_keys_ln=the_data_keys.length;
 <div id="mediainfo" class="w3-hide field w3-padding-32">
 <p>Información multimedia de un archivo (dentro del bot) obtenida al ejecutar MediaInfo
 <p>La información completa se le dará en un archivo de texto que se sube al chat, en caso de no subirlo (dios sabe por qué) el archivo se queda de todos modos en el directorio donde ejecuta el comando
-<p><strong>Uso:</strong> <code class="cmd">/mediainfo</code>
+<p><strong>Uso:</strong> <code class="cmd">/mediainfo A</code>
+<p>A = Selección simple de un archivo
 </div>
 
 <button onclick="funAccSimple('start','c1')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/start</button>
@@ -181,7 +182,7 @@ const the_data_keys_ln=the_data_keys.length;
 </span>
 <p>Para cifrar o descifrar debe primero crear una clave ya sea ejecutando este comando sin argumentos o con KFSCrypt en su PC
 <p>Las claves generadas son completamente aleatorias y puede usarlas las veces que quiera
-<p>Para descifrar un archivo, debe hacerlo con la misma clave con el cual se cifró, en el caso de perder la clave ni se esfuerce porque ha perdido el archivo, es lo mismo que si se le olvidara la contraseña para un archivo comprimido
+<p>Para descifrar un archivo, debe hacerlo con la misma clave con el cual se cifró, en el caso de perder la clave <font color="red">ni se esfuerce porque ha perdido el archivo</font>, es lo mismo que si se le olvidara la contraseña para un archivo comprimido
 <p>Cuando genera una clave con el comando, la clave se establece como la que se va a usar y el archivo con la clave se sube al chat. Tambien puede crear claves usando a KFSCrypt e importarlas al bot
 <p>Acciones y valores:
 <p>r → Leer y asignar una clave a partir de un archivo en el chat que contiene dicha clave. Se usa respondiendo a un archivo. No usa ningún valor
