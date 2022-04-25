@@ -251,26 +251,30 @@ const the_data_keys_ln=the_data_keys.length;
 
 <button onclick="funAccSimple('cancel','c4')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/cancel</button>
 <div id="cancel" class="w3-hide field w3-padding-32">
-<p>Envía una orden de cancelación a una cola
-<p>En las colas, el elemento cero (el primero) no se puede borrar, es el que se está ejecutando en el momento así que solamente se puede cancelar
-<p>Los procesos no se cancelan de inmediato, lo que se hace es enviar una órden de cancelación, que sólo se debe enviar una vez y en algún momento se realiza la cancelación como tal
+<p>Sends a cancelation request to a queue
+<p>In the queues, the first element (index #0) cannot be deleted, it's the one that it's running currently, so the only way to skip it is by cancelling it
+<p>The tasks cannot be cancelled right away, so they recieve and acknowledge the cancelation request and at a certain point (ie: downloading, uploading, checking file existence, etc... depeding on the command) it does the cancellation
+<p>The cancellation cannot be sent multiple times, it can only be sent once per queue while the corresponding command is running and to send it again to the same queue, it first has to make the cancellation
 <p><strong>Usage:</strong> <code class="cmd">/cancel A</code>
-<p>A = Identificador de cola 
+<p>A = Queue ID
 </div>
 
 <button onclick="funAccSimple('que','c4')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/que</button>
 <div id="que" class="w3-hide field w3-padding-32">
-<p>Si se ejecuta sin argumentos, se mostrarán en pantalla todas las colas que no estén vacías y al final, un mensaje donde salen todos los identificadores de cola
-<p>Si se ejecuta con un argumento (un identificador de cola) es para ver una cola en específico
-<p>Si se ejecuta con dos argumentos es para borrar uno o varios elementos de una cola
-<p>El elemento cero de la cola no se puede borrar, para ello debe usar <code>/cancel</code>. Si en una selección por rango selecciona el elemento cero, este será ignorado y si selecciona el elemento cero en una selección simple, se borrarán todos los elementos de la cola excepto el elemento cero
+<p>Queue manager
+<p>When it is executed with no arguments, it shows all working queues plus a message containing all the queue IDs
+<p>When it is executed with one argument, this argument must be the queue ID, to see the elements in the queue
+<p>When it is executed with 2 arguments, the second argument is a selection to delete elements from the queue
+<p>The elmement #0 cannot be deleted, it can only be cancelled with the <code>/cancel</code> command
+<p>While selecting a single element, if the #0 is selected, all the other elements are selected and removed, leaving #0 in the queue
+<p>While selecting elements in range, if the #0 is selected, it is ignored for removal
 <p><strong>Usage:</strong> <code class="cmd">/que A1 A2</code>
-<p>A1 = Identificador de cola (Optional)
-<p>A2 = Selección simple o de rango para borrar de la cola (Optional)
-<p><strong>Ejemplos</strong>:
-<p><code class="cmd">/que y</code> Ver la cola de descarga de Youtube (/ytdl)
-<p><code class="cmd">/que w 0</code> Borrar de la cola de desgarga general (/wget) todos los elementos menos el 1ro (elemento 0)
-<p><code class="cmd">/que m 3-6</code> Borrar de la cola de MEGA (/megadl) los elementos que ocupan los lugares 3,4,5,6,7,8
+<p>A1 = Queue ID (Optional)
+<p>A2 = Simple or range select to remove from the queue (Optional)
+<p><strong>Examples:</strong>
+<p><code class="cmd">/que y</code> Look at the Youtube download queue (/ytdl)
+<p><code class="cmd">/que w 0</code> Remove from the general downloads queue (/wget) all the elements except #0
+<p><code class="cmd">/que m 3-6</code> Remove from the MEGA queue (/megadl) the elements #3, #4, #5, #6, #7 and #8
 </div>
 
 </div>
@@ -279,45 +283,47 @@ const the_data_keys_ln=the_data_keys.length;
 
 <p>
 <div>
-<button onclick="funAccGroup('c5')" class="w3-button w3-block w3-black" style="width:100%">Transferencias de red (Telegram)</button>
+<button onclick="funAccGroup('c5')" class="w3-button w3-block w3-black" style="width:100%">Network transfers (Telegram)</button>
 <div id="c5" class="w3-hide">
 
 <button onclick="funAccSimple('aname','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/aname</button>
 <div id="aname" class="w3-hide field w3-padding-32">
-<p>Activar o desactivar el renombramiento automático al descargar del chat al bot
-<p>Funciona solamente si <code>/auto</code> está activado también y si el archivo ya trae un nombre real, es decir, no funciona con archivos a los que se le tenga que dar un nombre de forma automática desde cero
-<p>Desactivado de forma predeterminada
-<p>Al descargar, se le agrega al archivo un texto adicional en el nombre, muy util al descargar masivamente múltiples archivos que podrían compartir el mismo nombre
+<p>Activate/Deactivate automatic renaming when downloading from Telegram to the bot
+<p>It only works if <code>/auto</code> is activated and if the file has a real name. It won't work with files that originally do not have a name
+<p>Deactivated by default
+<p>When downloading, it adds to the filename, an aditional string in the name, very useful for downloading multiple files with the same name
 <p><strong>Usage:</strong> <code class="cmd">/aname</code>
 </div>
 
 <button onclick="funAccSimple('auto','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/auto</button>
 <div id="auto" class="w3-hide field w3-padding-32">
-<p>Activar o desactivar la descarga automática de los archivos que son reenviados hacia el chat
-<p>Desactivado de forma predeterminada
-<p>Es la única forma de descargar álbumes/grupos de archivos
+<p>Activate/Deactivate the automatic download of files forwarded to the chat
+<p>Deactivated by default
+<p>It's the only way to download albums and groups of files
 <p><strong>Usage:</strong> <code class="cmd">/auto</code>
 </div>
 
 <button onclick="funAccSimple('download','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/download</button>
 <div id="download" class="w3-hide field w3-padding-32">
-<p>Descarga un archivo de Telegram al bot
-<p>Se usa respondiendo a un archivo
-<p>Opcionalmente puede cambiar el nombre del archivo al descargarlo
+<p>Downloads a file from Telegram to the bot
+<p>To download, reply the command to a file in the chat
+<p>You can also change the filename when downloading
+<p>When using this command on a regular message without a file, it downloads the message as a text file, in this case the argument is mandatory
 <p><strong>Usage:</strong> <code class="cmd">/download A</code>
-<p>A = Nuevo nombre (Optional)
+<p>A = New name (Optional if the message has a file)
 </div>
 
 <button onclick="funAccSimple('upload','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/upload</button>
 <div id="upload" class="w3-hide field w3-padding-32">
-<p>Sube archivos del bot a Telegram, puede ser uno o varios archivos
-<p>Tenga en cuenta que no se pueden subir archivos que superen 2 GB de espacio, ni superen 60 caracteres en el nombre, si los archivos no se encolan para subir, debe revisar y asegurarse de que cumplan con estos requisitos
+<p>Upload files to Telegram
+<p>It can be one or many files 
+<p>Be aware that you cannot send files above 2 GB, and the filename cannot be more than 60 chars long
 <p><strong>Usage:</strong> <code class="cmd">/upload A</code>
-<p>Selección simple, rango o libre de archivos y subdirectorios. En el caso de ser un subdirectorio en la selección simple, se seleccionan todos los archivos en el primer nivel, en el caso de los demás tipos de selección, solo se detectarán archivos
-<p><strong>Ejemplos</strong>:
-<p><code class="cmd">/upload 6</code> Subir el elemento 6, en el caso de ser un directorio, se suben los archivos que tiene dentro
-<p><code class="cmd">/upload 2-4</code> Subir los archivos 2,3,4 y 5. Los que sean directorios serán ignorados porsuppuesto
-<p><code class="cmd">/upload 6,7,3</code> Subir los archivos 6,7 y 3 en ese orden
+<p>A = Ranged and free selection of files, and simple selecion of a file or a subdirectory. In case of selecting a subdirectory in simple selection, the files inside the subdirectory will be selected for upload
+<p><strong>Examples:</strong>
+<p><code class="cmd">/upload 6</code> Upload element #6, and in case it is a directory, it uploads all files inside that directory
+<p><code class="cmd">/upload 2-4</code> Uploads files #2, #3, #4 and #5. Directories are ignored
+<p><code class="cmd">/upload 6,7,3</code> Uploads files #6, #7 and #3, in that order. Directories are ignored
 </div>
 
 </div>
@@ -326,7 +332,7 @@ const the_data_keys_ln=the_data_keys.length;
 
 <p>
 <div>
-<button onclick="funAccGroup('c6')" class="w3-button w3-block w3-black" style="width:100%">Transferencias de red (Web)</button>
+<button onclick="funAccGroup('c6')" class="w3-button w3-block w3-black" style="width:100%">Network transfers (Web)</button>
 <div id="c6" class="w3-hide">
 
 <button onclick="funAccSimple('freak','c6')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/freak</button>
@@ -336,7 +342,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>Por cada capítulo o número se crea un CBZ, en el caso de haber errores durante la descarga, se deja la carpeta tal cual y no se crea el CBZ
 <p><strong>Usage:</strong> <code class="cmd">/freak A</code>
 <p>A = Lista de URLs separadas por espacio
-<p><strong>Ejemplos</strong>:
+<p><strong>Examples:</strong>
 <p><code class="cmd">/freak</code> Ver sitios soportados
 <p><code class="cmd">/freak URL1 URL2 URL3</code> Encola 3 URLs para descargar
 <p>En esta publicación del canal hay una demostración de cómo bajar de uno de los sitios soportados</p>
@@ -350,7 +356,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><strong>Usage:</strong> <code class="cmd">/gddl</code>
 <p>A1 = Lista de URLs separadas por espacio
 <p>A2 = "R" (literalmente) para indicar en caso de si las URLs son carpetas de Google Drive, descargarlas de forma recursiva. Esto es opcional
-<p><strong>Ejemplos</strong>:
+<p><strong>Examples:</strong>
 <p><code class="cmd">/gddl URL1</code>
 <p><code class="cmd">/gddl URL1 URL2 URL3 URL4</code>
 <p><code class="cmd">/gddl URL1 URL2 R</code>
@@ -371,7 +377,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>Descargador de enlaces MEGA. No soporta carpetas. Se usa una sesión anónima de forma predeterminada en caso de no haber credenciales de MEGA asignados
 <p><strong>Usage:</strong> <code class="cmd">/megadl</code>
 <p>A = URLs de archivos en MEGA separadas por espacios
-<p><strong>Ejemplos</strong>:
+<p><strong>Examples:</strong>
 <p><code class="cmd">/megadl URL1 URL2</code> Encola 2 URLs para descargar
 </div>
 
@@ -402,7 +408,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p>Ejecute sin argumentos para ver los sitios soportados directamente
 <p><strong>Usage:</strong> <code class="cmd">/wget A</code>
 <p>A = URLs separadas por espacios (Optional)
-<p><strong>Ejemplos</strong>:
+<p><strong>Examples:</strong>
 <p><code class="cmd">/wget URL1 URL2 URL3 URL4 URL5</code> Encola 5 URLs para descargar
 <p>En esta publicación del canal hay un vídeo sobre los sitios soportados por este comando</p>
 
@@ -429,7 +435,7 @@ const the_data_keys_ln=the_data_keys.length;
 <p><strong>Usage:</strong> <code class="cmd">/ytdl A1 A2</code>
 <p>A1 = URLs de vídeos de Youtube o listas de reproducción de Youtube separadas por espacios
 <p>A2 = Ajustes. Puede ser una resolución de video de las soportadas, extraer audio o generar subtítulos junto al video descargado 
-<p><strong>Ejemplos</strong>:
+<p><strong>Examples:</strong>
 <p><code class="cmd">/ytdl URL1 URL2</code> Encola 2 enlaces, si alguno es una lista de reproducción, se repobla la cola con los videos de dicha lista de reproducción
 <p><code class="cmd">/ytdl URL1 URL2 URL3 360p</code> Encola 3 enlaces y prioriza descargar solamente en una resolución de 360p
 <p><code class="cmd">/ytdl URL1 URL2 URL3 URL4 subs</code> Encola 4 enlaces y los manda a subtitular
