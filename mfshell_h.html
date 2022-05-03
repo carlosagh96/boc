@@ -22,7 +22,8 @@ const the_data_keys_ln=the_data_keys.length;
 <div class="w3-top w3-bar w3-black">
 <a href="index.html" class="w3-bar-item w3-button">Home</a>
 <a href="#top" class="w3-bar-item w3-button">Up</a>
-<a href="mfshell_g.html" class="w3-bar-item w3-button" style="float:right">MF Shell Guide</a>
+<a href="mfshell_h_es.html" class="w3-bar-item w3-button" style="float:right">Español</a>
+<a href="mfshell_g.html" class="w3-bar-item w3-button" style="float:right">Guide</a>
 </div>
 
 <!-- Start Content -->
@@ -338,80 +339,84 @@ const the_data_keys_ln=the_data_keys.length;
 
 <button onclick="funAccSimple('freak','c6')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/freak</button>
 <div id="freak" class="w3-hide field w3-padding-32">
-<p>Descargador de comics y manga. Ejecuta sin argumentos para ver los sitios soportados
-<p>El comando no hace labores de búsqueda, debe ir a uno de los sitios soportados y darle una o varias URLs de capítulos
-<p>Por cada capítulo o número se crea un CBZ, en el caso de haber errores durante la descarga, se deja la carpeta tal cual y no se crea el CBZ
+<p>Comics and manga downloader
+<p>Execute with no arguments to see the supported websites
+<p>This command does not perform any searches, it only works with URLs
+<p>For every "chapter" fully downloaded with no errors, a CBZ file is created. In case of an error during the download the directory will not be deleted
 <p><strong>Usage:</strong> <code class="cmd">/freak A</code>
-<p>A = Lista de URLs separadas por espacio
+<p>A = One or more URLs separated by a space
 <p><strong>Examples:</strong>
-<p><code class="cmd">/freak</code> Ver sitios soportados
-<p><code class="cmd">/freak URL1 URL2 URL3</code> Encola 3 URLs para descargar
-<p>En esta publicación del canal hay una demostración de cómo bajar de uno de los sitios soportados</p>
-<span><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/191" data-width="100%" data-dark="1"></script></span>
-<span><a href="https://t.me/bots_of_charles/191"><button class="w3-button w3-black" style="width:320px">View on Telegram</button></a></span>
+<p><code class="cmd">/freak</code> See the supported sites
+<p><code class="cmd">/freak URL1 URL2 URL3</code> Puts 3 URLs in the queue
 </div>
 
 <button onclick="funAccSimple('gddl','c6')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/gddl</button>
 <div id="gddl" class="w3-hide field w3-padding-32">
-<p>Descargador de URLs de Google Drive 
-<p><strong>Usage:</strong> <code class="cmd">/gddl</code>
-<p>A1 = Lista de URLs separadas por espacio
-<p>A2 = "R" (literalmente) para indicar en caso de si las URLs son carpetas de Google Drive, descargarlas de forma recursiva. Esto es opcional
+<p>Google drive URL downloader
+<p><strong>Usage:</strong> <code class="cmd">/gddl A1 A2</code>
+<p>A1 = One or more URLs separated by a space
+<p>A2 = "R" (Literally an "R") Recursive flag. In case of unpacking the elements of a folder, the folders inside it are also unpacked. Notice that the recursive flag propagates to very links. The usage of the recursive flag is optional
 <p><strong>Examples:</strong>
-<p><code class="cmd">/gddl URL1</code>
-<p><code class="cmd">/gddl URL1 URL2 URL3 URL4</code>
-<p><code class="cmd">/gddl URL1 URL2 R</code>
+<p><code class="cmd">/gddl URL1</code> Puts a single URL in the queue
+<p><code class="cmd">/gddl URL1 URL2 URL3 URL4</code> Puts 4 URLs in the queue
+<p><code class="cmd">/gddl URL1 URL2 R</code> Puts 2 URLs in the queue and sets the recursive flag on
 </div>
 
 <button onclick="funAccSimple('megacreds','c6')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/megacreds</button>
 <div id="megacreds" class="w3-hide field w3-padding-32">
-<p>Credenciales de cuenta de MEGA
-<p>Para usar una cuenta real de MEGA en lugar de depender de la sesión anónima
-<p>Las cuotas de descarga en el bot son públicas, así que la cuenta real lo único que hace es darle acceso a sus archivos
+<p>MEGA account credentials
+<p>Have access to files owned by a real account
+<p>Using a real account will not affect the quota for downloads in the bot
 <p><strong>Usage:</strong> <code class="cmd">/megacreds A1 A2</code>
-<p>A1 = Usuario de MEGA
-<p>A2 = Contraseña del usuario de MEGA
+<p>A1 = MEGA user (e-mail)
+<p>A2 = User password
 </div>
 
 <button onclick="funAccSimple('megadl','c6')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/megadl</button>
 <div id="megadl" class="w3-hide field w3-padding-32">
-<p>Descargador de enlaces MEGA. No soporta carpetas. Se usa una sesión anónima de forma predeterminada en caso de no haber credenciales de MEGA asignados
+<p>MEGA downloader
+<p>It does not support folders at the moment
 <p><strong>Usage:</strong> <code class="cmd">/megadl</code>
-<p>A = URLs de archivos en MEGA separadas por espacios
+<p>A = One or more URLs separated by a space
 <p><strong>Examples:</strong>
-<p><code class="cmd">/megadl URL1 URL2</code> Encola 2 URLs para descargar
+<p><code class="cmd">/megadl URL1 URL2</code> Puts 2 URLs in the queue
 </div>
 
 <button onclick="funAccSimple('share','c6')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/share</button>
 <div id="share" class="w3-hide field w3-padding-32">
-<p>Activar/Desactivar compartir los archivos de su sesión públicamente
-<p>Si activa esto, los archivos serán visibles desde el servidor web de forma pública para poder ser descargados. También puede hacer streamming en caso de ser archivos de vídeo o música
-<p>Desactivado de forma predeterminada
-<p>Puede ver en todo momento su enlace con <code>/start</code>
+<p>Activate/deactivate sharing files
+<p>Deactivated ny default
+<p>Activating this will make all the files and directories in your session accesible from the web, this has multiple benefits, such as streaming, downloading directly, etc... all of this straight from the bot itself
+<p>You can see your link any time executing <code>/start</code>
 <p><strong>Usage:</strong> <code class="cmd">/share</code>
 </div>
 
 <button onclick="funAccSimple('ua','c6')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/ua</button>
 <div id="ua" class="w3-hide field w3-padding-32">
-<p>Agente de usuario
-<p>Afecta el comportamiento de /wget
-<p>No use este comando a menos lo que sepa que está haciendo
-<p>Ejecute sin argumentos para ver el agente de usuario actual
-<p>De forma predeterminada el agente de usuario es aleatorio (r), pero puede elegir entre Chrome (c), Firefox (f), Safari (s) u Opera (o)
+<p>Default User Agent
+<p>Affects the behavior of <code>/wget</code>
+<p>Don't use this command unless you know what you're doing
+<p>Execute without arguments to see the current user agent
+<p>Available user agents:
+<p>r - Random
+<p>c - Chrome
+<p>f - Firefox
+<p>s - Safari
+<p>o - Opera
 <p><strong>Usage:</strong> <code class="cmd">/ua A</code>
-<p><code class="cmd">/ua s</code> Usar un agente de usuario de Safari
+<p><code class="cmd">/ua s</code> Set a user agent from Safari
 </div>
 
 <button onclick="funAccSimple('wget','c6')" class="w3-button" style="width:100%;background-color:#282E33">/wget</button>
 <div id="wget" class="w3-hide field w3-padding-32" style="display:block;overflow:visible">
-<p>Descargador web general
-<p>Descarga enlaces directos (no todos) y es compatible con varios sitios de alojamiento de archivos
-<p>Ejecute sin argumentos para ver los sitios soportados directamente
+<p>General web downloader
+<p>It can download almost any apparent direct download link and it's also compatible with many links from file hosting sites
+<p>Execute without args to see the supported websites
 <p><strong>Usage:</strong> <code class="cmd">/wget A</code>
-<p>A = URLs separadas por espacios (Optional)
+<p>A = One or more URLs separated by a space (Optional)
 <p><strong>Examples:</strong>
-<p><code class="cmd">/wget URL1 URL2 URL3 URL4 URL5</code> Encola 5 URLs para descargar
-<p>En esta publicación del canal hay un vídeo sobre los sitios soportados por este comando</p>
+<p><code class="cmd">/wget URL1 URL2 URL3 URL4 URL5</code> Puts 5 URLs in the queue
+<p>In this post there's a video about all the links from the supported sites</p>
 
 <span><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles/170" data-width="100%" data-dark="1"></script></span>
 <span><a href="https://t.me/bots_of_charles/170"><button class="w3-button w3-black" style="width:320px">View on Telegram</button></a></span>
@@ -420,9 +425,8 @@ const the_data_keys_ln=the_data_keys.length;
 
 <button onclick="funAccSimple('ytdl','c6')" class="w3-button" style="width:100%;background-color:#282E33">/ytdl</button>
 <div id="ytdl" class="w3-hide field w3-padding-32">
-<p>Descargador de Youtube
-<p>Soporta listas de reproducción
-<p>Además de las URLs, se puede también especificar ajustes
+<p>Youtube downloader
+<p>Supports playlists and subtitles
 <p>Ajustes:
 <p>→ Resoluciones de vídeo: "144p", "240p", "360p", "480p", "720p", "1080p", "1440p", "2160p". La resolución predeterminada es "720p"
 <p>→ Extraer audio: "exa"
