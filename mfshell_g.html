@@ -145,33 +145,28 @@ w3.slideshow(".slides", 3000);
 <div id="c4" class="w3-container w3-padding-32">
 <p><h2>⚙️ Limits and queues</h2>
 
-<p><h3>Transferencias de red y colas</h3>
-<p>Cada comando de transferencia de red tiene una cola asociada, al cual puede frenarse o se puede cancelar el proceso de transferencia.
-<p>Cada usuario tiene un límite de 2 transferencias paralelas y a nivel global hay un límite de 5. El límite global puede ser reajustado por el administrador
-<p>Cada cola tiene un identificador, este identificador se usa en comandos que administran colas
-<p>Por ejemplo, si agrega una o varias URLs con <code>/wget</code>, y la cola estaba vacía, el comando empezará a trabajar, si sigue ejecutando a dicho comando pero con otras URLs mientras está trabajando, la cola de "w" (que es la cola que identifica a <code>/wget</code>) se irá llenando
-<p>Para más información, véase los comandos para gestionar colas <a class="main" href="mfshell_h_es.html#c4">aquí</a>
+<p><h3>Network transfers and queues</h3>
+<p>Each user has a limit of 2 paralel network transfers and globally, the limit is 5. The global limit can be adjusted at runtime by the admin
+<p>Each network transfer command has it's own queue per user, which can be paused or cancelled
+<p>Each queue has an identifier, this identifier is used in commands for queue administration
+<p>For more information, read the Queue control commands at the commands reference
 <p>
-<p><h3>Comandos regulados</h3>
-<p>Hay comandos, o una parte de ellos donde se realizan tareas intensivas o simplemente reguladas, ejecutarlas simultáneamente sin ningún tipo de control puede ocasionar que el bot se desestabilice, no es primera vez que pasa. Es por eso que en el bot hay bloqueos de comandos y una cola global para procesos pesados
-<p>Básicamente nadie puede ejecutar estos comandos de forma simultanea, solo uno de estos comandos puede ejecutarse a uno a la vez y de forma global, lo que se hace es encolar todas estas peticiones para realizar estos procesos, esto se hace con el fin de evitar que ocurra un desbordamiento de memoria o de CPU en el bot
-<p>A pesar de todo esto, en la práctica es poco probable verse envuelto en una cola para ejecutar estos comandos. En el caso de verse envuelto en una cola automática y se demora un tiempo considerable, debe reportar inmediatamente el problema al administrador del bot
+<p><h3>Regulated commands</h3>
+<p>There are commands, or parts of them, where they perform CPU heavy or memory heavy jobs and jobs that use the bash shell directly
+<p>And this is why in this bot, there are queues to avoid the users from executing these jobs at the same time and avoid issues like data raises
+<p>Network transfer commands also consume a lot of resources in the bot besides the bandwith, this is why in case the amount of network transfers reached the maximum and a user wants to download or upload something, it will have to wait in a queue called NIO queue until one of the transfers has finished
 <p>
-<p><h3>Límite de sesiones</h3>
-<p>En cada instancia del bot hay un límite de sesiones, esto se hace por dos razones principales:
-<p>1 - El espacio que consume cada sesión dentro de la memoria del bot
-<p>2 - El uso de los datos de cada sesión dentro del bot
-
+<p><h3>Sessions limit</h3>
+<p>In each instance of the bot running there's a daily user limit, which can be adjusted by the admin
+<p>By default the limit is 100 users, in case the limit is reached and a user wants to start a session in the bot, the user will recieve a message saying the limit has been reached and it will be black listed by the bot to ignore the user. This will only last until the bot is reset
 </div>
-
-
 
 <div id="c5" class="w3-container w3-padding-32">
 <p><h2>✍️ Extra knowledge</h2>
-<p>El comando <code>/start</code> sirve para consultar información básica, más allá de la ubicación actual para no para no "perderse"
-<p>Si la cola de procesos pesados o de subprocesos se alarga, y se queda mucho tiempo viendo cómo no avanza, debe reportarlo al administrador a través del grupo, al igual que si tiene una "rotura" en una cola de algún comando. El administrador del bot es el único que puede forzar vaciado de colas, resetear estados de sesiones y otros aspectos del bot sin necesidad de esperar a que el propio bot sea reseteado
-<p>Cada cuenta de MF Shell tiene un sitio web asociado, en este sitio web hay una sección de noticias donde se puede ver el "uptime" (tiempo de actividad) que lleva el bot guiándose del primer mensaje, tenga en cuenta que el bot es reiniciado cada 24 horas, <font color=red>borrando todo lo que hay dentro</font>. Asi que si piensa dejar información alojada en el bot para luego descargarla via web, revise el tiempo que lleva en pie el bot y saque usted sus propias conclusiones
-
+<p>The <code>/start</code> gives displays usefuñl information about the current session, so you don't get lost. Some data is not visible through this command though
+<p>If an automatic queue or a command stops working, you must report to the administrator through the group. The admin is the only user capable of resetting user sessions and other components in the bot
+<p>Each MF Shell account has it's own website attached. In this website, there's a news section in which you can see the bot's uptime, this is important because the bot is reset automatically every 24 and a half hours, <font color=red>purging everything inside it</font>, so if you are thinking about leaving files to pick up later through the server (this is the only reason you might do this), you first need to check the bot's uptime
+<p>Maintainances and updates are normally notified in the BoC channel, but when the bot is reset automatically by the hosting provider, the admin may do a patch or an update in the bot at that time
 </div>
 
 
