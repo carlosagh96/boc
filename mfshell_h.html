@@ -9,7 +9,7 @@
 <script src="w3_hide_n_show.js"></script>
 <script>
 
-const the_json='{"c1":["about","auto","help","info","mediainfo","start"],"c2":["back","cd","ls","mkdir","mv","rm"],"c3":["bren","crypt","ext","seven"],"c4":["brake","cancel","que"],"c5":["aname","auto","download","upload"],"c6":["freak","gddl","megacreds","megadl","search","share","ua","wget","ytdl"]}';
+const the_json='{"c1":["about","auto","help","info","mediainfo","start"],"c2":["back","cd","ls","mkdir","mv","rm"],"c3":["bren","crypt","ext","seven"],"c4":["brake","cancel","que"],"c5":["aname","download","upload"],"c6":["freak","gddl","megacreds","megadl","search","share","ua","wget","ytdl"]}';
 const the_data=JSON.parse(the_json);
 const the_data_keys=Object.keys(the_data);
 const the_data_keys_ln=the_data_keys.length;
@@ -40,6 +40,10 @@ const the_data_keys_ln=the_data_keys.length;
 <div>
 <button onclick="funAccGroup('c1')" class="w3-button w3-block w3-black" style="width:100%">Information and help</button>
 <div id="c1" class="w3-hide">
+
+<div class="other">
+<p>Commands for gathering information or getting help
+</div>
 
 <button onclick="funAccSimple('about','c1')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/about</button>
 <div id="about" class="w3-hide field w3-padding-32">
@@ -93,6 +97,10 @@ const the_data_keys_ln=the_data_keys.length;
 <div>
 <button onclick="funAccGroup('c2')" class="w3-button w3-block w3-black" style="width:100%">File system (Basic)</button>
 <div id="c2" class="w3-hide">
+
+<div class="other">
+<p>Commands for basic file system utilities
+</div>
 
 <button onclick="funAccSimple('back','c2')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/back</button>
 <div id="back" class="w3-hide field w3-padding-32">
@@ -157,6 +165,10 @@ const the_data_keys_ln=the_data_keys.length;
 <div>
 <button onclick="funAccGroup('c3')" class="w3-button w3-black" style="width:100%">File system (Advanced)</button>
 <div id="c3" class="w3-hide">
+
+<div class="other">
+<p>Commands for advanced file system utilities
+</div>
 
 <button onclick="funAccSimple('bren','c3')" class="w3-button" style="width:100%;background-color:#282E33">/bren</button>
 <div id="bren" class="w3-hide field w3-padding-32">
@@ -251,6 +263,11 @@ const the_data_keys_ln=the_data_keys.length;
 <button onclick="funAccGroup('c4')" class="w3-button w3-block w3-black" style="width:100%">Queue controls</button>
 <div id="c4" class="w3-hide">
 
+<div class="other">
+<p>Commands used for controlling network transfer queues
+<p>Remember <a class="blu" href="mfshell_g_es.html#c4">this</a>
+</div>
+
 <button onclick="funAccSimple('brake','c4')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/brake</button>
 <div id="brake" class="w3-hide field w3-padding-32">
 <p>Sets or release queue brake on a queue
@@ -298,6 +315,10 @@ const the_data_keys_ln=the_data_keys.length;
 <button onclick="funAccGroup('c5')" class="w3-button w3-block w3-black" style="width:100%">Network transfers (Telegram)</button>
 <div id="c5" class="w3-hide">
 
+<div class="other">
+<p>Commands for network transfers between the bot and Telegram only
+</div>
+
 <button onclick="funAccSimple('aname','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/aname</button>
 <div id="aname" class="w3-hide field w3-padding-32">
 <p>Activate/Deactivate automatic renaming when downloading from Telegram to the bot
@@ -305,14 +326,6 @@ const the_data_keys_ln=the_data_keys.length;
 <p>Deactivated by default
 <p>When downloading, it adds to the filename, an aditional string in the name, very useful for downloading multiple files with the same name
 <p><strong>Usage:</strong> <code class="cmd">/aname</code>
-</div>
-
-<button onclick="funAccSimple('auto','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/auto</button>
-<div id="auto" class="w3-hide field w3-padding-32">
-<p>Activate/Deactivate the automatic download of files forwarded to the chat
-<p>Deactivated by default
-<p>It's the only way to download albums and groups of files
-<p><strong>Usage:</strong> <code class="cmd">/auto</code>
 </div>
 
 <button onclick="funAccSimple('download','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/download</button>
@@ -346,6 +359,10 @@ const the_data_keys_ln=the_data_keys.length;
 <div>
 <button onclick="funAccGroup('c6')" class="w3-button w3-block w3-black" style="width:100%">Network transfers (Web)</button>
 <div id="c6" class="w3-hide">
+
+<div class="other">
+<p>Commands for network transfers (basically downloads) between the rest of the web and the bot
+</div>
 
 <button onclick="funAccSimple('freak','c6')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/freak</button>
 <div id="freak" class="w3-hide field w3-padding-32">
@@ -452,25 +469,25 @@ const the_data_keys_ln=the_data_keys.length;
 <div id="ytdl" class="w3-hide field w3-padding-32">
 <p>Youtube downloader
 <p>Supports playlists and subtitles
-<p>Ajustes:
-<p>→ Resoluciones de vídeo: "144p", "240p", "360p", "480p", "720p", "1080p", "1440p", "2160p". La resolución predeterminada es "720p"
-<p>→ Extraer audio: "exa"
-<p>→ Subtitular: "subs"
-<p>Reglas de los ajustes:
-<p>→ Extraer audio debe usarse solo, no tiene sentido usar este ajuste junto al de subtitular o descargar en una resolución específica
-<p>→ Se puede subtitular y bajar también una resolución de vídeo específica, en el caso de no especificar una resolución de video al subtitular, se descarga en el predeterminado
+<p>Settings:
+<p>→ Video resolutions: "144p", "240p", "360p", "480p", "720p", "1080p", "1440p", "2160p". The default is "720p"
+<p>→ Extract audio: "exa"
+<p>→ Subtitles: "subs"
+<p>Rules for setings:
+<p>→ The audio extracting option cannot be used with the other settings, because it doesn't make sense to embed subtitles or donwload in a specific resolution if you aren't keeping the video stream
+<p>→ You can subtitle and also download to a specific video resolution
 <p>Acerca del subtitulado:
-<p>→ Depende del lenguaje detectado por el bot al iniciar sesión
-<p>→ No todos los vídeos de Youtube están subtitulados, los autogenerados no cuentan
+<p>→ (Beta) Depends on the detected language of your session
+<p>→ Not all videos in youtube are subtitled, autogenerated subtitles do not count
 <p><strong>Usage:</strong> <code class="cmd">/ytdl A1 A2</code>
-<p>A1 = URLs de vídeos de Youtube o listas de reproducción de Youtube separadas por espacios
-<p>A2 = Ajustes. Puede ser una resolución de video de las soportadas, extraer audio o generar subtítulos junto al video descargado 
+<p>A1 = Youtube URLs or playlists separated by space
+<p>A2 = The settings (Optional)
 <p><strong>Examples:</strong>
-<p><code class="cmd">/ytdl URL1 URL2</code> Encola 2 enlaces, si alguno es una lista de reproducción, se repobla la cola con los videos de dicha lista de reproducción
-<p><code class="cmd">/ytdl URL1 URL2 URL3 360p</code> Encola 3 enlaces y prioriza descargar solamente en una resolución de 360p
-<p><code class="cmd">/ytdl URL1 URL2 URL3 URL4 subs</code> Encola 4 enlaces y los manda a subtitular
-<p><code class="cmd">/ytdl URL1 URL2 exa</code> Encola 2 enlaces y manda a extraer el audio
-<p><code class="cmd">/ytdl URL1 URL2 URL3 subs,1080p</code> Encola 3 enlaces y los manda a subtitular y bajar en 1080p
+<p><code class="cmd">/ytdl URL1 URL2</code> Puts 2 URLs in the queue
+<p><code class="cmd">/ytdl URL1 URL2 URL3 360p</code> Puts 3 URLs in queue and specifies that all videos have to be downloaded on "360p"
+<p><code class="cmd">/ytdl URL1 URL2 URL3 URL4 subs</code> Puts 4 URLs in the queue and it will download and embed subtitles on the videos, if there are subtitles available
+<p><code class="cmd">/ytdl URL1 URL2 exa</code> Puts 2 URLs in the queue and extracts audio
+<p><code class="cmd">/ytdl URL1 URL2 URL3 subs,1080p</code> Puts 3 URLs in the queue and the videos will be subtitled (if subtitles are found) and the videos must be in "1080p"
 </div>
 
 </div>

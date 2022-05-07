@@ -8,6 +8,7 @@ code.cmd{font-size:110%;color:white;background-color:black;padding-left:8px;padd
 div.field{background-color:#282E33;color:white;padding-left:16px;padding-right:16px;padding-top:8px;padding-bottom:8px}
 */
 div.field{background-color:#3A4047;color:white;padding-left:16px;padding-right:16px;padding-top:8px;padding-bottom:8px}
+div.other{background-color:#21242B;color:white;padding-left:16px;padding-right:16px;padding-top:4px;padding-bottom:4px}
 a.blu{padding:8;background-color:transparent;font-weight:bold;}
 a.blu:link{color:#0074E8;text-decoration:none;}
 a.blu:hover{text-decoration:underline;}
