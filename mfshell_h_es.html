@@ -9,7 +9,7 @@
 <script src="w3_hide_n_show.js"></script>
 <script>
 
-const the_json='{"c1":["about","help","info","mediainfo","start"],"c2":["back","cd","ls","mkdir","mv","rm"],"c3":["bren","crypt","ext","seven"],"c4":["brake","cancel","que"],"c5":["aname","auto","download","upload"],"c6":["freak","gddl","megacreds","megadl","share","ua","wget","ytdl"]}';
+const the_json='{"c1":["about","auto","help","info","mediainfo","start"],"c2":["back","cd","ls","mkdir","mv","rm"],"c3":["bren","crypt","ext","seven"],"c4":["brake","cancel","que"],"c5":["aname","download","upload"],"c6":["freak","gddl","megacreds","megadl","search","share","ua","wget","ytdl"]}';
 const the_data=JSON.parse(the_json);
 const the_data_keys=Object.keys(the_data);
 const the_data_keys_ln=the_data_keys.length;
@@ -45,6 +45,15 @@ const the_data_keys_ln=the_data_keys.length;
 <div id="about" class="w3-hide field w3-padding-32">
 <p>Muestra un breve resúmen acerca del bot y el enlace al sitio web propio del bot
 <p><strong>Uso:</strong> <code class="cmd">/about</code>
+</div>
+
+<button onclick="funAccSimple('auto','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/auto</button>
+<div id="auto" class="w3-hide field w3-padding-32">
+<p>Activar o desactivar la descarga automática de los archivos y URLs
+<p>Desactivado de forma predeterminada
+<p>Es la única forma de descargar álbumes/grupos de archivos de Telegram
+<p>Con la descarga automática activada, también se pueden descargar automáticamente URLs. De forma predeterminada, el comando asignado es <code>/wget</code>, es decir, que los elnaces que envíe al chat deben ser compatibles con <code>/wget</code>, pero para cambiar el descargador asignado, ejecute el comando sin argumento. Los comandos asignables son los de descarga web
+<p><strong>Uso:</strong> <code class="cmd">/auto</code>
 </div>
 
 <button onclick="funAccSimple('help','c1')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/help</button>
@@ -288,14 +297,6 @@ const the_data_keys_ln=the_data_keys.length;
 <p><strong>Uso:</strong> <code class="cmd">/aname</code>
 </div>
 
-<button onclick="funAccSimple('auto','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/auto</button>
-<div id="auto" class="w3-hide field w3-padding-32">
-<p>Activar o desactivar la descarga automática de los archivos que son reenviados hacia el chat
-<p>Desactivado de forma predeterminada
-<p>Es la única forma de descargar álbumes/grupos de archivos
-<p><strong>Uso:</strong> <code class="cmd">/auto</code>
-</div>
-
 <button onclick="funAccSimple('download','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/download</button>
 <div id="download" class="w3-hide field w3-padding-32">
 <p>Descarga un archivo de Telegram al bot
@@ -370,6 +371,21 @@ const the_data_keys_ln=the_data_keys.length;
 <p>A = URLs de archivos en MEGA separadas por espacios
 <p><strong>Ejemplos</strong>:
 <p><code class="cmd">/megadl URL1 URL2</code> Encola 2 URLs para descargar
+</div>
+
+<button onclick="funAccSimple('search','c6')" class="w3-button" style="width:100%;background-color:#282E33">/search</button>
+<div id="search" class="w3-hide field w3-padding-32">
+<p>Buscador
+<p>Busca en sitios compatibles con los descargadores de URL del bot
+<p>Los resultados de búsqueda son enlaces, estos enlaces debe usarlos directamente en otros comandos según su tipo
+<p>En caso de que los resultados sean muy largos, se le dará un enlace donde están todos los resultados de la búsqueda
+<p>Ejecute sin argumentos para ver los sitios donde se busca según el criterio de búsqueda
+<p>Tipos de búsqueda:
+<p>apk - Aplicaciones de Android
+<p>man - Manga/Manwha/Comics, etc...
+<p><strong>Uso:</strong> <code class="cmd">/search A1 A2</code>
+<p>A1 = Tipo de búsqueda
+<p>A2 = Texto
 </div>
 
 <button onclick="funAccSimple('share','c6')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/share</button>

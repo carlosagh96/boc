@@ -9,7 +9,7 @@
 <script src="w3_hide_n_show.js"></script>
 <script>
 
-const the_json='{"c1":["about","help","info","mediainfo","start"],"c2":["back","cd","ls","mkdir","mv","rm"],"c3":["bren","crypt","ext","seven"],"c4":["brake","cancel","que"],"c5":["aname","auto","download","upload"],"c6":["freak","gddl","megacreds","megadl","share","ua","wget","ytdl"]}';
+const the_json='{"c1":["about","auto","help","info","mediainfo","start"],"c2":["back","cd","ls","mkdir","mv","rm"],"c3":["bren","crypt","ext","seven"],"c4":["brake","cancel","que"],"c5":["aname","auto","download","upload"],"c6":["freak","gddl","megacreds","megadl","search","share","ua","wget","ytdl"]}';
 const the_data=JSON.parse(the_json);
 const the_data_keys=Object.keys(the_data);
 const the_data_keys_ln=the_data_keys.length;
@@ -45,6 +45,16 @@ const the_data_keys_ln=the_data_keys.length;
 <div id="about" class="w3-hide field w3-padding-32">
 <p>Shows a brief information about the bot and a link to the bot's own website
 <p><strong>Usage:</strong> <code class="cmd">/about</code>
+</div>
+
+<button onclick="funAccSimple('auto','c5')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/auto</button>
+<div id="auto" class="w3-hide field w3-padding-32">
+<p>Activate/deactivate the automatic downloads
+<p>Deactivated by default
+<p>When activated, it automatically downloads Telegram files and albums forwarded to the chat, as well as URLs without the need to write the required command + the URL in a single message
+<p>This command is the only way to download albums and groups of files automatically
+<p>By default, the assigned command for URL downloading is <code>/wget</code>, which means you need to send URLs compatible with the <code>/wget</code> command, to use a different URL downloader, you have to execute it without args while <code>/auto</code> is activated
+<p><strong>Usage:</strong> <code class="cmd">/auto</code>
 </div>
 
 <button onclick="funAccSimple('help','c1')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/help</button>
@@ -380,6 +390,21 @@ const the_data_keys_ln=the_data_keys.length;
 <p>A = One or more URLs separated by a space
 <p><strong>Examples:</strong>
 <p><code class="cmd">/megadl URL1 URL2</code> Puts 2 URLs in the queue
+</div>
+
+<button onclick="funAccSimple('search','c6')" class="w3-button" style="width:100%;background-color:#282E33">/search</button>
+<div id="search" class="w3-hide field w3-padding-32">
+<p>Searcher
+<p>Execute without arguments to see the compatible sites
+<p>Searches in websites compatible with the URL downloaders of the bot
+<p>The search results are links, these links which can be used directly in other commands depending on their type
+<p>In case that the results are bigger to show in Telegram, you will be given a link to the results; these results will not be accesible one the bot is shut down or reset
+<p>Search types:
+<p>apk - Android apps
+<p>man - Manga/Comics, etc...
+<p><strong>Usage:</strong> <code class="cmd">/search A1 A2</code>
+<p>A1 = Search type
+<p>A2 = Text
 </div>
 
 <button onclick="funAccSimple('share','c6')" class="w3-button w3-block" style="width:100%;background-color:#282E33">/share</button>
