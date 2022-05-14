@@ -1,6 +1,6 @@
 # Bots Of Charles
 
-Website for the documentation of the BoC project bots
+Full documentation for bots
 
 English: https://carlosagh96.github.io/boc
 
