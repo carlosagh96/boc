@@ -34,9 +34,7 @@ const the_data_keys_ln=the_data_keys.length;
 <div class="w3-container">
 
 <p class="w3-center">Esta página contiene todos los comandos del bot PRO Mail</p>
-<!--
 <p class="w3-center">Si no ha leído la guía, vuelva y termine de leerla</p>
--->
 
 <p>
 <div>
@@ -44,25 +42,25 @@ const the_data_keys_ln=the_data_keys.length;
 <div id="c1" class="w3-hide">
 
 <div class="other">
-<p>Comandos para obtener información y ayuda
+<p>Comandos para obtener información y ayuda</p>
 </div>
 
 <button onclick="funAccSimple('about','c1')" class="w3-button" style="width:100%;background-color:#282E33">/about</button>
 <div id="about" class="w3-hide field w3-padding-32">
-<p>Muestra un breve resúmen acerca del bot y el enlace al sitio web propio del bot
-<p><strong>Uso:</strong> <code class="cmd">/about</code>
+<p>Muestra un breve resúmen acerca del bot y el enlace al sitio web propio del bot</p>
+<p><strong>Uso:</strong> <code class="cmd">/about</code></p>
 </div>
 
 <button onclick="funAccSimple('help','c1')" class="w3-button" style="width:100%;background-color:#282E33">/help</button>
 <div id="help" class="w3-hide field w3-padding-32">
-<p>Muestra enlaces a la guía de usuario y a la referencia de comandos, es decir, este sitio
-<p><strong>Uso:</strong> <code class="cmd">/help</code>
+<p>Muestra enlaces a la guía de usuario y a la referencia de comandos, es decir, este sitio</p>
+<p><strong>Uso:</strong> <code class="cmd">/help</code></p>
 </div>
 
 <button onclick="funAccSimple('start','c1')" class="w3-button" style="width:100%;background-color:#282E33">/start</button>
 <div id="start" class="w3-hide field w3-padding-32">
-<p>Muestra información resumida sobre su sesión en el bot y el estado sobre las colas globales de envío. Esto muestra toda su configuración
-<p><strong>Uso:</strong> <code class="cmd">/start</code>
+<p>Muestra información resumida sobre su sesión en el bot y el estado sobre las colas globales de envío. Esto muestra toda su configuración</p>
+<p><strong>Uso:</strong> <code class="cmd">/start</code></p>
 </div>
 
 </div>
@@ -75,50 +73,50 @@ const the_data_keys_ln=the_data_keys.length;
 <div id="c2" class="w3-hide">
 
 <div class="other">
-<p>Comandos para establecer datos sobre el correo de orígen y el destinatario
-<p>IMPORTANTE: Tenga en cuenta que hay comandos donde se pide usuario del correo en lugar de dirección del correo
+<p>Comandos para establecer datos sobre el correo de orígen y el destinatario</p>
+<p>IMPORTANTE: Tenga en cuenta que hay comandos donde se pide usuario del correo en lugar de dirección del correo</p>
 </div>
 
 <button onclick="funAccSimple('dest','c2')" class="w3-button" style="width:100%;background-color:#282E33">/dest</button>
 <div id="dest" class="w3-hide field w3-padding-32">
-<p>Establecer la dirección de correo destinatario
-<p>Ejecute sin argumentos para ver el destinatario actual
-<p><strong>Uso:</strong> <code class="cmd">/dest A</code>
-<p>A = Dirección de correo electrónico
+<p>Establecer la dirección de correo destinatario</p>
+<p>Ejecute sin argumentos para ver el destinatario actual</p>
+<p><strong>Uso:</strong> <code class="cmd">/dest A</code></p>
+<p>A = Dirección de correo electrónico</p>
 </div>
 
 <button onclick="funAccSimple('from','c2')" class="w3-button" style="width:100%;background-color:#282E33">/from</button>
 <div id="from" class="w3-hide field w3-padding-32">
-<p>Establece el usuario del correo de orígen (SMTP) y la contraseña correspondiente
-<p>Ejecute sin argumentos para ver el usuario y la contraseña actual
-<p>El comando usa si o si los dos argumentos, para cambiar solamente el usuario o solamente la contraseña, mejor use /user o /pass respectivamente
-<p><strong>Uso:</strong> <code class="cmd">/from A1 A2</code>
-<p>A1 = Usuario del correo de origen
-<p>A2 = Contraseña del usuario
+<p>Establece el usuario del correo de orígen (SMTP) y la contraseña correspondiente</p>
+<p>Ejecute sin argumentos para ver el usuario y la contraseña actual</p>
+<p>El comando usa si o si los dos argumentos, para cambiar solamente el usuario o solamente la contraseña, mejor use /user o /pass respectivamente</p>
+<p><strong>Uso:</strong> <code class="cmd">/from A1 A2</code></p>
+<p>A1 = Usuario del correo de origen</p>
+<p>A2 = Contraseña del usuario</p>
 </div>
 
 <button onclick="funAccSimple('pass','c2')" class="w3-button" style="width:100%;background-color:#282E33">/pass</button>
 <div id="pass" class="w3-hide field w3-padding-32">
-<p>Establece la contraseña del correo de orígen (SMTP)
-<p>Ejecute sin argumentos para ver la contraseña actual
-<p><strong>Uso:</strong> <code class="cmd">/pass A</code>
-<p>A = Contraseña del usuario
+<p>Establece la contraseña del correo de orígen (SMTP)</p>
+<p>Ejecute sin argumentos para ver la contraseña actual</p>
+<p><strong>Uso:</strong> <code class="cmd">/pass A</code></p>
+<p>A = Contraseña del usuario</p>
 </div>
 
 <button onclick="funAccSimple('user','c2')" class="w3-button" style="width:100%;background-color:#282E33">/user</button>
 <div id="user" class="w3-hide field w3-padding-32">
-<p>Establece el usuario del correo de orígen (SMTP)
-<p>Ejecute sin argumentos para ver el usuario actual
-<p><strong>Uso:</strong> <code class="cmd">/user A</code>
-<p>A = Usuario del correo de origen
+<p>Establece el usuario del correo de orígen (SMTP)</p>
+<p>Ejecute sin argumentos para ver el usuario actual</p>
+<p><strong>Uso:</strong> <code class="cmd">/user A</code></p>
+<p>A = Usuario del correo de origen</p>
 </div>
 
 <button onclick="funAccSimple('smtp','c2')" class="w3-button" style="width:100%;background-color:#282E33">/smtp</button>
 <div id="smtp" class="w3-hide field w3-padding-32">
-<p>Establece el servidor SMTP a usar. Al realizar el envío, la dirección de correo electrónico de origen se determina según el usuario establecido y el servidor SMTP
-<p>Ejecute sin argumentos para ver la lista de servidores SMTP soportados por el bot
-<p><strong>Uso:</strong> <code class="cmd">/smtp A</code>
-<p>A = Servidor SMTP
+<p>Establece el servidor SMTP a usar. Al realizar el envío, la dirección de correo electrónico de origen se determina según el usuario establecido y el servidor SMTP</p>
+<p>Ejecute sin argumentos para ver la lista de servidores SMTP soportados por el bot</p>
+<p><strong>Uso:</strong> <code class="cmd">/smtp A</code></p>
+<p>A = Servidor SMTP</p>
 </div>
 
 </div>
@@ -131,39 +129,39 @@ const the_data_keys_ln=the_data_keys.length;
 <div id="c3" class="w3-hide">
 
 <div class="other">
-<p>Comandos que tienen que ver con la descarga de archivos al bot y el control de la cola de descarga
+<p>Comandos que tienen que ver con la descarga de archivos al bot y el control de la cola de descarga</p>
 </div>
 
 <button onclick="funAccSimple('down','c3')" class="w3-button" style="width:100%;background-color:#282E33">/down</button>
 <div id="down" class="w3-hide field w3-padding-32">
-<p>Descarga un archivo de Telegram al bot para su posterior suscripción al envío
-<p>Se usa respondiendo a un archivo
-<p><strong>Uso:</strong> <code class="cmd">/down</code>
+<p>Descarga un archivo de Telegram al bot para su posterior suscripción al envío</p>
+<p>Se usa respondiendo a un archivo</p>
+<p><strong>Uso:</strong> <code class="cmd">/down</code></p>
 </div>
 
 <button onclick="funAccSimple('brake','c3')" class="w3-button" style="width:100%;background-color:#282E33">/brake</button>
 <div id="brake" class="w3-hide field w3-padding-32">
-<p>Frena el proceso de descarga de Telegram al bot
-<p>No detiene la descarga actual, siempre se ejecuta antes de la siguiente descarga
-<p><strong>Uso:</strong> <code class="cmd">/brake</code>
+<p>Frena el proceso de descarga de Telegram al bot</p>
+<p>No detiene la descarga actual, siempre se ejecuta antes de la siguiente descarga</p>
+<p><strong>Uso:</strong> <code class="cmd">/brake</code></p>
 </div>
 
 <button onclick="funAccSimple('cancel','c3')" class="w3-button" style="width:100%;background-color:#282E33">/cancel</button>
 <div id="cancel" class="w3-hide field w3-padding-32">
-<p>Cancela la suscripción del archivo para el envío
-<p>No cancela la descarga, lo que hace es evitar que el archivo se suscriba al envío
-<p><strong>Uso:</strong> <code class="cmd">/cancel</code>
+<p>Cancela la suscripción del archivo para el envío</p>
+<p>No cancela la descarga, lo que hace es evitar que el archivo se suscriba al envío</p>
+<p><strong>Uso:</strong> <code class="cmd">/cancel</code></p>
 </div>
 
 <button onclick="funAccSimple('que','c3')" class="w3-button" style="width:100%;background-color:#282E33">/que</button>
 <div id="que" class="w3-hide field w3-padding-32">
-<p>Administrador de cola de descarga del chat al bot. Ejecute sin argumentos para ver la cola
-<p>Al igual que en <a class="main" href="mfshell_h.html#que">MF Shell</a>, el primer elemento de la cola no se borra, se cancela, si selecciona el elemento cero por selección simple, eliminará todos los elementos de la cola. Si no sabe qué es la selección simple, véase en la guía de <a class="main" href="mfshell_g.html">MF Shell</a> los tipos de selección
-<p><strong>Uso:</strong> <code class="cmd">/que A</code>
-<p>A = Selección simple o de rango
-<p><strong>Ejemplos:</strong>
-<p><code class="cmd">/que 0</code> Borra todos los elementos de la cola excepto el primero
-<p><code class="cmd">/que 4-3</code> Borra los elementos (si existen) 4,5, y 6 de la cola
+<p>Administrador de cola de descarga del chat al bot. Ejecute sin argumentos para ver la cola</p>
+<p>Al igual que en <a class="main" href="mfshell_h.html#que">MF Shell</a>, el primer elemento de la cola no se borra, se cancela, si selecciona el elemento cero por selección simple, eliminará todos los elementos de la cola. Si no sabe qué es la selección simple, véase en la guía de <a class="main" href="mfshell_g.html#c3">MF Shell</a> los tipos de selección</p>
+<p><strong>Uso:</strong> <code class="cmd">/que A</code></p>
+<p>A = Selección simple o de rango</p>
+<p><strong>Ejemplos:</strong></p>
+<p><code class="cmd">/que 0</code> Borra todos los elementos de la cola excepto el primero</p>
+<p><code class="cmd">/que 4-3</code> Borra los elementos (si existen) 4,5, y 6 de la cola</p>
 </div>
 
 </div>
@@ -176,46 +174,59 @@ const the_data_keys_ln=the_data_keys.length;
 <div id="c4" class="w3-hide">
 
 <div class="other">
-<p>Comandos que afectan el comportamiento de partes del bot y el tratamiento de los archivos durante todo el tiempo que estén en el bot antes de ser enviados
+<p>Comandos que afectan el comportamiento de partes del bot y el tratamiento de los archivos durante todo el tiempo que estén en el bot antes de ser enviados</p>
 </div>
+
+
+
 
 <button onclick="funAccSimple('auto','c4')" class="w3-button" style="width:100%;background-color:#282E33">/auto</button>
 <div id="auto" class="w3-hide field w3-padding-32">
-
+<p>Activar o desactivar la descarga automática de los archivos que son reenviados hacia el chat. Activado de forma predeterminada. Es la única forma de descargar álbumes/grupos de archivos</p>
+<p><strong>Uso:</strong> <code class="cmd">/auto</code></p>
 </div>
+
 
 <button onclick="funAccSimple('delay','c4')" class="w3-button" style="width:100%;background-color:#282E33">/delay</button>
 <div id="delay" class="w3-hide field w3-padding-32">
-
+<p>Atrasa la suscripción a la cola de envío. Útil para planificar. El límite es de 1 minuto</p>
+<p>Ejecute sin argumentos para ver cuánto tiempo hay de atraso</p>
+<p><strong>Uso:</strong> <code class="cmd">/delay A</code></p>
+<p>A = Tiempo en segundos</p>
 </div>
+
 
 <button onclick="funAccSimple('hasher','c4')" class="w3-button" style="width:100%;background-color:#282E33">/hasher</button>
 <div id="hasher" class="w3-hide field w3-padding-32">
-
+<p>Activar o desactivar el cálculo de hashes MD5 de cada archivo antes de suscribirlo envío</p>
+<p>Muy útil para asegurar la fiabilidad de los archivos después de ser enviados</p>
+<p><strong>Uso:</strong> <code class="cmd">/hasher</code></p>
 </div>
+
+
 
 <button onclick="funAccSimple('slicer','c4')" class="w3-button" style="width:100%;background-color:#282E33">/slicer</button>
 <div id="slicer" class="w3-hide field w3-padding-32">
-<p>Configuración del archivador automático, creación y respaldo de archivos resultantes
+<p>Configuración del archivador automático, creación y respaldo de archivos resultantes</p>
 <p>El archivador solo funciona después de descargar y antes de suscribir, funciona de forma pasiva por lo que este comando es solo para configurar su comportamiento
-<p>Ejecute sin argumentos para ver un resúmen del comportamiento actual
-<p>En este comando hay acciones y valores, no todas las acciones tienen valores
-<p>Las acciones que tengan valores, si se ejecutan sin un valor para poder cambiarlo, se puede ver su valor actual
-<p>Acciones y valores:
-<p><code>ps</code> → Establecer/Cambiar el tamaño de partes. Debe ser entre 1 y 64 MB. El valor es el tamaño nuevo de partes
-<p><code>pw</code> → Establecer/Cambiar contraseña. El valor es la contraseña
-<p><code>dp</code> → Borrar contraseña establecida. No usa un valor
-<p><code>bk</code> → Establecer el nivel de respaldo. Hay 3 niveles, 0 (No respaldar), 1 (Respaldar en caso de error de envío), 2 (Respaldar siempre antes de suscribir al envío). El valor es el nivel
-<p><code>an</code> → Activar/Desactivar el uso de un nombre base de archivo aleatorio. No usa un valor
-<p><code>ap</code> → Activar/Desactivar el uso de una contraseña aleatoria por cada archivo. No usa un valor. Al activar el uso de contraseñas aleatorias, se ignorará el hecho de si tiene o no una contraseña asignada de forma fija en <code>pw</code>
-<p><strong>Uso:</strong> <code class="cmd">/slicer A V</code>
-<p>A = Acción
-<p>V = Valor (Depende de la acción)
-<p><strong>Ejemplos</strong>
-<p><code class="cmd">/slicer</code> Ver un resumen del comportamiento actual
-<p><code class="cmd">/slicer ps</code> Ver el tamaño de partes asignado
-<p><code class="cmd">/slicer ps 15</code> Cambiar el tamaño de partes a 15 MB
-<p><code class="cmd">/slicer dp</code> Borrar la contraseña
+<p>Ejecute sin argumentos para ver un resúmen del comportamiento actual</p>
+<p>En este comando hay acciones y valores, no todas las acciones tienen valores</p>
+<p>Las acciones que tengan valores, si se ejecutan sin un valor para poder cambiarlo, se puede ver su valor actual</p>
+<p>Acciones y valores:</p>
+<p><code>ps</code> → Establecer/Cambiar el tamaño de partes. Debe ser entre 1 y 64 MB. El valor es el tamaño nuevo de partes</p>
+<p><code>pw</code> → Establecer/Cambiar contraseña. El valor es la contraseña</p>
+<p><code>dp</code> → Borrar contraseña establecida. No usa un valor</p>
+<p><code>bk</code> → Establecer el nivel de respaldo. Hay 3 niveles, 0 (No respaldar), 1 (Respaldar en caso de error de envío), 2 (Respaldar siempre antes de suscribir al envío). El valor es el nivel</p>
+<p><code>an</code> → Activar/Desactivar el uso de un nombre base de archivo aleatorio. No usa un valor</p>
+<p><code>ap</code> → Activar/Desactivar el uso de una contraseña aleatoria por cada archivo. No usa un valor. Al activar el uso de contraseñas aleatorias, se ignorará el hecho de si tiene o no una contraseña asignada de forma fija en <code>pw</code></p>
+<p><strong>Uso:</strong> <code class="cmd">/slicer A V</code></p>
+<p>A = Acción</p>
+<p>V = Valor (Depende de la acción)</p>
+<p><strong>Ejemplos</strong></p>
+<p><code class="cmd">/slicer</code> Ver un resumen del comportamiento actual</p>
+<p><code class="cmd">/slicer ps</code> Ver el tamaño de partes asignado</p>
+<p><code class="cmd">/slicer ps 15</code> Cambiar el tamaño de partes a 15 MB</p>
+<p><code class="cmd">/slicer dp</code> Borrar la contraseña</p>
 <p>Véase también la siguiente conversación en el chat del grupo</p>
 
 <span><script async src="https://telegram.org/js/telegram-widget.js?18" data-telegram-post="bots_of_charles_chat/17178" data-width="100%" data-dark="1"></script></span>
@@ -226,19 +237,19 @@ const the_data_keys_ln=the_data_keys.length;
 
 </div>
 
-<button onclick="funAccSimple('','c4')" class="w3-button" style="width:100%;background-color:#282E33">/sname</button>
+<button onclick="funAccSimple('sname','c4')" class="w3-button" style="width:100%;background-color:#282E33">/sname</button>
 <div id="sname" class="w3-hide field w3-padding-32">
-<p>Cambiar nombres de archivos a "nombres seguros" antes de descargar al bot
-<p>Algunos clientes de correo electrónico no leen correctamente nombres de archivos desde lo que se espera que no puedan leer correctamente desde caractéres cirílicos, asiáticos o arábicos, hasta lo más simple como tildes o incluso espacios
-<p>Los archivos no se renombran no existen todavía del lado del bot para que pase eso, lo que se hace es que se les cambia el nombre antes de ser descargados y ese será el nuevo nombre del archivo al descargar
-<p>Hay 3 niveles de renombrado:
-<p>0 - No renombrar. Mantiene el nombre del archivo tal cual
-<p>1 - Normal. Reemplaza espacios por guiones bajos, tildes, quita caracteres tales como asiáticos, griegos, arábicos, etc...
-<p>2 - Agresivo. Además de lo que se hace en el nivel 1, sustituye símbolos comunes como "&", "$", elimina incluso paréntesis, corchetes y llaves. <font color="red">El uso de este nivel puede resultar en un nombre drásticamente diferente al original</font>
-<p><strong>Uso:</strong> <code class="cmd">/sname A</code>
-<p>A = Nivel
-<p><strong>Ejemplos</strong>
-<p><code class="cmd">/sname 1</code> Ajustar agresividad de nombres seguros al nivel 1
+<p>Cambiar nombres de archivos a "nombres seguros" antes de descargar al bot</p>
+<p>Algunos clientes de correo electrónico no leen correctamente nombres de archivos desde lo que se espera que no puedan leer correctamente desde caractéres cirílicos, asiáticos o arábicos, hasta lo más simple como tildes o incluso espacios</p>
+<p>Los archivos no se renombran no existen todavía del lado del bot para que pase eso, lo que se hace es que se les cambia el nombre antes de ser descargados y ese será el nuevo nombre del archivo al descargar</p>
+<p>Hay 3 niveles de renombrado:</p>
+<p>0 - No renombrar. Mantiene el nombre del archivo tal cual</p>
+<p>1 - Normal. Reemplaza espacios por guiones bajos, tildes, quita caracteres tales como asiáticos, griegos, arábicos, etc...</p>
+<p>2 - Agresivo. Además de lo que se hace en el nivel 1, sustituye símbolos comunes como el ampher, signos de dolar, elimina incluso paréntesis, corchetes y llaves. <font color="red">El uso de este nivel puede resultar en un nombre drásticamente diferente al original</font></p>
+<p><strong>Uso:</strong> <code class="cmd">/sname A</code></p>
+<p>A = Nivel</p>
+<p><strong>Ejemplos</strong></p>
+<p><code class="cmd">/sname 1</code> Ajustar agresividad de nombres seguros al nivel 1</p>
 </div>
 
 </div>
@@ -251,23 +262,23 @@ const the_data_keys_ln=the_data_keys.length;
 <div id="c5" class="w3-hide">
 
 <div class="other">
-<p>Comandos para gestionar la configuración personal
+<p>Comandos para gestionar la configuración personal</p>
 </div>
 
 <button onclick="funAccSimple('export','c5')" class="w3-button" style="width:100%;background-color:#282E33">/export</button>
 <div id="export" class="w3-hide field w3-padding-32">
-<p>Exporta la configuración al chat
-<p>Se recomienda anclar estas configuraciones en el chat con el bot
-<p>Opcionalmente puede añadirle un nombre de prefijo al archivo para identificarlo
-<p><strong>Uso:</strong> <code class="cmd">/export A</code>
-<p>A = Prefijo
+<p>Exporta la configuración al chat</p>
+<p>Se recomienda anclar estas configuraciones en el chat con el bot</p>
+<p>Opcionalmente puede añadirle un nombre de prefijo al archivo para identificarlo</p>
+<p><strong>Uso:</strong> <code class="cmd">/export A</code></p>
+<p>A = Prefijo</p>
 </div>
 
 <button onclick="funAccSimple('import','c5')" class="w3-button" style="width:100%;background-color:#282E33">/import</button>
 <div id="import" class="w3-hide field w3-padding-32">
-<p>Importa una configuración existente al bot
-<p>Se usa respondiendo a un archivo en el chat, debe ser un archivo que haya sido exportado
-<p><strong>Uso:</strong> <code class="cmd">/import</code>
+<p>Importa una configuración existente al bot</p>
+<p>Se usa respondiendo a un archivo en el chat, debe ser un archivo que haya sido exportado</p>
+<p><strong>Uso:</strong> <code class="cmd">/import</code></p>
 </div>
 
 </div>
